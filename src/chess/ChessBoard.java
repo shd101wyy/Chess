@@ -226,7 +226,6 @@ public class ChessBoard {
         if(remove_piece != null) {
             remove_piece.removeSelf();  // remove self temporarily
         }
-        p.removeSelf();
         if(p.getPiece_name().equals("pawn"))  // if it is pawn, we don't want to change its first_time_move flag
             ((Pawn)p).setCoordinateWithoutChangingFirstTimeMoveFlag(move_to_x, move_to_y);
         else
@@ -247,7 +246,6 @@ public class ChessBoard {
         }
 
         // restore remove_piece and p
-        p.removeSelf();
         if(p.getPiece_name().equals("pawn"))
             ((Pawn)p).setCoordinateWithoutChangingFirstTimeMoveFlag(current_x_coord, current_y_coord);
         else
@@ -447,7 +445,6 @@ public class ChessBoard {
                                 if(p.getPiece_name().equals("king")){ // check whether game over
                                     game_over(panel); // game over
                                 }
-                                this.chosen_piece.removeSelf();
                                 this.chosen_piece.setCoordinate(coord.getX(), coord.getY());
 
                                 /* update turns and redraw the canvas */
@@ -473,7 +470,6 @@ public class ChessBoard {
                         // System.out.println("You moved a piece");
 
                         // move player's piece to that coordinate
-                        this.chosen_piece.removeSelf();
                         this.chosen_piece.setCoordinate(x, y);
 
 

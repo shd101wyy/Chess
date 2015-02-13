@@ -47,6 +47,9 @@ public class Piece {
         if(x < 0 || x >= this.board.getWidth() || y < 0 || y >= this.board.getHeight() || this.board.getPieceAtCoordinate(x, y) != null){ // invalid coordinate
             return false;
         }
+        if(this.x_coordinate != -1 && this.y_coordinate != -1) {  // piece is not just initliazed.
+            this.removeSelf(); // remove self from current coordinate
+        }
         // set coordinate
         this.x_coordinate = x;
         this.y_coordinate = y;
@@ -60,6 +63,8 @@ public class Piece {
      */
     public void removeSelf(){
         this.board.removePiece(this);
+        this.x_coordinate = -1; // clear coordinate
+        this.y_coordinate = -1;
     }
 
     /**
