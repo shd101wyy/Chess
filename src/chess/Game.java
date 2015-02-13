@@ -41,6 +41,8 @@ public class Game extends JPanel{
         pawn1.setCoordinate(0, 1);
         Pawn pawn2 = new Pawn(board, 2);  // black
         pawn2.setCoordinate(0, 7);
+        King king1 = new King(board, 1); // white
+        king1.setCoordinate(4, 0);
 
         // Initialize JFrame
         frame = new JFrame("Chess");  // init jframe object

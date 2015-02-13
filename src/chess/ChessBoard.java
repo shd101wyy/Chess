@@ -177,6 +177,8 @@ public class ChessBoard {
             if (p != null) { // click a piece, show its possible moves
                 if(p.getPlayer() == getPlayForThisTurn()) { // player chooses his/her own piece
                     this.chosen_piece = p;       // save as chosen_piece
+                    // System.out.println("Enter Here\n");
+                    // System.out.println(p.getX_coordinate() + " " + p.getY_coordinate());
                     ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate();
                     if (coords == null) {  // this should not happend
                         System.out.println("It is null\n");
