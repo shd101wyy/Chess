@@ -12,6 +12,7 @@ import java.util.ArrayList;
 /**
  * Created by wangyiyi on 2/12/15.
  */
+
 public class ChessBoard {
     private int width;           // the width of chess board
     private int height;          // the height of chess board
@@ -271,7 +272,7 @@ public class ChessBoard {
         for (i = 0; i < this.width; i++){
             for(j = 0; j < this.height; j++){
                 Piece p = getPieceAtCoordinate(i, j);
-                if(p != null && p.getPlayer() == player){  // get opponent's piece
+                if(p != null && p.getPlayer() == player){  // get player's piece
                     ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // possible move coordinates.
                     for(Coordinate coord : coords){
                         if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // so piece can move there.

@@ -88,8 +88,42 @@ public class Game extends JPanel{
         Rook rook1 = new Rook(board, 2);
         rook1.setCoordinate(7, 0);
         */
+        // checkmate
+        /*
+
+         player2_rook1 player2_queen1       player1_rook1
 
 
+         king1         player2_rook2
+
+         in this case player 1 cannot move
+         */
+        /* create king */
+        /*
+        King king1 = new King(board, 1);
+        Rook player2_rook1 = new Rook(board, 2);
+        Rook player2_rook2 = new Rook(board, 2);
+        Queen player2_queen1 = new Queen(board, 2);
+        Rook player1_rook1 = new Rook(board, 1);
+        king1.setCoordinate(0, 0);
+        player2_rook1.setCoordinate(0, 5);
+        player2_rook2.setCoordinate(4, 0);
+        player2_queen1.setCoordinate(2, 2);
+        player1_rook1.setCoordinate(4, 1);
+        */
+
+        /*
+        stalemate
+         */
+        /*
+        board.setTurns(1);
+        Pawn pawn1 = new Pawn(board, 1);
+        King king1 = new King(board, 1);
+        King king2 = new King(board, 2);
+        king2.setCoordinate(5, 7);
+        pawn1.setCoordinate(5, 6);
+        king1.setCoordinate(5, 5);
+        */
 
         /*
         King king1 = new King(board, 1);
