@@ -308,7 +308,7 @@ public class ChessBoard {
             King king = (this.turns%2 == 0) ? (King)this.king1 : (King)this.king2;  // get current player's king
             this.gameover = true;
             if(king.isInCheck()){ // checkmate
-                JOptionPane.showMessageDialog(panel, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(panel, "Checkmate!", "", JOptionPane.INFORMATION_MESSAGE);
             }
             else{ // slatemate
                 JOptionPane.showMessageDialog(panel, "Player"+(this.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);

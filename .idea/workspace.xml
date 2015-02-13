@@ -13,7 +13,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chess/chess/Rook.class" afterPath="$PROJECT_DIR$/out/production/Chess/chess/Rook.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Bishop.java" afterPath="$PROJECT_DIR$/src/chess/Bishop.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/ChessBoard.java" afterPath="$PROJECT_DIR$/src/chess/ChessBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Game.java" afterPath="$PROJECT_DIR$/src/chess/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/King.java" afterPath="$PROJECT_DIR$/src/chess/King.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Knight.java" afterPath="$PROJECT_DIR$/src/chess/Knight.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Pawn.java" afterPath="$PROJECT_DIR$/src/chess/Pawn.java" />
@@ -48,7 +47,7 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chess/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35656837" vertical-offset="274" max-vertical-offset="1560">
+            <state vertical-scroll-proportion="0.16085792" vertical-offset="420" max-vertical-offset="1560">
               <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,8 +142,8 @@
       <file leaf-file-name="ChessBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chess/ChessBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.666667" vertical-offset="0" max-vertical-offset="3840">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state vertical-scroll-proportion="-18.851852" vertical-offset="3661" max-vertical-offset="6255">
+              <caret line="310" column="63" selection-start-line="310" selection-start-column="63" selection-end-line="310" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1741#1742#0" expanded="true" />
@@ -153,7 +152,6 @@
                 <element signature="e#1835#1836#0" expanded="true" />
                 <element signature="method#isStalemate#0;class#ChessBoard#0" expanded="false" />
                 <element signature="method#game_over#0;class#ChessBoard#0" expanded="false" />
-                <element signature="method#drawBoard#0;class#ChessBoard#0" expanded="false" />
                 <element signature="e#8469#8488#0" expanded="false" />
                 <element signature="method#generateStandardBoard#0;class#ChessBoard#0" expanded="false" />
               </folding>
@@ -177,8 +175,8 @@
         <option value="$PROJECT_DIR$/src/chess/Queen.java" />
         <option value="$PROJECT_DIR$/src/chess/Pawn.java" />
         <option value="$PROJECT_DIR$/src/chess/King.java" />
-        <option value="$PROJECT_DIR$/src/chess/ChessBoard.java" />
         <option value="$PROJECT_DIR$/src/chess/Piece.java" />
+        <option value="$PROJECT_DIR$/src/chess/ChessBoard.java" />
         <option value="$PROJECT_DIR$/src/chess/Game.java" />
       </list>
     </option>
@@ -613,7 +611,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13463067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23366337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23366337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -737,7 +735,6 @@
             <element signature="e#1835#1836#0" expanded="true" />
             <element signature="method#isStalemate#0;class#ChessBoard#0" expanded="false" />
             <element signature="method#game_over#0;class#ChessBoard#0" expanded="false" />
-            <element signature="method#drawBoard#0;class#ChessBoard#0" expanded="false" />
             <element signature="e#8469#8488#0" expanded="false" />
             <element signature="method#generateStandardBoard#0;class#ChessBoard#0" expanded="false" />
           </folding>
@@ -825,7 +822,6 @@
             <element signature="e#1835#1836#0" expanded="true" />
             <element signature="method#isStalemate#0;class#ChessBoard#0" expanded="false" />
             <element signature="method#game_over#0;class#ChessBoard#0" expanded="false" />
-            <element signature="method#drawBoard#0;class#ChessBoard#0" expanded="false" />
             <element signature="e#8469#8488#0" expanded="false" />
             <element signature="method#generateStandardBoard#0;class#ChessBoard#0" expanded="false" />
           </folding>
@@ -918,25 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/ChessBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.666667" vertical-offset="0" max-vertical-offset="3840">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1802#1803#0" expanded="true" />
-            <element signature="e#1835#1836#0" expanded="true" />
-            <element signature="method#isStalemate#0;class#ChessBoard#0" expanded="false" />
-            <element signature="method#game_over#0;class#ChessBoard#0" expanded="false" />
-            <element signature="method#drawBoard#0;class#ChessBoard#0" expanded="false" />
-            <element signature="e#8469#8488#0" expanded="false" />
-            <element signature="method#generateStandardBoard#0;class#ChessBoard#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/Rook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1290">
@@ -953,9 +930,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/ChessBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.851852" vertical-offset="3661" max-vertical-offset="6255">
+          <caret line="310" column="63" selection-start-line="310" selection-start-column="63" selection-end-line="310" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
+            <element signature="e#1835#1836#0" expanded="true" />
+            <element signature="method#isStalemate#0;class#ChessBoard#0" expanded="false" />
+            <element signature="method#game_over#0;class#ChessBoard#0" expanded="false" />
+            <element signature="e#8469#8488#0" expanded="false" />
+            <element signature="method#generateStandardBoard#0;class#ChessBoard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35656837" vertical-offset="274" max-vertical-offset="1560">
+        <state vertical-scroll-proportion="0.16085792" vertical-offset="420" max-vertical-offset="1560">
           <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
