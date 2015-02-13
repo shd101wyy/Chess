@@ -35,9 +35,7 @@ public class Pawn extends Piece {
         }
 
         if (board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move) != null) { // check piece in front
-            Piece p = board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move); // get piece at that coord.
-            if (p.getPlayer() != this.getPlayer())                       // it is opponent's piece
-                coords.add(new Coordinate(current_x_coord, current_y_coord + possible_move));
+            // do nothing
         } else {
             coords.add(new Coordinate(current_x_coord, current_y_coord + possible_move));
         }
@@ -60,7 +58,7 @@ public class Pawn extends Piece {
     }
 
     public boolean setCoordinate(int x, int y) {
-        if (this.getX_coordinate() == -1) { // first time init
+        if (this.getX_coordinate() == -1 || this.getY_coordinate() == -1) { // first time init
             this.first_time_move = true;
         } else {
             this.first_time_move = false;

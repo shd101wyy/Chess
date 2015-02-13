@@ -184,9 +184,15 @@ public class ChessBoard {
                         System.out.println("It is null\n");
                     } else {
                         for (Coordinate coord : coords) {
-                            System.out.println("p: X: " + coord.getX() + " Y: " + coord.getY());
+                            // System.out.println("p: X: " + coord.getX() + " Y: " + coord.getY());
+
                             // high light possible moves.
-                            color = new Color(195, 98, 108);
+                            if(getPieceAtCoordinate(coord.getX(), coord.getY()) == null) { // that spot is empty
+                                color = new Color(195, 98, 108);
+                            }
+                            else{  // opponent's piece is there
+                                color = new Color(195, 77, 34);
+                            }
                             x = coord.getX() * square_size;  // convert to canvas coordinate
                             y = (this.height - 1 - coord.getY()) * square_size;
                             drawSquareForBoard(g2d, x, y, color, square_size);
