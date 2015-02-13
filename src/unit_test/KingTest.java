@@ -16,21 +16,21 @@ public class KingTest {
 
         King king = new King(board, 1);
         king.setCoordinate(3, 0);
-        assertEquals(king.getPossibleMoveCoordinate().size(), 5);
+        assertEquals(5, king.getPossibleMoveCoordinate().size());
 
         // put an enemy ahead
         Pawn enemy = new Pawn(board, 2);
         enemy.setCoordinate(3, 1);
-        assertEquals(king.getPossibleMoveCoordinate().size(), 5);
+        assertEquals(5, king.getPossibleMoveCoordinate().size());
 
         // put an friend on the left;
         Pawn friend = new Pawn(board, 1);
         friend.setCoordinate(2, 0);
-        assertEquals(king.getPossibleMoveCoordinate().size(), 4);
+        assertEquals(4, king.getPossibleMoveCoordinate().size());
 
         // put king at the center of the board
         king.setCoordinate(3, 3);
-        assertEquals(king.getPossibleMoveCoordinate().size(), 8);
+        assertEquals(8, king.getPossibleMoveCoordinate().size());
     }
 
     /*
@@ -43,12 +43,12 @@ public class KingTest {
 
         King king = new King(board, 1);
         king.setCoordinate(3, 0);
-        assertEquals(king.isInCheck(), false);
+        assertEquals(false, king.isInCheck());
 
         // add an enemy ahead
         Rook rook = new Rook(board, 2);
         rook.setCoordinate(3, 6);
-        assertEquals(king.isInCheck(), true);
+        assertEquals(true, king.isInCheck());
 
     }
 }

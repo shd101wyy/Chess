@@ -20,15 +20,15 @@ public class BishopTest {
         // put p at left bottom corner
         p = new Bishop(board, 1);
         p.setCoordinate(0, 0);
-        assertEquals(p.getPossibleMoveCoordinate().size(), 7);
+        assertEquals(7, p.getPossibleMoveCoordinate().size());
 
         // put p at center
         p.setCoordinate(3, 3);
-        assertEquals(p.getPossibleMoveCoordinate().size(), 13);
+        assertEquals(13, p.getPossibleMoveCoordinate().size());
 
         // put opponent piece at one possible move coordinate
         Piece opponent_piece = new Bishop(board, 1);
         opponent_piece.setCoordinate(5, 5);
-        assertEquals(p.getPossibleMoveCoordinate().size(), 10);
+        assertEquals(10, p.getPossibleMoveCoordinate().size());
     }
 }

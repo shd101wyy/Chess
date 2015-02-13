@@ -17,10 +17,10 @@ public class PieceTest {
         ChessBoard board = new ChessBoard(8, 8);  // create chess board
 
         Piece p1 = new King(board, 1);            // check player id valid
-        assertEquals(p1.getPlayer(), 1);
+        assertEquals(1, p1.getPlayer());
 
         Piece p2 = new King(board, 2);            // check player id valid
-        assertEquals(p2.getPlayer(), 2);
+        assertEquals(2, p2.getPlayer());
     }
 
     /**
@@ -34,22 +34,22 @@ public class PieceTest {
         Piece p;
 
         p = new King(board, 1);
-        assertEquals(p.getPiece_name(), "king");
+        assertEquals("king", p.getPiece_name());
 
         p = new Bishop(board, 1);
-        assertEquals(p.getPiece_name(), "bishop");
+        assertEquals("bishop", p.getPiece_name());
 
         p = new Knight(board, 1);
-        assertEquals(p.getPiece_name(), "knight");
+        assertEquals("knight", p.getPiece_name());
 
         p = new Pawn(board, 1);
-        assertEquals(p.getPiece_name(), "pawn");
+        assertEquals("pawn", p.getPiece_name());
 
         p = new Queen(board, 1);
-        assertEquals(p.getPiece_name(), "queen");
+        assertEquals("queen", p.getPiece_name());
 
         p = new Rook(board, 1);
-        assertEquals(p.getPiece_name(), "rook");
+        assertEquals("rook", p.getPiece_name());
     }
     /**
      * Test whether the piece image path is correct
@@ -62,42 +62,42 @@ public class PieceTest {
 
         // test player 1
         p = new King(board, 1);
-        assertEquals(p.getPiece_image_path(), "assets/white_king.png");
+        assertEquals("assets/white_king.png", p.getPiece_image_path());
 
         p = new Bishop(board, 1);
-        assertEquals(p.getPiece_image_path(), "assets/white_bishop.png");
+        assertEquals("assets/white_bishop.png", p.getPiece_image_path());
 
         p = new Knight(board, 1);
-        assertEquals(p.getPiece_image_path(), "assets/white_knight.png");
+        assertEquals("assets/white_knight.png", p.getPiece_image_path());
 
         p = new Pawn(board, 1);
-        assertEquals(p.getPiece_image_path(), "assets/white_pawn.png");
+        assertEquals("assets/white_pawn.png", p.getPiece_image_path());
 
         p = new Queen(board, 1);
-        assertEquals(p.getPiece_image_path(), "assets/white_queen.png");
+        assertEquals( "assets/white_queen.png", p.getPiece_image_path());
 
         p = new Rook(board, 1);
-        assertEquals(p.getPiece_image_path(), "assets/white_rook.png");
+        assertEquals("assets/white_rook.png", p.getPiece_image_path());
 
 
         // test player 2
         p = new King(board, 2);
-        assertEquals(p.getPiece_image_path(), "assets/black_king.png");
+        assertEquals("assets/black_king.png", p.getPiece_image_path());
 
         p = new Bishop(board, 2);
-        assertEquals(p.getPiece_image_path(), "assets/black_bishop.png");
+        assertEquals("assets/black_bishop.png", p.getPiece_image_path());
 
         p = new Knight(board, 2);
-        assertEquals(p.getPiece_image_path(), "assets/black_knight.png");
+        assertEquals("assets/black_knight.png", p.getPiece_image_path());
 
         p = new Pawn(board, 2);
-        assertEquals(p.getPiece_image_path(), "assets/black_pawn.png");
+        assertEquals("assets/black_pawn.png", p.getPiece_image_path());
 
         p = new Queen(board, 2);
-        assertEquals(p.getPiece_image_path(), "assets/black_queen.png");
+        assertEquals("assets/black_queen.png", p.getPiece_image_path());
 
         p = new Rook(board, 2);
-        assertEquals(p.getPiece_image_path(), "assets/black_rook.png");
+        assertEquals("assets/black_rook.png", p.getPiece_image_path());
     }
 
     /**
@@ -124,62 +124,62 @@ public class PieceTest {
 
         // check case 1
         result = p.setCoordinate(-1, 9); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 2
         result = p.setCoordinate(1, 8); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 3
         result = p.setCoordinate(10, 10); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 4
         result = p.setCoordinate(-1, 0); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 5
         result = p.setCoordinate(9, 4); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 6
         result = p.setCoordinate(-1, -1); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 7
         result = p.setCoordinate(4, -1); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // check case 8
         result = p.setCoordinate(9, -4); // outside the boundary;
-        assertEquals(result, false);
+        assertEquals(false, result);
 
 
         // check valid area
         result = p.setCoordinate(0, 0); // inside valid area
-        assertEquals(result, true);
+        assertEquals(true, result);
 
         result = p.setCoordinate(7, 7); // inside valid area
-        assertEquals(result, true);
+        assertEquals(true, result);
 
         result = p.setCoordinate(6, 3); // inside valid area
-        assertEquals(result, true);
+        assertEquals(true, result);
 
         result = p.setCoordinate(2, 2); // inside valid area
-        assertEquals(result, true);
+        assertEquals(true, result);
 
 
         // create new piece, test whether we can put it at p's location
         Piece p2 = new King(board, 2);
         result = p2.setCoordinate(2, 2);  // this should return false
-        assertEquals(result, false);
+        assertEquals(false, result);
 
         // put p2 in a valid place
         result = p2.setCoordinate(2, 3);
-        assertEquals(result, true);
+        assertEquals(true, result);
 
         result = p2.setCoordinate(0, 0);
-        assertEquals(result, true);
+        assertEquals(true, result);
     }
 
     /**
@@ -194,8 +194,8 @@ public class PieceTest {
         p.setCoordinate(0, 0);
 
         p.removeSelf();      // piece removes itself from the chess board
-        assertEquals(p.getX_coordinate(), -1);  // coordinate should be reset to -1
-        assertEquals(p.getY_coordinate(), -1);
+        assertEquals(-1, p.getX_coordinate());  // coordinate should be reset to -1
+        assertEquals(-1, p.getY_coordinate());
 
         /* the piece should be found on board after we remove it */
         boolean find = false;
@@ -207,7 +207,7 @@ public class PieceTest {
                 }
             }
         }
-        assertEquals(find, false); // piece should not be found from the chess board
+        assertEquals(false, find); // piece should not be found from the chess board
     }
 
 
