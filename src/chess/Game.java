@@ -66,6 +66,20 @@ public class Game extends JPanel{
         */
 
         /*
+        // checkmate
+        King king1 = new King(board, 2);
+        king1.setCoordinate(5, 4);
+
+        King king2 = new King(board, 1);
+        king2.setCoordinate(7, 4);
+
+        Rook rook1 = new Rook(board, 2);
+        rook1.setCoordinate(7, 0);
+        */
+
+
+
+        /*
         King king1 = new King(board, 1);
         king1.setCoordinate(1, 7);
         Rook rook2 = new Rook(board, 2);
@@ -74,7 +88,7 @@ public class Game extends JPanel{
         king2.setCoordinate(2, 5);
         Knight knight2 = new Knight(board, 2);
         knight2.setCoordinate(4, 6);
-*/
+        */
 
         // Initialize JFrame
         frame = new JFrame("Chess");  // init jframe object

@@ -13,13 +13,13 @@ import java.util.ArrayList;
  * Created by wangyiyi on 2/12/15.
  */
 public class ChessBoard {
-    private int width;
-    private int height;
-    private Piece pieces[][];
-    private Piece chosen_piece; // the piece that is chosen by player
-    private int turns; // count number of moves
-    private Piece king1; // king for player1 White
-    private Piece king2; // king for player2 Black
+    private int width;           // the width of chess board
+    private int height;          // the height of chess board
+    private Piece pieces[][];    // this 2d array is used to save pieces
+    private Piece chosen_piece;  // the piece that is chosen by player
+    private int turns;           // count number of moves
+    private Piece king1;         // king for player1 White
+    private Piece king2;         // king for player2 Black
     private boolean gameover; // check whether gameover
 
     /**
@@ -65,6 +65,12 @@ public class ChessBoard {
         this.king2 = p;
     }
 
+    public void setTurns(int turns){
+        this.turns = turns;
+    }
+    public int getTurns(){
+        return this.turns;
+    }
     /**
      *
      * Return the piece at given coordinate
@@ -122,7 +128,7 @@ public class ChessBoard {
     }
 
     /**
-     *
+     * Draw Piece on Chess Board
      * @param g2d
      * @param p
      * @param square_size
@@ -146,7 +152,7 @@ public class ChessBoard {
      * @param p
      * @param move_to_x
      * @param move_to_y
-     * @return
+     * @return return true if this move will cause king being checked.
      */
     public boolean isSuicideMove(Piece p, int move_to_x, int move_to_y){
         int current_player = p.getPlayer(); // get player
@@ -204,7 +210,7 @@ public class ChessBoard {
      *
      * Check whether player can move a piece
      * If a player can not move any piece, then return true
-     * @return
+     * @return true if player cannot move any piece; otherwise return false
      */
     public boolean playerCannotMove(int player){
         int i, j;

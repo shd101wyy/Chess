@@ -8,7 +8,6 @@ import java.util.ArrayList;
 //import chess.ChessBoard;
 public class Piece {
     private String piece_name; // name of the piece: king, rook, bishop, queen, knight, pawn.
-    private boolean captured;   // whether the piece is captured.
 
     // Assume left bottom corner is (0, 0)
     private int x_coordinate;  // piece x coordinate
@@ -27,7 +26,6 @@ public class Piece {
     public Piece(String piece_name, ChessBoard board, int player){
         // String [] valid_piece_name = {"king", "rook", "bishop", "queen", "knight", "pawn"}; // list valid piece name
         this.piece_name = piece_name;
-        this.captured = false;
         this.x_coordinate = -1;
         this.y_coordinate = -1;
         this.board = board;
@@ -54,10 +52,6 @@ public class Piece {
 
     public void removeSelf(){
         this.board.removePiece(this);
-    }
-
-    public void capturePiece(Piece p){
-        p.captured = true;
     }
 
     public ChessBoard getChessBoard(){
