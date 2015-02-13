@@ -202,20 +202,20 @@ public class ChessBoard {
 
     /**
      *
-     * Check whether opponent can move
-     * If opponent can not move any piece, then game over
+     * Check whether player can move a piece
+     * If a player can not move any piece, then return true
      * @return
      */
-    public boolean opponentCannotMove(int player){
+    public boolean playerCannotMove(int player){
         int i, j;
         for (i = 0; i < this.width; i++){
-            for(j = 0; j < this.width; j++){
+            for(j = 0; j < this.height; j++){
                 Piece p = getPieceAtCoordinate(i, j);
                 if(p != null && p.getPlayer() == player){  // get opponent's piece
                     ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // possible move coordinates.
                     for(Coordinate coord : coords){
-                        if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // so opponent piece can move there.
-                            return false; // not game over
+                        if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // so piece can move there.
+                            return false; // there is a legal move
                         }
                     }
                 }
@@ -224,27 +224,6 @@ public class ChessBoard {
         return true;
     }
 
-    /*
-     * Check whether opponent can kill king next move
-     */
-    public boolean opponentCanKillKing(int player){
-        Piece king = ((player == 1) ? king2 : king1);
-        int i, j;
-        for (i = 0; i < this.width; i++){
-            for(j = 0; j < this.width; j++){
-                Piece p = getPieceAtCoordinate(i, j);
-                if(p != null && p.getPlayer() == player){  // get opponent's piece
-                    ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // possible move coordinates.
-                    for(Coordinate coord : coords){
-                        if (coord.getX() == king.getX_coordinate() && coord.getY() == king.getY_coordinate()){ // so opponent piece can move there.
-                            return true; // game over
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-    }
 
     /**
      * Check whether player's king is in stalemate
@@ -256,23 +235,10 @@ public class ChessBoard {
         if(king.isInCheck() == false){ // king is not in check.
             // check whether is there any legal move
             // if there is no legal move, then return true
-            int i, j;
-            for(i = 0; i < this.width; i++){
-                for(j = 0; j < this.height; j++){
-                    Piece p = getPieceAtCoordinate(i, j);
-                    if(p != null && p.getPlayer() == player){
-                        ArrayList<Coordinate> coords = king.getPossibleMoveCoordinate();
-                        if(coords.size() == 0)
-                            return false;
-                        for(Coordinate coord : coords){
-                            if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // there is a legal move
-                                return false;
-                            }
-                        }
-                    }
-                }
-            }
-            return true;
+            // if there is a legal move, then return false
+            if(playerCannotMove(player))
+                return true;
+            return false;
         }
         else{
             return false;
@@ -280,7 +246,7 @@ public class ChessBoard {
     }
 
 
-    public void gameover(JPanel panel){
+    public void game_over(JPanel panel){
         this.gameover = true;
         JOptionPane.showMessageDialog(panel, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
     }
@@ -332,10 +298,15 @@ public class ChessBoard {
             }
         }
 
-        // check stalemate
-        if(isStalemate(this.turns%2 == 0 ? 1 : 2)){
+        if (playerCannotMove(this.turns%2 == 0 ? 1 : 2)){ // so right now that player cannot move any chess
+            King king = (this.turns%2 == 0) ? (King)this.king1 : (King)this.king2;  // get current player's king
             this.gameover = true;
-            JOptionPane.showMessageDialog(panel, "Player"+(this.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
+            if(king.isInCheck()){ // checkmate
+                JOptionPane.showMessageDialog(panel, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{ // slatemate
+                JOptionPane.showMessageDialog(panel, "Player"+(this.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
 
         // check mouse click.
@@ -400,17 +371,11 @@ public class ChessBoard {
                                 // move player's piece to that coordinate
                                 p.removeSelf(); // remove opponent's piece
                                 if(p.getPiece_name().equals("king")){ // check whether game over
-                                    gameover(panel); // game over
+                                    game_over(panel); // game over
                                 }
                                 this.chosen_piece.removeSelf();
                                 this.chosen_piece.setCoordinate(coord.getX(), coord.getY());
 
-                                if(opponentCannotMove(this.chosen_piece.getPlayer() == 1 ? 2 : 1)){ // check whether opponent can move
-                                    gameover(panel);
-                                }
-                                if(opponentCanKillKing(this.chosen_piece.getPlayer() == 1 ? 2 : 1)){ // check whether next round opponent will definitely kill the king
-                                    gameover(panel);
-                                }
                                 // update turns and redraw the canvas
                                 this.chosen_piece = null;
                                 turns++;
@@ -438,13 +403,6 @@ public class ChessBoard {
                             this.chosen_piece.removeSelf();
                             this.chosen_piece.setCoordinate(x, y);
 
-                            if(opponentCannotMove(this.chosen_piece.getPlayer() == 1 ? 2 : 1)){ // check whether opponent can move
-                                gameover(panel);
-                            }
-
-                            if(opponentCanKillKing(this.chosen_piece.getPlayer() == 1 ? 2 : 1)){ // check whether next round opponent will definitely kill the king
-                                gameover(panel);
-                            }
 
                             // update turns and redraw the canvas
                             this.chosen_piece = null;

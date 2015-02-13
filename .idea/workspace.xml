@@ -143,8 +143,8 @@
       <file leaf-file-name="ChessBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chess/ChessBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7093185" vertical-offset="7126" max-vertical-offset="8640">
-              <caret line="571" column="49" selection-start-line="571" selection-start-column="49" selection-end-line="571" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.58275384" vertical-offset="3076" max-vertical-offset="8010">
+              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -919,8 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/ChessBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7093185" vertical-offset="7126" max-vertical-offset="8640">
-          <caret line="571" column="49" selection-start-line="571" selection-start-column="49" selection-end-line="571" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.58275384" vertical-offset="3076" max-vertical-offset="8010">
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
