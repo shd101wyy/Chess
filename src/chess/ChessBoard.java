@@ -18,6 +18,8 @@ public class ChessBoard {
     private Piece pieces[][];
     private Piece chosen_piece; // the piece that is chosen by player
     private int turns; // count number of moves
+    private Piece king1; // king for player1 White
+    private Piece king2; // king for player2 Black
 
     /**
      *
@@ -41,6 +43,24 @@ public class ChessBoard {
         }
         this.chosen_piece = null;
         this.turns = 0;   // if it is even number, then it's White turn, otherwise Black turn
+        this.king1 = null;
+        this.king2 = null;
+    }
+
+    public Piece getKing1(){
+        return this.king1;
+    }
+
+    public void setKing1(Piece p){
+        this.king1 = p;
+    }
+
+    public Piece getKing2(){
+        return this.king2;
+    }
+
+    public void setKing2(Piece p){
+        this.king2 = p;
     }
 
     /**
@@ -69,7 +89,7 @@ public class ChessBoard {
         return this.height;
     }
 
-    public int getPlayForThisTurn(){
+    public int getPlayerForThisTurn(){
         if (this.turns % 2 == 0){
             return 1; // White
         }
@@ -116,6 +136,53 @@ public class ChessBoard {
         } catch (Exception e) {
             System.out.println("ERROR: Cannot load image file\n"); // this exception should never happen
         }
+    }
+
+    /**
+     *
+     * Check whether this is a suicide move
+     * @param p
+     * @param move_to_x
+     * @param move_to_y
+     * @return
+     */
+    public boolean isSuicideMove(Piece p, int move_to_x, int move_to_y){
+        int current_player = p.getPlayer(); // get player
+        int current_x_coord = p.getX_coordinate();
+        int current_y_coord = p.getY_coordinate();
+        int i, j;
+        boolean is_suicide = false;
+
+        Piece king = (current_player == 1 ? this.king1 : this.king2);
+
+        Piece remove_piece = getPieceAtCoordinate(move_to_x, move_to_y);
+        if(remove_piece == null) // empty spot
+            return false;
+        remove_piece.removeSelf();  // remove self temporarily
+
+        p.removeSelf();
+        p.setCoordinate(move_to_x, move_to_y); // move p to that coord;
+
+        for(i = 0; i < this.width; i++){
+            for(j = 0; j < this.height; j++){
+                if (this.pieces[j][i] != null && this.pieces[j][i].getPlayer() != current_player){ // opponent's piece
+                    ArrayList<Coordinate> coords = this.pieces[j][i].getPossibleMoveCoordinate();
+                    for(Coordinate coord : coords){
+                        if(coord.getX() == king.getX_coordinate() && coord.getY() == king.getY_coordinate()){ // will go to king's coord
+                            is_suicide = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // restore remove_piece and p
+        p.removeSelf();
+        p.setCoordinate(current_x_coord, current_y_coord);
+        remove_piece.setCoordinate(move_to_x, move_to_y);
+
+        return is_suicide;
     }
 
     /**
@@ -177,7 +244,7 @@ public class ChessBoard {
              *
              */
             if (p != null) { // click a piece, show its possible moves
-                if(p.getPlayer() == getPlayForThisTurn()) { // player chooses his/her own piece
+                if(p.getPlayer() == getPlayerForThisTurn()) { // player chooses his/her own piece
                     this.chosen_piece = p;       // save as chosen_piece
                     // System.out.println("Enter Here\n");
                     // System.out.println(p.getX_coordinate() + " " + p.getY_coordinate());
@@ -186,8 +253,9 @@ public class ChessBoard {
                         System.out.println("It is null\n");
                     } else {
                         for (Coordinate coord : coords) {
-                            // System.out.println("p: X: " + coord.getX() + " Y: " + coord.getY());
-
+                            if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move
+                                continue;
+                            }
                             // high light possible moves.
                             if(getPieceAtCoordinate(coord.getX(), coord.getY()) == null) { // that spot is empty
                                 color = new Color(195, 98, 108);
@@ -216,6 +284,9 @@ public class ChessBoard {
                     ArrayList<Coordinate> coords = this.chosen_piece.getPossibleMoveCoordinate();
                     if(coords != null){
                         for(Coordinate coord : coords){
+                            if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move
+                                continue;
+                            }
                             if (coord.getX() == p.getX_coordinate() && coord.getY() == p.getY_coordinate()){ // opponent's piece is captured
                                 System.out.println("You captured a piece");
                                 // remove that opponent's piece
@@ -246,6 +317,9 @@ public class ChessBoard {
                 ArrayList<Coordinate> coords = this.chosen_piece.getPossibleMoveCoordinate();
                 if(coords != null){
                     for(Coordinate coord : coords){
+                        if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move
+                            continue;
+                        }
                         if (coord.getX() == x && coord.getY() == y){ // opponent's piece is captured
                             System.out.println("You moved a piece");
 

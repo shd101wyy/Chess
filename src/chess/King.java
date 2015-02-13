@@ -10,9 +10,21 @@ public class King extends Piece {
         super("king", board, player);
         if(player == 1){  // White player
             this.setPiece_image_path("assets/white_king.png");
+            if(board.getKing1() == null){
+                board.setKing1(this);
+            }
+            else{
+                System.out.println("ERROR: There are more than one king");
+            }
         }
         else{ // Black player
             this.setPiece_image_path("assets/black_king.png");
+            if(board.getKing2() == null){
+                board.setKing2(this);
+            }
+            else{
+                System.out.println("ERROR: There are more than one king");
+            }
         }
     }
 

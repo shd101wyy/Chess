@@ -25,9 +25,12 @@ public class Rook extends Piece {
         int i;
         // check left
         for(i = current_x_coord - 1; i >= 0; i--){
-            if(board.getPieceAtCoordinate(i, current_y_coord) == null ||
-                    board.getPieceAtCoordinate(i, current_y_coord).getPlayer() != this.getPlayer()){
+            if(board.getPieceAtCoordinate(i, current_y_coord) == null){
                 coords.add(new Coordinate(i, current_y_coord));
+            }
+            else if (board.getPieceAtCoordinate(i, current_y_coord).getPlayer() != this.getPlayer()){
+                coords.add(new Coordinate(i, current_y_coord));
+                break;
             }
             else{
                 break;
@@ -35,9 +38,12 @@ public class Rook extends Piece {
         }
         // check right
         for(i = current_x_coord + 1; i < board.getWidth(); i++){
-            if(board.getPieceAtCoordinate(i, current_y_coord) == null ||
-                    board.getPieceAtCoordinate(i, current_y_coord).getPlayer() != this.getPlayer()){
+            if(board.getPieceAtCoordinate(i, current_y_coord) == null){
                 coords.add(new Coordinate(i, current_y_coord));
+            }
+            else if (board.getPieceAtCoordinate(i, current_y_coord).getPlayer() != this.getPlayer()){
+                coords.add(new Coordinate(i, current_y_coord));
+                break;
             }
             else{
                 break;
@@ -45,9 +51,12 @@ public class Rook extends Piece {
         }
         // check above
         for(i = current_y_coord + 1 ; i < board.getHeight(); i++){
-            if(board.getPieceAtCoordinate(current_x_coord, i) == null ||
-                    board.getPieceAtCoordinate(current_x_coord, i).getPlayer() != this.getPlayer()){
+            if(board.getPieceAtCoordinate(current_x_coord, i) == null){
                 coords.add(new Coordinate(current_x_coord, i));
+            }
+            else if (board.getPieceAtCoordinate(current_x_coord, i).getPlayer() != this.getPlayer()){
+                coords.add(new Coordinate(current_x_coord, i));
+                break;
             }
             else{
                 break;
@@ -55,9 +64,12 @@ public class Rook extends Piece {
         }
         // check below
         for(i = current_y_coord - 1; i >= 0; i--){
-            if(board.getPieceAtCoordinate(current_x_coord, i) == null ||
-                    board.getPieceAtCoordinate(current_x_coord, i).getPlayer() != this.getPlayer()){
+            if(board.getPieceAtCoordinate(current_x_coord, i) == null){
                 coords.add(new Coordinate(current_x_coord, i));
+            }
+            else if (board.getPieceAtCoordinate(current_x_coord, i).getPlayer() != this.getPlayer()){
+                coords.add(new Coordinate(current_x_coord, i));
+                break;
             }
             else{
                 break;
