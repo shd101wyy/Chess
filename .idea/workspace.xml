@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Game.java" afterPath="$PROJECT_DIR$/src/chess/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/King.java" afterPath="$PROJECT_DIR$/src/chess/King.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Knight.java" afterPath="$PROJECT_DIR$/src/chess/Knight.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Rook.java" afterPath="$PROJECT_DIR$/src/chess/Rook.java" />
     </list>
     <ignored path="Chess.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,27 +31,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HelloWorld.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chess/HelloWorld.java">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chess/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1095">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="945">
+              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#387#770#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chess/Game.java">
+      <file leaf-file-name="Rook.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chess/Rook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="915">
-              <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.87935656" vertical-offset="199" max-vertical-offset="1110">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#387#770#0" expanded="true" />
-                <element signature="e#769#770#0" expanded="true" />
+                <element signature="e#809#821#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,6 +92,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Queen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chess/Queen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Bishop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chess/Bishop.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -123,11 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="King.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="King.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chess/King.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3766756" vertical-offset="229" max-vertical-offset="1380">
-              <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1380">
+              <caret line="22" column="103" selection-start-line="18" selection-start-column="3" selection-end-line="22" selection-end-column="103" />
               <folding>
                 <element signature="e#808#820#0" expanded="true" />
               </folding>
@@ -187,16 +201,16 @@
         <option value="$PROJECT_DIR$/src/Piece.java" />
         <option value="$PROJECT_DIR$/src/HelloWorld.java" />
         <option value="$PROJECT_DIR$/src/chess/HelloWorld.java" />
-        <option value="$PROJECT_DIR$/src/chess/Rook.java" />
         <option value="$PROJECT_DIR$/src/chess/Queen.java" />
         <option value="$PROJECT_DIR$/src/chess/Bishop.java" />
         <option value="$PROJECT_DIR$/src/chess/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/chess/Pawn.java" />
         <option value="$PROJECT_DIR$/src/chess/Piece.java" />
         <option value="$PROJECT_DIR$/src/chess/Knight.java" />
-        <option value="$PROJECT_DIR$/src/chess/Game.java" />
         <option value="$PROJECT_DIR$/src/chess/ChessBoard.java" />
         <option value="$PROJECT_DIR$/src/chess/King.java" />
+        <option value="$PROJECT_DIR$/src/chess/Game.java" />
+        <option value="$PROJECT_DIR$/src/chess/Rook.java" />
       </list>
     </option>
   </component>
@@ -684,10 +698,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="285">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-          <folding>
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -764,28 +775,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/Rook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/Queen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -913,10 +902,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/King.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1380">
+          <caret line="22" column="103" selection-start-line="18" selection-start-column="3" selection-end-line="22" selection-end-column="103" />
+          <folding>
+            <element signature="e#808#820#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="915">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="945">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#387#770#0" expanded="true" />
@@ -925,12 +924,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/King.java">
+    <entry file="file://$PROJECT_DIR$/src/chess/Queen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3766756" vertical-offset="229" max-vertical-offset="1380">
-          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
-            <element signature="e#808#820#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/Rook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87935656" vertical-offset="199" max-vertical-offset="1110">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding>
+            <element signature="e#809#821#0" expanded="true" />
           </folding>
         </state>
       </provider>
