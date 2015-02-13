@@ -6,10 +6,15 @@ import java.util.ArrayList;
  * Created by wangyiyi on 2/12/15.
  */
 public class Bishop extends Piece {
-    private String image_path;
+    /**
+     * Constructor: initialize a Bishop Object
+     * @param board
+     * @param player
+     */
     public Bishop(ChessBoard board, int player){
         super("bishop", board, player);
 
+        // set piece image path
         if(player == 1){  // White player
             this.setPiece_image_path("assets/white_bishop.png");
         }
@@ -18,7 +23,22 @@ public class Bishop extends Piece {
         }
     }
 
-
+    /**
+     * Get all possible move coordinates for this bishop piece at current coordinate
+     * @         @
+     *  @       @          P: this piece
+     *   @     @           @: Possible coordinates to move
+     *    @   @
+     *     @ @
+     *      P
+     *     @ @
+     *    @   @
+     *   @     @
+     *  @       @
+     *
+     *
+     * @return ArrayList<Coordinate> Object
+     */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
         int current_x_coord = this.getX_coordinate();       // get current x coord of pawn
         int current_y_coord = this.getY_coordinate();       // get current y coord of pawn
@@ -28,10 +48,10 @@ public class Bishop extends Piece {
         int i, j;
         // go direction of left top
         for(i = current_x_coord - 1, j = current_y_coord + 1; i >= 0 && j < board.getHeight(); i--, j++){
-            if(board.getPieceAtCoordinate(i, j) == null){
+            if(board.getPieceAtCoordinate(i, j) == null){     // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()) {
+            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()) {  // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -40,10 +60,10 @@ public class Bishop extends Piece {
         }
         // go direction of right top
         for(i = current_x_coord + 1, j = current_y_coord + 1; i < board.getWidth() && j < board.getHeight(); i++, j++){
-            if(board.getPieceAtCoordinate(i, j) == null){
+            if(board.getPieceAtCoordinate(i, j) == null){ // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){
+            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){ // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -52,10 +72,10 @@ public class Bishop extends Piece {
         }
         // go direction of left bottom
         for(i = current_x_coord - 1, j = current_y_coord - 1; i >= 0 && j >= 0; i--, j--){
-            if(board.getPieceAtCoordinate(i, j) == null){
+            if(board.getPieceAtCoordinate(i, j) == null){ // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){
+            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){ // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -64,10 +84,10 @@ public class Bishop extends Piece {
         }
         // go direction of right bottom
         for(i = current_x_coord + 1, j = current_y_coord - 1; i < board.getWidth() && j >= 0; i++, j--){
-            if(board.getPieceAtCoordinate(i, j) == null){
+            if(board.getPieceAtCoordinate(i, j) == null){ // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){
+            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){ // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }

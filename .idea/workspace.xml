@@ -13,6 +13,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chess/chess/Rook.class" afterPath="$PROJECT_DIR$/out/production/Chess/chess/Rook.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Bishop.java" afterPath="$PROJECT_DIR$/src/chess/Bishop.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/ChessBoard.java" afterPath="$PROJECT_DIR$/src/chess/ChessBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Coordinate.java" afterPath="$PROJECT_DIR$/src/chess/Coordinate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/King.java" afterPath="$PROJECT_DIR$/src/chess/King.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Knight.java" afterPath="$PROJECT_DIR$/src/chess/Knight.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chess/Pawn.java" afterPath="$PROJECT_DIR$/src/chess/Pawn.java" />
@@ -32,6 +33,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -66,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chess/Piece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7587131" vertical-offset="1384" max-vertical-offset="2145">
-              <caret line="130" column="77" selection-start-line="130" selection-start-column="77" selection-end-line="130" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1384" max-vertical-offset="2145">
+              <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
               <folding>
                 <element signature="e#2185#2186#0" expanded="true" />
                 <element signature="e#2229#2230#0" expanded="true" />
@@ -110,72 +116,21 @@
       <file leaf-file-name="Bishop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chess/Bishop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="1260">
-              <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="40" selection-end-column="7" />
+              <folding>
+                <element signature="e#1344#1356#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Coordinate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chess/Coordinate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="King.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="King.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chess/King.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1069" max-vertical-offset="1935">
-              <caret line="103" column="28" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.72386056" vertical-offset="1395" max-vertical-offset="2175">
+              <caret line="129" column="50" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Knight.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chess/Knight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="709" max-vertical-offset="1590">
-              <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pawn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chess/Pawn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="349" max-vertical-offset="1155">
-              <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
-              <folding>
-                <element signature="e#3228#3229#0" expanded="true" />
-                <element signature="e#3276#3277#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChessBoard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chess/ChessBoard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.851852" vertical-offset="3661" max-vertical-offset="6255">
-              <caret line="310" column="63" selection-start-line="310" selection-start-column="63" selection-end-line="310" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1741#1742#0" expanded="true" />
-                <element signature="e#1775#1776#0" expanded="true" />
-                <element signature="e#1802#1803#0" expanded="true" />
-                <element signature="e#1835#1836#0" expanded="true" />
-                <element signature="method#isStalemate#0;class#ChessBoard#0" expanded="false" />
-                <element signature="method#game_over#0;class#ChessBoard#0" expanded="false" />
-                <element signature="e#8469#8488#0" expanded="false" />
-                <element signature="method#generateStandardBoard#0;class#ChessBoard#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -189,16 +144,16 @@
         <option value="$PROJECT_DIR$/src/Piece.java" />
         <option value="$PROJECT_DIR$/src/HelloWorld.java" />
         <option value="$PROJECT_DIR$/src/chess/HelloWorld.java" />
-        <option value="$PROJECT_DIR$/src/chess/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/chess/Knight.java" />
-        <option value="$PROJECT_DIR$/src/chess/Bishop.java" />
         <option value="$PROJECT_DIR$/src/chess/Rook.java" />
         <option value="$PROJECT_DIR$/src/chess/Queen.java" />
         <option value="$PROJECT_DIR$/src/chess/Pawn.java" />
-        <option value="$PROJECT_DIR$/src/chess/King.java" />
         <option value="$PROJECT_DIR$/src/chess/ChessBoard.java" />
         <option value="$PROJECT_DIR$/src/chess/Game.java" />
         <option value="$PROJECT_DIR$/src/chess/Piece.java" />
+        <option value="$PROJECT_DIR$/src/chess/Bishop.java" />
+        <option value="$PROJECT_DIR$/src/chess/Coordinate.java" />
+        <option value="$PROJECT_DIR$/src/chess/King.java" />
       </list>
     </option>
   </component>
@@ -726,7 +681,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="1260">
           <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#1344#1356#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -734,7 +691,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="525">
           <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -834,7 +800,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="270">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="e#1344#1356#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -926,14 +894,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/Bishop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="1260">
-          <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/Knight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="709" max-vertical-offset="1590">
@@ -946,33 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="829" max-vertical-offset="2010">
           <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/King.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1069" max-vertical-offset="1935">
-          <caret line="103" column="28" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/Pawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="349" max-vertical-offset="1155">
-          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
-          <folding>
-            <element signature="e#3228#3229#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/Coordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1015,8 +948,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7587131" vertical-offset="1384" max-vertical-offset="2145">
-          <caret line="130" column="77" selection-start-line="130" selection-start-column="77" selection-end-line="130" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1384" max-vertical-offset="2145">
+          <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
           <folding>
             <element signature="e#2185#2186#0" expanded="true" />
             <element signature="e#2229#2230#0" expanded="true" />
@@ -1039,6 +972,52 @@
             <element signature="e#3718#3719#0" expanded="true" />
             <element signature="e#3745#3746#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/Pawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91957104" vertical-offset="349" max-vertical-offset="1155">
+          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+          <folding>
+            <element signature="e#3228#3229#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/Coordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1461126" vertical-offset="0" max-vertical-offset="1095">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/Bishop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="40" selection-end-column="7" />
+          <folding>
+            <element signature="e#1344#1356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/King.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72386056" vertical-offset="1395" max-vertical-offset="2175">
+          <caret line="129" column="50" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
