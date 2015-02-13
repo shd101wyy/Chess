@@ -39,6 +39,43 @@ public class Game extends JPanel{
         // initialize standard 8 x 8 chess board
         board.generateStandardBoard();;
 
+        /*
+        King king1 = new King(board, 1);
+        king1.setCoordinate(0, 7);
+
+        King king2 = new King(board, 2);
+        king2.setCoordinate(0, 0);
+
+        Rook rook2 = new Rook(board, 2);
+        rook2.setCoordinate(2, 7);
+
+        Rook rook3 = new Rook(board, 2);
+        rook3.setCoordinate(0, 4);
+        */
+
+        /*
+        // stalemate
+        King king1 = new King(board, 1);
+        king1.setCoordinate(7, 7);
+
+        King king2 = new King(board, 2);
+        king2.setCoordinate(5, 6);
+
+        Rook rook2 = new Rook(board, 2);
+        rook2.setCoordinate(6, 6);
+        */
+
+        /*
+        King king1 = new King(board, 1);
+        king1.setCoordinate(1, 7);
+        Rook rook2 = new Rook(board, 2);
+        rook2.setCoordinate(0, 5);
+        King king2 = new King(board, 2);
+        king2.setCoordinate(2, 5);
+        Knight knight2 = new Knight(board, 2);
+        knight2.setCoordinate(4, 6);
+*/
+
         // Initialize JFrame
         frame = new JFrame("Chess");  // init jframe object
         frame.add(new Game());        // draw canvas

@@ -96,4 +96,29 @@ public class King extends Piece {
 
         return coords;
     }
+
+    /**
+     * Check whether the king is in check
+     * @return
+     */
+    public boolean isInCheck(){
+        ChessBoard board = this.getChessBoard();
+        int i, j;
+        for(i = 0; i < board.getWidth(); i++){
+            for(j = 0; j < board.getHeight(); j++){
+                Piece p = board.getPieceAtCoordinate(i, j);
+                if(p != null && p.getPlayer() != this.getPlayer()){ // it is opponent
+                    ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate();
+                    for(Coordinate coord : coords){
+                        if (coord.getX() == this.getX_coordinate() && coord.getY() == this.getY_coordinate()){
+                            return true; // check
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
 }

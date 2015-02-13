@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by wangyiyi on 2/12/15.
  */
 public class Pawn extends Piece {
-    private boolean first_time_move;
+    public boolean first_time_move;
 
     public Pawn(ChessBoard board, int player) {
         super("pawn", board, player);
@@ -63,6 +63,10 @@ public class Pawn extends Piece {
         } else {
             this.first_time_move = false;
         }
+        return super.setCoordinate(x, y);
+    }
+
+    public boolean setCoordinateWithoutChangingFirstTimeMoveFlag(int x, int y){
         return super.setCoordinate(x, y);
     }
 }
