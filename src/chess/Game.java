@@ -49,6 +49,8 @@ public class Game extends JPanel{
         rook1.setCoordinate(3, 0);
         Bishop bishop1 = new Bishop(board, 1); // white;
         bishop1.setCoordinate(5, 0);
+        Queen queen1 = new Queen(board, 1); // white
+        queen1.setCoordinate(6, 0);
 
         // Initialize JFrame
         frame = new JFrame("Chess");  // init jframe object
