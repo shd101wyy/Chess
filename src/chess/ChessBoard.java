@@ -254,14 +254,22 @@ public class ChessBoard {
     public boolean isStalemate(int player){
         King king = player == 1 ? (King)this.king1 : (King)this.king2;
         if(king.isInCheck() == false){ // king is not in check.
-            // check whether king has legal move
-            // if king doesnt have legal move, then return true
-            ArrayList<Coordinate> coords = king.getPossibleMoveCoordinate();
-            if(coords.size() == 0)
-                return false;
-            for(Coordinate coord : coords){
-                if (isSuicideMove(king, coord.getX(), coord.getY()) == false){ // there is a legal move
-                    return false;
+            // check whether is there any legal move
+            // if there is no legal move, then return true
+            int i, j;
+            for(i = 0; i < this.width; i++){
+                for(j = 0; j < this.height; j++){
+                    Piece p = getPieceAtCoordinate(i, j);
+                    if(p != null && p.getPlayer() == player){
+                        ArrayList<Coordinate> coords = king.getPossibleMoveCoordinate();
+                        if(coords.size() == 0)
+                            return false;
+                        for(Coordinate coord : coords){
+                            if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // there is a legal move
+                                return false;
+                            }
+                        }
+                    }
                 }
             }
             return true;
