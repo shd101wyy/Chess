@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by wangyiyi on 2/12/15.
  */
+
 public class Bishop extends Piece {
     /**
      * Constructor: initialize a Bishop Object

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by wangyiyi on 2/12/15.
  */
+
 public class Pawn extends Piece {
     private boolean first_time_move;  // this flag check whether this is first time for Pawn to move, if so, it can advance 2 squares forward.
 
