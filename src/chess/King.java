@@ -34,7 +34,7 @@ public class King extends Piece {
     }
 
     /**
-     * Get all possible move coordinates for this bishop piece at current coordinate
+     * Get all possible move coordinates for this king piece at current coordinate
      *
      *                   P: this piece
      *                   @: Possible coordinates to move

@@ -6,8 +6,13 @@ import java.util.ArrayList;
  * Created by wangyiyi on 2/12/15.
  */
 public class Pawn extends Piece {
-    public boolean first_time_move;
+    private boolean first_time_move;  // this flag check whether this is first time for Pawn to move, if so, it can advance 2 squares forward.
 
+    /**
+     * Constructor: initialize a Pawn Object
+     * @param board
+     * @param player
+     */
     public Pawn(ChessBoard board, int player) {
         super("pawn", board, player);
         this.first_time_move = true;   // it is pawn's first move, so it can advance 2 squares now.
@@ -20,8 +25,13 @@ public class Pawn extends Piece {
 
     /**
      * Assume no promotion for pawn
+     * Get all possible move coordinates for this pawn piece at current coordinate
      *
-     * @return
+     *   @             X @ X         @: Possible Coordinate to move to
+     * X @ X             P           P: this piece
+     *   P                           X: opponent's piece
+     *
+     * @return ArrayList<Coordinate> Object
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
         int current_x_coord = this.getX_coordinate();       // get current x coord of pawn
@@ -34,13 +44,13 @@ public class Pawn extends Piece {
             return coords;
         }
 
-        if (board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move) != null) { // check piece in front
+        if (board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move) != null) { // check piece in front, and the square is occupied.
             // do nothing
         } else {
-            coords.add(new Coordinate(current_x_coord, current_y_coord + possible_move));
+            coords.add(new Coordinate(current_x_coord, current_y_coord + possible_move));  // could go to that unoccupied square
         }
-        if (this.first_time_move &&
-                board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move) == null &&
+        if (this.first_time_move &&                                                       // check first_time_move => advance 2 squares
+                board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move) == null &&       // both squares ahead are not occupied
                 board.getPieceAtCoordinate(current_x_coord, current_y_coord + possible_move * 2) == null) {   // first move, therefore it can advance two more steps
             coords.add(new Coordinate(current_x_coord, current_y_coord + possible_move * 2));
         }
@@ -57,6 +67,13 @@ public class Pawn extends Piece {
         return coords;
     }
 
+    /**
+     * Set coordinate for pawn object.
+     * Change its first_time_move flag if necessary
+     * @param x         the x coordinate to put the piece
+     * @param y         the y coordinate to put the piece
+     * @return
+     */
     public boolean setCoordinate(int x, int y) {
         if (this.getX_coordinate() == -1 || this.getY_coordinate() == -1) { // first time init
             this.first_time_move = true;
@@ -66,6 +83,12 @@ public class Pawn extends Piece {
         return super.setCoordinate(x, y);
     }
 
+    /**
+     * Set coordinate for pawn object without modifying the first_time_move_flag
+     * @param x        the x coordinate to put the piece
+     * @param y        the y coordinate to put the piece
+     * @return
+     */
     public boolean setCoordinateWithoutChangingFirstTimeMoveFlag(int x, int y){
         return super.setCoordinate(x, y);
     }
