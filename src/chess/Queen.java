@@ -31,6 +31,8 @@ public class Queen extends Piece {
                 coords.add(new Coordinate(i, j));
                 break;
             }
+            else // meet player's own piece
+                break;
         }
         // go direction of right top
         for(i = current_x_coord + 1, j = current_y_coord + 1; i < board.getWidth() && j < board.getHeight(); i++, j++){
@@ -41,6 +43,8 @@ public class Queen extends Piece {
                 coords.add(new Coordinate(i, j));
                 break;
             }
+            else // meet player's own piece
+                break;
         }
         // go direction of left bottom
         for(i = current_x_coord - 1, j = current_y_coord - 1; i >= 0 && j >= 0; i--, j--){
@@ -51,6 +55,8 @@ public class Queen extends Piece {
                 coords.add(new Coordinate(i, j));
                 break;
             }
+            else // meet player's own piece
+                break;
         }
         // go direction of right bottom
         for(i = current_x_coord + 1, j = current_y_coord - 1; i < board.getWidth() && j >= 0; i++, j--){
@@ -61,6 +67,8 @@ public class Queen extends Piece {
                 coords.add(new Coordinate(i, j));
                 break;
             }
+            else // meet player's own piece
+                break;
         }
         // check left
         for(i = current_x_coord - 1; i >= 0; i--){
