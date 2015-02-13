@@ -93,6 +93,10 @@ public class Piece {
         this.y_coordinate = y;
     }
 
+    public String getPiece_name(){
+        return this.piece_name;
+    }
+
     public void setPiece_image_path(String piece_image_path){
         this.piece_image_path = piece_image_path;
     }
