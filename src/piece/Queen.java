@@ -45,103 +45,43 @@ public class Queen extends Piece {
         int i, j;
         // go direction of left top
         for(i = current_x_coord - 1, j = current_y_coord + 1; i >= 0 && j < board.getHeight(); i--, j++){
-            if(board.getPieceAtCoordinate(i, j) == null){            // the square is not occupied by any piece
-                coords.add(new Coordinate(i, j));
-            }
-            else if(board.getPieceAtCoordinate(i, j).player != this.player) {  // meet opponent's piece
-                coords.add(new Coordinate(i, j));
-                break;
-            }
-            else // meet player's own piece
+            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // go direction of right top
         for(i = current_x_coord + 1, j = current_y_coord + 1; i < board.getWidth() && j < board.getHeight(); i++, j++){
-            if(board.getPieceAtCoordinate(i, j) == null){            // the square is not occupied by any piece
-                coords.add(new Coordinate(i, j));
-            }
-            else if(board.getPieceAtCoordinate(i, j).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(i, j));
-                break;
-            }
-            else // meet player's own piece
+            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // go direction of left bottom
         for(i = current_x_coord - 1, j = current_y_coord - 1; i >= 0 && j >= 0; i--, j--){
-            if(board.getPieceAtCoordinate(i, j) == null){           // the square is not occupied by any piece
-                coords.add(new Coordinate(i, j));
-            }
-            else if(board.getPieceAtCoordinate(i, j).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(i, j));
-                break;
-            }
-            else // meet player's own piece
+            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // go direction of right bottom
         for(i = current_x_coord + 1, j = current_y_coord - 1; i < board.getWidth() && j >= 0; i++, j--){
-            if(board.getPieceAtCoordinate(i, j) == null){          // the square is not occupied by any piece
-                coords.add(new Coordinate(i, j));
-            }
-            else if(board.getPieceAtCoordinate(i, j).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(i, j));
-                break;
-            }
-            else // meet player's own piece
+            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // check left
         for(i = current_x_coord - 1; i >= 0; i--){
-            if(board.getPieceAtCoordinate(i, current_y_coord) == null){   // the square is not occupied by any piece
-                coords.add(new Coordinate(i, current_y_coord));
-            }
-            else if (board.getPieceAtCoordinate(i, current_y_coord).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(i, current_y_coord));
+            if(addToCoordinatesIfValid(coords, board, i, current_y_coord)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
-            }
-            else{  // meet player's own piece
-                break;
-            }
         }
         // check right
         for(i = current_x_coord + 1; i < board.getWidth(); i++){
-            if(board.getPieceAtCoordinate(i, current_y_coord) == null){   // the square is not occupied by any piece
-                coords.add(new Coordinate(i, current_y_coord));
-            }
-            else if (board.getPieceAtCoordinate(i, current_y_coord).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(i, current_y_coord));
+            if(addToCoordinatesIfValid(coords, board, i, current_y_coord)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
-            }
-            else{  // meet player's own piece
-                break;
-            }
         }
         // check above
         for(i = current_y_coord + 1 ; i < board.getHeight(); i++){
-            if(board.getPieceAtCoordinate(current_x_coord, i) == null){   // the square is not occupied by any piece
-                coords.add(new Coordinate(current_x_coord, i));
-            }
-            else if (board.getPieceAtCoordinate(current_x_coord, i).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(current_x_coord, i));
+            if(addToCoordinatesIfValid(coords, board, current_x_coord, i)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
-            }
-            else{  // meet player's own piece
-                break;
-            }
         }
         // check below
         for(i = current_y_coord - 1; i >= 0; i--){
-            if(board.getPieceAtCoordinate(current_x_coord, i) == null){   // the square is not occupied by any piece
-                coords.add(new Coordinate(current_x_coord, i));
-            }
-            else if (board.getPieceAtCoordinate(current_x_coord, i).player != this.player){  // meet opponent's piece
-                coords.add(new Coordinate(current_x_coord, i));
+            if(addToCoordinatesIfValid(coords, board, current_x_coord, i)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
-            }
-            else{  // meet player's own piece
-                break;
-            }
         }
         return  coords;
     }

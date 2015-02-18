@@ -130,6 +130,28 @@ public abstract class Piece {
     }
 
     /**
+     * Given coordinate (x, y), check whether the piece can move there.
+     * If the piece can move to that coordinate, save (x, y) to coords.
+     * If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way => return true; otherwise return false
+     * @param coords
+     * @param board
+     * @param x
+     * @param y
+     * @return
+     */
+    public boolean addToCoordinatesIfValid(ArrayList<Coordinate> coords, ChessBoard board, int x, int y){
+        if(board.getPieceAtCoordinate(x, y) == null){     // the square is not occupied by any piece
+            coords.add(new Coordinate(x, y));
+            return false;
+        }
+        else if(board.getPieceAtCoordinate(x, y).player != this.player) {  // meet opponent's piece
+            coords.add(new Coordinate(x, y));
+            return true;
+        }
+        else  // meet player's own piece
+            return true;
+    }
+    /**
      * Get possible move coordinates for this piece
      * As this function is implemented in each subclass, it will return null.
      * @return
