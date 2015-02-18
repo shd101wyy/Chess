@@ -105,22 +105,25 @@ public class King extends Piece {
      */
     public boolean isInCheck(){
         ChessBoard board = this.board;   // get current chess board
-        int i, j;
-        for(i = 0; i < board.getWidth(); i++){
-            for(j = 0; j < board.getHeight(); j++){
-                Piece p = board.getPieceAtCoordinate(i, j);   // get piece at that coordinate
-                if(p != null && p.player != this.player){ // it is opponent
-                    ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate();
-                    for(Coordinate coord : coords){
-                        if (coord.getX() == this.x_coordinate && coord.getY() == this.y_coordinate){  // opponent's next move could reach the king
-                            return true; // is in check
-                        }
-                    }
+        ArrayList<Piece> opponent_pieces;
+
+        // get opponent's pieces
+        if(this.player == Player.WHITE){
+            opponent_pieces = this.board.getBlack_pieces();
+        }
+        else{
+            opponent_pieces = this.board.getWhite_pieces();
+        }
+        for( Piece p : opponent_pieces){ // get opponent piece
+            if (p.x_coordinate == -1 || p.y_coordinate == -1) // invalid coord
+                continue;
+            ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate();
+            for(Coordinate coord : coords){
+                if (coord.getX() == this.x_coordinate && coord.getY() == this.y_coordinate){  // opponent's next move could reach the king
+                    return true; // is in check
                 }
             }
         }
         return false;
     }
-
-
 }

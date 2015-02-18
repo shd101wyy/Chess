@@ -33,6 +33,7 @@ public abstract class Piece {
         this.y_coordinate = -1;
         this.board = board;                       // set the board
         this.player = player;                     // set player id
+        this.board.addPieceToList(this);          // add piece to piece list
     }
 
     /**
@@ -45,7 +46,7 @@ public abstract class Piece {
         if(x < 0 || x >= this.board.getWidth() || y < 0 || y >= this.board.getHeight() || this.board.getPieceAtCoordinate(x, y) != null){ // invalid coordinate
             return false;
         }
-        if(this.x_coordinate != -1 && this.y_coordinate != -1) {  // piece is not just initliazed.
+        if(this.x_coordinate != -1 && this.y_coordinate != -1) {  // piece is not just initialized.
             this.removeSelf(); // remove self from current coordinate
         }
         // set coordinate

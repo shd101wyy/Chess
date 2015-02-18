@@ -22,6 +22,8 @@ public class ChessBoard {
     private Piece king1;         // king for player1 White
     private Piece king2;         // king for player2 Black
     private boolean gameover;    // check whether game is over
+    private ArrayList<Piece> white_pieces; // array list used to save all white pieces
+    private ArrayList<Piece> black_pieces; // array list used to save all black pieces
 
     /**
      *
@@ -46,12 +48,47 @@ public class ChessBoard {
             this.tiles[i] = new Piece[width];
         }
 
+        // initialize white_pieces and black_pieces
+        this.white_pieces = new ArrayList<Piece>();
+        this.black_pieces = new ArrayList<Piece>();
+
+        // initialize other variables
         this.chosen_piece = null; // no piece is chosen by player yet
         this.turns = 0;           // if it is even number, then it's White turn, otherwise Black turn
         this.king1 = null;        // no king is set yet
         this.king2 = null;
         this.gameover = false;    // game not over yet
     }
+
+    /**
+     * add piece to white_pieces or black_pieces
+     * @param p
+     */
+    public void addPieceToList(Piece p) {
+        if(p.getPlayer() == Player.WHITE){
+            this.white_pieces.add(p);
+        }
+        else{
+            this.black_pieces.add(p);
+        }
+    }
+
+    /**
+     * Getter: return this.white_pieces
+     * @return
+     */
+    public ArrayList<Piece> getWhite_pieces(){
+        return this.white_pieces;
+    }
+
+    /**
+     * Getter: return this.black_pieces
+     * @return
+     */
+    public ArrayList<Piece> getBlack_pieces(){
+        return this.black_pieces;
+    }
+
 
     /**
      * Getter: get king1
@@ -217,12 +254,13 @@ public class ChessBoard {
         Player current_player = p.getPlayer();       // get player
         int current_x_coord = p.getX_coordinate();
         int current_y_coord = p.getY_coordinate();
-        int i, j;
         boolean is_suicide = false;
 
         Piece king = (current_player == Player.WHITE ? this.king1 : this.king2);  // get king
 
         Piece remove_piece = getPieceAtCoordinate(move_to_x, move_to_y); // get piece that need to be removed
+
+        ArrayList<Piece> opponent_pieces = (current_player == Player.WHITE ? this.getBlack_pieces() : this.getWhite_pieces()); // get opponent's pieces
 
         if(remove_piece != null) {
             remove_piece.removeSelf();  // remove self temporarily
@@ -232,20 +270,17 @@ public class ChessBoard {
         else
             p.setCoordinate(move_to_x, move_to_y); // move p to that coordinate;
 
-        for(i = 0; i < this.width; i++){
-            for(j = 0; j < this.height; j++){
-                if (this.tiles[j][i] != null && this.tiles[j][i].getPlayer() != current_player){ // opponent's piece
-                    ArrayList<Coordinate> coords = this.tiles[j][i].getPossibleMoveCoordinate();
-                    for(Coordinate coord : coords){
-                        if(coord.getX() == king.getX_coordinate() && coord.getY() == king.getY_coordinate()){ // will go to king's coord
-                            is_suicide = true;
-                            break;
-                        }
-                    }
+        for(Piece opponent_piece : opponent_pieces){
+            if(p.getX_coordinate() == -1 || p.getY_coordinate() == -1) // invalid coordinate
+                continue;
+            ArrayList<Coordinate> coords = opponent_piece.getPossibleMoveCoordinate();
+            for(Coordinate coord : coords){
+                if(coord.getX() == king.getX_coordinate() && coord.getY() == king.getY_coordinate()){ // will go to king's coord
+                    is_suicide = true;
+                    break;
                 }
             }
         }
-
         // restore remove_piece and p
         if(p.getPiece_name().equals("pawn"))
             ((Pawn)p).setCoordinateWithoutChangingFirstTimeMoveFlag(current_x_coord, current_y_coord);
@@ -269,18 +304,17 @@ public class ChessBoard {
      */
     public boolean playerCannotMove(Player player){
         int i, j;
-        for (i = 0; i < this.width; i++){
-            for(j = 0; j < this.height; j++){
-                Piece p = getPieceAtCoordinate(i, j);
-                if(p != null && p.getPlayer() == player){  // get player's piece
-                    ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // possible move coordinates.
-                    for(Coordinate coord : coords){
-                        if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // so piece can move there.
-                            return false; // there is a legal move
-                        }
-                    }
+        ArrayList<Piece> player_pieces = ((player == Player.WHITE) ? this.getWhite_pieces() : this.getBlack_pieces());
+        for(Piece p : player_pieces){ // get player's piece
+            if(p.getX_coordinate() == -1 || p.getY_coordinate() == -1)
+                continue;;
+            ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // possible move coordinates.
+            for(Coordinate coord : coords){
+                if (isSuicideMove(p, coord.getX(), coord.getY()) == false){ // so piece can move there.
+                    return false; // there is a legal move
                 }
             }
+
         }
         return true;
     }
