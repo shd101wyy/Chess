@@ -13,9 +13,9 @@ public class Knight extends Piece {
      * @param board
      * @param player
      */
-    public Knight(ChessBoard board, int player) {
+    public Knight(ChessBoard board, Player player) {
         super("knight", board, player);
-        if (player == 1) {  // White player
+        if (player == Player.WHITE) {  // White player
             this.setPiece_image_path("assets/white_knight.png");
         } else { // Black player
             this.setPiece_image_path("assets/black_knight.png");

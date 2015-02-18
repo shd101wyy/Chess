@@ -18,7 +18,7 @@ public class BishopTest {
         Piece p;
 
         // put p at left bottom corner
-        p = new Bishop(board, 1);
+        p = new Bishop(board, Piece.Player.WHITE);
         p.setCoordinate(0, 0);
         assertEquals(7, p.getPossibleMoveCoordinate().size());
 
@@ -27,8 +27,8 @@ public class BishopTest {
         assertEquals(13, p.getPossibleMoveCoordinate().size());
 
         // put opponent piece at one possible move coordinate
-        Piece opponent_piece = new Bishop(board, 1);
+        Piece opponent_piece = new Bishop(board, Piece.Player.BLACK);
         opponent_piece.setCoordinate(5, 5);
-        assertEquals(10, p.getPossibleMoveCoordinate().size());
+        assertEquals(11, p.getPossibleMoveCoordinate().size());
     }
 }

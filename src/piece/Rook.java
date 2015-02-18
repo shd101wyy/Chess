@@ -13,9 +13,9 @@ public class Rook extends Piece {
      * @param board
      * @param player
      */
-    public Rook(ChessBoard board, int player){
+    public Rook(ChessBoard board, Player player){
         super("rook", board, player);
-        if(player == 1){  // White player
+        if(player == Player.WHITE){  // White player
             this.setPiece_image_path("assets/white_rook.png");
         }
         else{ // Black player

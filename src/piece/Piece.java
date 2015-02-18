@@ -11,13 +11,16 @@ import java.util.ArrayList;
  * Piece Class
  */
 public abstract class Piece {
+    public enum Player{          // 2 players, white and black
+        WHITE, BLACK
+    }
     protected String piece_name; // name of the piece: king, rook, bishop, queen, knight, pawn.
 
     // Assume left bottom corner is (0, 0)
     protected int x_coordinate;  // piece x coordinate
     protected int y_coordinate;  // piece y coordinate
 
-    protected int player;        // #player, 1 => White, 2 => Black
+    protected Player player;     // white and black
     protected ChessBoard board;  // the current chessboard object
 
     protected String piece_image_path; // piece image path
@@ -28,15 +31,11 @@ public abstract class Piece {
      * @param board      the chess board where we put this piece
      * @param player     the player id
      */
-    public Piece(String piece_name, ChessBoard board, int player){
+    public Piece(String piece_name, ChessBoard board, Player player){
         this.piece_name = piece_name;             // set the piece name
         this.x_coordinate = -1;                   // init coordinate to -1, which means the piece is not put to chess board yet
         this.y_coordinate = -1;
         this.board = board;                       // set the board
-        if(player != 1 && player != 2){           // invalid player id
-            System.out.println("ERROR: Invalid player #"+player);
-            System.exit(0);
-        }
         this.player = player;                     // set player id
     }
 
@@ -82,7 +81,7 @@ public abstract class Piece {
      * Setter, set player
      * @param player
      */
-    public void setPlayer(int player){
+    public void setPlayer(Player player){
         this.player = player;
     }
 
@@ -90,7 +89,7 @@ public abstract class Piece {
      * Getter, return player
      * @return
      */
-    public int getPlayer(){
+    public Player getPlayer(){
         return this.player;
     }
 

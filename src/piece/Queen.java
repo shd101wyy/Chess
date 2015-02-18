@@ -13,9 +13,9 @@ public class Queen extends Piece {
      * @param board
      * @param player
      */
-    public Queen(ChessBoard board, int player){
+    public Queen(ChessBoard board, Player player){
         super("queen", board, player);
-        if(player == 1){  // White player
+        if(player == Player.WHITE){  // White player
             this.setPiece_image_path("assets/white_queen.png");
         }
         else{ // Black player

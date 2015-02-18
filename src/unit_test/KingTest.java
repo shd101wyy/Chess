@@ -4,6 +4,7 @@ import chess.*;
 import org.junit.Test;
 import piece.King;
 import piece.Pawn;
+import piece.Piece;
 import piece.Rook;
 
 import static org.junit.Assert.*;
@@ -17,17 +18,17 @@ public class KingTest {
     public void testGetPossibleMoveCoordinate() throws Exception {
         ChessBoard board = new ChessBoard(8, 8);
 
-        King king = new King(board, 1);
+        King king = new King(board, Piece.Player.WHITE);
         king.setCoordinate(3, 0);
         assertEquals(5, king.getPossibleMoveCoordinate().size());
 
         // put an enemy ahead
-        Pawn enemy = new Pawn(board, 2);
+        Pawn enemy = new Pawn(board, Piece.Player.BLACK);
         enemy.setCoordinate(3, 1);
         assertEquals(5, king.getPossibleMoveCoordinate().size());
 
         // put an friend on the left;
-        Pawn friend = new Pawn(board, 1);
+        Pawn friend = new Pawn(board, Piece.Player.WHITE);
         friend.setCoordinate(2, 0);
         assertEquals(4, king.getPossibleMoveCoordinate().size());
 
@@ -44,12 +45,12 @@ public class KingTest {
     public void testIsInCheck() throws Exception {
         ChessBoard board = new ChessBoard(8, 8);
 
-        King king = new King(board, 1);
+        King king = new King(board, Piece.Player.WHITE);
         king.setCoordinate(3, 0);
         assertEquals(false, king.isInCheck());
 
         // add an enemy ahead
-        Rook rook = new Rook(board, 2);
+        Rook rook = new Rook(board, Piece.Player.BLACK);
         rook.setCoordinate(3, 6);
         assertEquals(true, king.isInCheck());
 

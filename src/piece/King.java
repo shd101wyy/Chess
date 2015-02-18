@@ -13,9 +13,9 @@ public class King extends Piece {
      * @param board
      * @param player
      */
-    public King(ChessBoard board, int player){
+    public King(ChessBoard board, Player player){
         super("king", board, player);
-        if(player == 1){  // White player
+        if(player == Player.WHITE){  // White player
             this.piece_image_path = "assets/white_king.png";
             if(board.getKing1() == null){
                 board.setKing1(this);

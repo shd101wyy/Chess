@@ -16,10 +16,10 @@ public class Pawn extends Piece {
      * @param board
      * @param player
      */
-    public Pawn(ChessBoard board, int player) {
+    public Pawn(ChessBoard board, Player player) {
         super("pawn", board, player);
         this.first_time_move = true;   // it is pawn's first move, so it can advance 2 squares now.
-        if (player == 1) {  // White player
+        if (player == Player.WHITE) {  // White player
             this.setPiece_image_path("assets/white_pawn.png");
         } else { // Black player
             this.setPiece_image_path("assets/black_pawn.png");
@@ -42,7 +42,7 @@ public class Pawn extends Piece {
         ChessBoard board = this.getChessBoard();            // get chess board
 
         ArrayList<Coordinate> coords = new ArrayList<Coordinate>();          // create return ArrayList
-        int possible_move = (this.player == 1) ? 1 : -1;                // if White player, then move +1, otherwise move -1
+        int possible_move = (this.player == Player.WHITE) ? 1 : -1;                // if White player, then move +1, otherwise move -1
         if (current_y_coord + possible_move >= board.getHeight() || current_y_coord + possible_move < 0) { // reach top/bottom
             return coords;
         }

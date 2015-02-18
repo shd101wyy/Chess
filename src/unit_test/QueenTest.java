@@ -18,7 +18,7 @@ public class QueenTest {
         ChessBoard board = new ChessBoard(8, 8);
 
         // create a queen
-        Queen queen = new Queen(board, 1);
+        Queen queen = new Queen(board, Piece.Player.WHITE);
         queen.setCoordinate(3, 0);
         assertEquals(21, queen.getPossibleMoveCoordinate().size());
 
@@ -27,12 +27,12 @@ public class QueenTest {
         assertEquals(27, queen.getPossibleMoveCoordinate().size());
 
         // put an enemy on top
-        Piece enemy = new Pawn(board, 2);
+        Piece enemy = new Pawn(board, Piece.Player.BLACK);
         enemy.setCoordinate(3, 5);
         assertEquals(25, queen.getPossibleMoveCoordinate().size());
 
         // put an friend on left
-        Piece friend = new Pawn(board, 1);
+        Piece friend = new Pawn(board, Piece.Player.WHITE);
         friend.setCoordinate(1, 3);
         assertEquals(23, queen.getPossibleMoveCoordinate().size());
 

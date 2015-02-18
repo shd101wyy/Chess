@@ -14,11 +14,11 @@ public class Bishop extends Piece {
      * @param board
      * @param player
      */
-    public Bishop(ChessBoard board, int player){
+    public Bishop(ChessBoard board, Player player){
         super("bishop", board, player);
 
         // set piece image path
-        if(player == 1){  // White player
+        if(player == Player.WHITE){  // White player
             this.piece_image_path = "assets/white_bishop.png";
         }
         else{ // Black player

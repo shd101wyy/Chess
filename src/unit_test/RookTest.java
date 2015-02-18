@@ -19,7 +19,7 @@ public class RookTest {
         ChessBoard board = new ChessBoard(8, 8);
 
         // create rook
-        Rook rook = new Rook(board, 1);
+        Rook rook = new Rook(board, Piece.Player.WHITE);
         rook.setCoordinate(0, 0);
         assertEquals(14, rook.getPossibleMoveCoordinate().size());
 
@@ -28,12 +28,12 @@ public class RookTest {
         assertEquals(14, rook.getPossibleMoveCoordinate().size());
 
         // put an enemy on top
-        Piece enemy = new Pawn(board, 2);
+        Piece enemy = new Pawn(board, Piece.Player.BLACK);
         enemy.setCoordinate(3, 5);
         assertEquals(12, rook.getPossibleMoveCoordinate().size());
 
         // put an friend on left
-        Piece friend = new Pawn(board, 1);
+        Piece friend = new Pawn(board, Piece.Player.WHITE);
         friend.setCoordinate(1, 3);
         assertEquals(10, rook.getPossibleMoveCoordinate().size());
     }

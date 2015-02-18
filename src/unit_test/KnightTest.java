@@ -17,7 +17,7 @@ public class KnightTest {
     public void testGetPossibleMoveCoordinate() throws Exception {
         ChessBoard board = new ChessBoard(8, 8);
 
-        Knight knight = new Knight(board, 1);
+        Knight knight = new Knight(board, Piece.Player.WHITE);
 
         // put king at center of the board
         knight.setCoordinate(3, 3);
@@ -28,13 +28,13 @@ public class KnightTest {
         assertEquals(4, knight.getPossibleMoveCoordinate().size());
 
         // put a friend at one possible move coordinate
-        Piece friend = new Pawn(board, 1);
+        Piece friend = new Pawn(board, Piece.Player.WHITE);
         friend.setCoordinate(1, 5);
         assertEquals(3, knight.getPossibleMoveCoordinate().size());
         friend.removeSelf();
 
         // put an enemy at one possible move coordinate
-        Piece enemy = new Pawn(board, 2);
+        Piece enemy = new Pawn(board, Piece.Player.BLACK);
         enemy.setCoordinate(1, 5);
         assertEquals(4, knight.getPossibleMoveCoordinate().size());
     }
