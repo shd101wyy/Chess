@@ -140,6 +140,8 @@ public abstract class Piece {
      * @return
      */
     public boolean addToCoordinatesIfValid(ArrayList<Coordinate> coords, int x, int y){
+        if (x < 0 || y < 0 || x >= this.board.getWidth() || y >= this.board.getHeight()) // invalid coordinate
+            return false;
         if(this.board.getPieceAtCoordinate(x, y) == null){     // the square is not occupied by any piece
             coords.add(new Coordinate(x, y));
             return false;

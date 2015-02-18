@@ -53,48 +53,34 @@ public class King extends Piece {
         ArrayList<Coordinate> coords = new ArrayList<Coordinate>();          // create return ArrayList
 
         // check left top
-        if(current_x_coord - 1 >= 0 &&
-                current_y_coord + 1 < board.getHeight()){
-            addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord + 1); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord + 1); // add to coords if valid.
+
 
         // check top
-        if(current_y_coord + 1 < board.getHeight()){
-            addToCoordinatesIfValid(coords, current_x_coord, current_y_coord + 1); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord, current_y_coord + 1); // add to coords if valid.
 
         // check right top
-        if(current_x_coord + 1 < board.getWidth() &&
-                current_y_coord + 1 < board.getHeight()){
-            addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord + 1); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord + 1); // add to coords if valid.
+
 
         // check left
-        if(current_x_coord - 1 >= 0){
-            addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord); // add to coords if valid.
+
 
         // check right
-        if(current_x_coord + 1 < board.getWidth() ){
-            addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord); // add to coords if valid.
+
 
         // check left bottom
-        if(current_x_coord - 1 >= 0 &&
-                current_y_coord - 1 >= 0){
-            addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord - 1); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord - 1); // add to coords if valid.
 
         // check bottom
-        if(current_y_coord - 1 >= 0){
-            addToCoordinatesIfValid(coords, current_x_coord, current_y_coord - 1); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord, current_y_coord - 1); // add to coords if valid.
+
 
         // check right bottom
-        if(current_x_coord + 1 < board.getWidth() &&
-                current_y_coord - 1 >= 0 ){
-            addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord - 1); // add to coords if valid.
-        }
+        addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord - 1); // add to coords if valid.
+
 
         return coords;
     }
