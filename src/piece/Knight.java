@@ -51,66 +51,50 @@ public class Knight extends Piece {
         // case1
         x = this.x_coordinate - 2;
         y = this.y_coordinate + 1;
-        if(x >= 0 && y < board.getHeight() &&
-                (board.getPieceAtCoordinate(x, y ) == null ||      // that square is not occupied by any piece
-                board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x >= 0 && y < board.getHeight()){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case2
         x = this.x_coordinate - 1;
         y = this.y_coordinate + 2;
-        if(x >= 0 && y < board.getHeight() &&
-                (board.getPieceAtCoordinate(x, y ) == null ||     // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x >= 0 && y < board.getHeight()){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case3
         x = this.x_coordinate + 1;
         y = this.y_coordinate + 2;
-        if(x < board.getWidth() && y < board.getHeight() &&
-                (board.getPieceAtCoordinate(x, y ) == null ||     // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x < board.getWidth() && y < board.getHeight()){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case4
         x = this.x_coordinate + 2;
         y = this.y_coordinate + 1;
-        if(x < board.getWidth() && y < board.getHeight() &&
-                (board.getPieceAtCoordinate(x, y ) == null ||     // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x < board.getWidth() && y < board.getHeight()){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case5
         x = this.x_coordinate - 2;
         y = this.y_coordinate - 1;
-        if(x >= 0 && y >= 0 &&
-                (board.getPieceAtCoordinate(x, y ) == null ||     // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x >= 0 && y >= 0 ){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case6
         x = this.x_coordinate - 1;
         y = this.y_coordinate - 2;
-        if(x >= 0 && y >= 0 &&
-                (board.getPieceAtCoordinate(x, y ) == null ||    // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x >= 0 && y >= 0){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case7
         x = this.x_coordinate + 1;
         y = this.y_coordinate - 2;
-        if(x < board.getWidth() && y >= 0 &&
-                (board.getPieceAtCoordinate(x, y ) == null ||   // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x < board.getWidth() && y >= 0){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
         // case1
         x = this.x_coordinate + 2;
         y = this.y_coordinate - 1;
-        if(x < board.getWidth() && y >= 0 &&
-                (board.getPieceAtCoordinate(x, y ) == null ||  // that square is not occupied by any piece
-                        board.getPieceAtCoordinate(x, y).player != this.player)){ // or the square is occupied by opponent's piece
-            coords.add(new Coordinate(x, y));
+        if(x < board.getWidth() && y >= 0){
+            addToCoordinatesIfValid(coords, x, y); // add to coords if the piece can move to that coordinate
         }
 
 

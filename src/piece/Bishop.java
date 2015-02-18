@@ -53,22 +53,22 @@ public class Bishop extends Piece {
         int i, j;
         // go direction of left top
         for(i = current_x_coord - 1, j = current_y_coord + 1; i >= 0 && j < board.getHeight(); i--, j++){
-            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // go direction of right top
         for(i = current_x_coord + 1, j = current_y_coord + 1; i < board.getWidth() && j < board.getHeight(); i++, j++){
-            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // go direction of left bottom
         for(i = current_x_coord - 1, j = current_y_coord - 1; i >= 0 && j >= 0; i--, j--){
-            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // go direction of right bottom
         for(i = current_x_coord + 1, j = current_y_coord - 1; i < board.getWidth() && j >= 0; i++, j--){
-            if(addToCoordinatesIfValid(coords, board, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, i, j)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         return  coords;

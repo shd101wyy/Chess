@@ -44,22 +44,22 @@ public class Rook extends Piece {
         int i;
         // check left
         for(i = current_x_coord - 1; i >= 0; i--){
-            if(addToCoordinatesIfValid(coords, board, i, current_y_coord)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, i, current_y_coord)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // check right
         for(i = current_x_coord + 1; i < board.getWidth(); i++){
-            if(addToCoordinatesIfValid(coords, board, i, current_y_coord)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, i, current_y_coord)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // check above
         for(i = current_y_coord + 1 ; i < board.getHeight(); i++){
-            if(addToCoordinatesIfValid(coords, board, current_x_coord, i)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, current_x_coord, i)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         // check below
         for(i = current_y_coord - 1; i >= 0; i--){
-            if(addToCoordinatesIfValid(coords, board, current_x_coord, i)) // add to coords if valid; if this return true, then it meets other pieces.
+            if(addToCoordinatesIfValid(coords, current_x_coord, i)) // add to coords if valid; if this return true, then it meets other pieces.
                 break;
         }
         return coords;
