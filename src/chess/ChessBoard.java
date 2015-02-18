@@ -214,27 +214,27 @@ public class ChessBoard {
      * @param x
      * @param y
      * @param color
-     * @param square_size
+     * @param tile_size
      */
-    public void drawSquareForBoard(Graphics2D g2d, int x, int y, Color color, int square_size){
+    public void drawSquareForBoard(Graphics2D g2d, int x, int y, Color color, int tile_size){
         g2d.setColor(color);       // set color
-        g2d.fillRect(x, y, square_size, square_size); // draw square
+        g2d.fillRect(x, y, tile_size, tile_size); // draw square
     }
 
     /**
      * Draw Piece on Chess Board
      * @param g2d
      * @param p
-     * @param square_size
+     * @param tile_size
      */
-    public void drawPiece(Graphics2D g2d, Piece p, int square_size){
+    public void drawPiece(Graphics2D g2d, Piece p, int tile_size){
         int piece_x_coord = p.getX_coordinate();                // get piece x coordinate (left-bottom coordinate system)
         int piece_y_coord = p.getY_coordinate();                // vet piece y coordinate
-        int x = piece_x_coord * square_size;                    // convert to canvas coordinate system
-        int y = (this.height - piece_y_coord - 1) * square_size;
+        int x = piece_x_coord * tile_size;                    // convert to canvas coordinate system
+        int y = (this.height - piece_y_coord - 1) * tile_size;
         try {
             BufferedImage image = ImageIO.read(new File(p.getPiece_image_path()));  // read image for this piece
-            g2d.drawImage(image, x, y, square_size, square_size, null);             // draw the image
+            g2d.drawImage(image, x, y, tile_size, tile_size, null);             // draw the image
         } catch (Exception e) {
             System.out.println("ERROR: Cannot load image file\n"); // this exception should never happen
             System.exit(0);
@@ -350,6 +350,117 @@ public class ChessBoard {
         this.gameover = true;
         JOptionPane.showMessageDialog(panel, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
     }
+
+    /**
+     * Show and draw tiles that the piece can move to
+     * @param p      the piece to move
+     * @param g2d
+     * @param tile_size
+     */
+    public void showAndDrawPossibleMovesForPiece(Graphics2D g2d, Piece p, int tile_size){
+        ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // get all possible move coordinates for this choesn piece
+        Color color;
+        int x, y;
+        for (Coordinate coord : coords) {
+            if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move, therefore player cannot make this move.
+                continue;
+            }
+                        /*
+                         *  high light possible moves.
+                         */
+            if(getPieceAtCoordinate(coord.getX(), coord.getY()) == null) { // that spot is empty
+                color = new Color(195, 98, 108);
+            }
+            else if (getPieceAtCoordinate(coord.getX(), coord.getY()).getPiece_name().equals("king")){ // check?
+                color = new Color(252, 236, 93);
+            }
+            else{  // opponent's piece is there
+                color = new Color(195, 77, 34);
+            }
+            x = coord.getX() * tile_size;  // convert to canvas coordinate
+            y = (this.height - 1 - coord.getY()) * tile_size;
+            drawSquareForBoard(g2d, x, y, color, tile_size);
+
+                        /* draw piece at that coordinate */
+            p = getPieceAtCoordinate(coord.getX(), coord.getY());
+            if (p != null)
+                drawPiece(g2d, p, tile_size);
+        }
+    }
+
+    /**
+     * Player's piece captures opponent piece
+     * If it can be done, redraw the chessboard; otherwise do nothing
+     * @param panel
+     * @param g2d
+     * @param p    the piece to move
+     * @param tile_size
+     */
+    public void movePieceToOpponentPieceLocationIfValid(JPanel panel, Graphics2D g2d, Piece p, int tile_size){
+        // check whether opponent's piece is under capture scope
+        ArrayList<Coordinate> coords = this.chosen_piece.getPossibleMoveCoordinate();
+        if(coords != null){
+            for(Coordinate coord : coords){
+                if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move, therefore player cannot make this move.
+                    continue;
+                }
+                if (coord.getX() == p.getX_coordinate() && coord.getY() == p.getY_coordinate()){ // opponent's piece is captured
+                    // System.out.println("You captured a piece");
+
+                                /*  remove that opponent's piece */
+                    this.tiles[p.getY_coordinate()][p.getX_coordinate()] = null;
+
+                                /* move player's piece to that coordinate */
+                    p.removeSelf(); // remove opponent's piece
+                    if(p.getPiece_name().equals("king")){ // check whether game over
+                        game_over(panel); // game over
+                    }
+                    this.chosen_piece.setCoordinate(coord.getX(), coord.getY());
+
+                                /* update turns and redraw the canvas */
+                    this.chosen_piece = null;
+                    turns++;
+                    panel.repaint();
+                    return;
+                }
+            }
+        }
+        else{
+            // nothing happend here
+        }
+    }
+
+    /**
+     * Move player's piece to unoccupied tile if valid, which means the move is not a suicide move
+     * @param panel
+     * @param g2d
+     * @param p     the piece to move
+     * @param x     the x coord to move to
+     * @param y     the y coord to move to
+     * @param tile_size
+     */
+    public void movePlayerPieceToEmptyTileIfValid(JPanel panel, Graphics2D g2d, Piece p, int x, int y, int tile_size){
+        ArrayList<Coordinate> coords = this.chosen_piece.getPossibleMoveCoordinate();
+        for(Coordinate coord : coords){
+            if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move, therefore player cannot make this move.
+                continue;
+            }
+            if (coord.getX() == x && coord.getY() == y){ // player can move the piece there
+                // System.out.println("You moved a piece");
+
+                // move player's piece to that coordinate
+                this.chosen_piece.setCoordinate(x, y);
+
+                // update turns and redraw the canvas
+                this.chosen_piece = null;
+                turns++;
+                panel.repaint();
+                return;
+            }
+        }
+    }
+
+
     /**
      * Draw current chess board
      * @param g2d
@@ -360,7 +471,7 @@ public class ChessBoard {
          * ## draw squares on chess board ##
          * #################################
          */
-        int square_size = 64;       // size of each square
+        int tile_size = 64;       // size of each square
         int count = 0;              // this number is used to judge color for board square
         int i, j;
         Piece p;
@@ -369,8 +480,8 @@ public class ChessBoard {
         int player;                 // used to check whose turn right now
         for(i = 0; i < this.height; i++){
             for(j = 0; j < this.width; j++){
-                x = j * square_size; // calculate canvas coordinate
-                y = i * square_size;
+                x = j * tile_size; // calculate canvas coordinate
+                y = i * tile_size;
 
                 /*
                  * decide the color for square
@@ -381,10 +492,10 @@ public class ChessBoard {
                 else{
                     color = new Color(209, 139, 71);
                 }
-                if(clicked_x_coord >= x  && clicked_x_coord < x + square_size && clicked_y_coord >= y && clicked_y_coord < y + square_size){
+                if(clicked_x_coord >= x  && clicked_x_coord < x + tile_size && clicked_y_coord >= y && clicked_y_coord < y + tile_size){
                     color = new Color(140, 91, 49);
                 }
-                drawSquareForBoard(g2d, x, y, color, square_size); // draw square
+                drawSquareForBoard(g2d, x, y, color, tile_size); // draw square
                 count++;
             }
             count++;
@@ -398,7 +509,7 @@ public class ChessBoard {
                 /* draw piece */
                 p = getPieceAtCoordinate(j, i);    // get piece at current canvas coordinate (left-top coordinate system)
                 if(p != null) {
-                    drawPiece(g2d, p, square_size);
+                    drawPiece(g2d, p, tile_size);
                 }
             }
         }
@@ -432,89 +543,16 @@ public class ChessBoard {
             if (p != null) { // player clicked a piece; show its possible moves
                 if(p.getPlayer() == getPlayerForThisTurn()) { // player clicked his/her own piece
                     this.chosen_piece = p;       // save as chosen_piece
-                    ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // get all possible move coordinates for this choesn piece
-
-                    for (Coordinate coord : coords) {
-                        if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move, therefore player cannot make this move.
-                            continue;
-                        }
-                        /*
-                         *  high light possible moves.
-                         */
-                        if(getPieceAtCoordinate(coord.getX(), coord.getY()) == null) { // that spot is empty
-                            color = new Color(195, 98, 108);
-                        }
-                        else if (getPieceAtCoordinate(coord.getX(), coord.getY()).getPiece_name().equals("king")){ // check?
-                            color = new Color(252, 236, 93);
-                        }
-                        else{  // opponent's piece is there
-                            color = new Color(195, 77, 34);
-                        }
-                        x = coord.getX() * square_size;  // convert to canvas coordinate
-                        y = (this.height - 1 - coord.getY()) * square_size;
-                        drawSquareForBoard(g2d, x, y, color, square_size);
-
-                        /* draw piece at that coordinate */
-                        p = getPieceAtCoordinate(coord.getX(), coord.getY());
-                        if (p != null)
-                            drawPiece(g2d, p, square_size);
-                    }
+                    showAndDrawPossibleMovesForPiece(g2d, p, tile_size); // draw possible moves
                 }
                 else{ // player clicked opponent's piece
                     if(this.chosen_piece == null) // do nothing
                         return;
-                    // check whether opponent's piece is under capture scope
-                    ArrayList<Coordinate> coords = this.chosen_piece.getPossibleMoveCoordinate();
-                    if(coords != null){
-                        for(Coordinate coord : coords){
-                            if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move, therefore player cannot make this move.
-                                continue;
-                            }
-                            if (coord.getX() == p.getX_coordinate() && coord.getY() == p.getY_coordinate()){ // opponent's piece is captured
-                                // System.out.println("You captured a piece");
-
-                                /*  remove that opponent's piece */
-                                this.tiles[p.getY_coordinate()][p.getX_coordinate()] = null;
-
-                                /* move player's piece to that coordinate */
-                                p.removeSelf(); // remove opponent's piece
-                                if(p.getPiece_name().equals("king")){ // check whether game over
-                                    game_over(panel); // game over
-                                }
-                                this.chosen_piece.setCoordinate(coord.getX(), coord.getY());
-
-                                /* update turns and redraw the canvas */
-                                this.chosen_piece = null;
-                                turns++;
-                                panel.repaint();
-                                return;
-                            }
-                        }
-                    }
-                    else{
-                        // nothing happend here
-                    }
+                    movePieceToOpponentPieceLocationIfValid(panel, g2d, p, tile_size);
                 }
             }
-            else if (this.chosen_piece != null) { // that means  p == null, and player clicked a square
-                ArrayList<Coordinate> coords = this.chosen_piece.getPossibleMoveCoordinate();
-                for(Coordinate coord : coords){
-                    if (isSuicideMove(this.chosen_piece, coord.getX(), coord.getY())){ // it is a suicide move, therefore player cannot make this move.
-                        continue;
-                    }
-                    if (coord.getX() == x && coord.getY() == y){ // player can move the piece there
-                        // System.out.println("You moved a piece");
-
-                        // move player's piece to that coordinate
-                        this.chosen_piece.setCoordinate(x, y);
-
-                        // update turns and redraw the canvas
-                        this.chosen_piece = null;
-                        turns++;
-                        panel.repaint();
-                        return;
-                    }
-                }
+            else if (this.chosen_piece != null) { // that means  p == null, and player clicked a tile that is occupied
+                movePlayerPieceToEmptyTileIfValid(panel, g2d, p, x, y, tile_size);
             }
         }
     }
