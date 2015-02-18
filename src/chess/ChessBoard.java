@@ -551,7 +551,7 @@ public class ChessBoard {
                     movePieceToOpponentPieceLocationIfValid(panel, g2d, p, tile_size);
                 }
             }
-            else if (this.chosen_piece != null) { // that means  p == null, and player clicked a tile that is occupied
+            else if (this.chosen_piece != null) { // that means  p == null, and player clicked a tile that is not occupied
                 movePlayerPieceToEmptyTileIfValid(panel, g2d, p, x, y, tile_size);
             }
         }
