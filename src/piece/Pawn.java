@@ -20,9 +20,9 @@ public class Pawn extends Piece {
         super("pawn", board, player);
         this.first_time_move = true;   // it is pawn's first move, so it can advance 2 squares now.
         if (player == Player.WHITE) {  // White player
-            this.setPiece_image_path("assets/white_pawn.png");
+            this.piece_image_path = "assets/white_pawn.png";
         } else { // Black player
-            this.setPiece_image_path("assets/black_pawn.png");
+            this.piece_image_path = "assets/black_pawn.png";
         }
     }
 

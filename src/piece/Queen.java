@@ -16,10 +16,10 @@ public class Queen extends Piece {
     public Queen(ChessBoard board, Player player){
         super("queen", board, player);
         if(player == Player.WHITE){  // White player
-            this.setPiece_image_path("assets/white_queen.png");
+            this.piece_image_path = "assets/white_queen.png";
         }
         else{ // Black player
-            this.setPiece_image_path("assets/black_queen.png");
+            this.piece_image_path = "assets/black_queen.png";
         }
     }
 

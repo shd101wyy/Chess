@@ -16,9 +16,9 @@ public class Knight extends Piece {
     public Knight(ChessBoard board, Player player) {
         super("knight", board, player);
         if (player == Player.WHITE) {  // White player
-            this.setPiece_image_path("assets/white_knight.png");
+            this.piece_image_path = "assets/white_knight.png";
         } else { // Black player
-            this.setPiece_image_path("assets/black_knight.png");
+            this.piece_image_path = "assets/black_knight.png";
         }
     }
 

@@ -16,10 +16,10 @@ public class Rook extends Piece {
     public Rook(ChessBoard board, Player player){
         super("rook", board, player);
         if(player == Player.WHITE){  // White player
-            this.setPiece_image_path("assets/white_rook.png");
+            this.piece_image_path  = "assets/white_rook.png";
         }
         else{ // Black player
-            this.setPiece_image_path("assets/black_rook.png");
+            this.piece_image_path = "assets/black_rook.png";
         }
     }
 
