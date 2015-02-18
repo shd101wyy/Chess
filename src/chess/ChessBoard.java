@@ -364,14 +364,13 @@ public class ChessBoard {
                 /* draw piece */
                 p = getPieceAtCoordinate(j, i);    // get piece at current canvas coordinate (left-top coordinate system)
                 if(p != null) {
-                    // System.out.println("Draw Piece " + p.getX_coordinate() + " " + p.getY_coordinate());
                     drawPiece(g2d, p, square_size);
                 }
             }
         }
 
         /*
-         * Check checkmate and slatemate
+         * Check checkmate and stalemate
          */
         if (playerCannotMove(this.turns%2 == 0 ? Player.WHITE : Player.BLACK)){ // so right now that player cannot move any chess
             King king = (this.turns%2 == 0) ? (King)this.king1 : (King)this.king2;  // get current player's king
@@ -379,7 +378,7 @@ public class ChessBoard {
             if(king.isInCheck()){ // checkmate
                 JOptionPane.showMessageDialog(panel, "Checkmate!", "", JOptionPane.INFORMATION_MESSAGE);
             }
-            else{ // slatemate
+            else{ // stalemate
                 JOptionPane.showMessageDialog(panel, "Player"+(this.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
             }
         }
@@ -474,7 +473,6 @@ public class ChessBoard {
 
                         // move player's piece to that coordinate
                         this.chosen_piece.setCoordinate(x, y);
-
 
                         // update turns and redraw the canvas
                         this.chosen_piece = null;
