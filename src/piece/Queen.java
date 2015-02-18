@@ -37,8 +37,8 @@ public class Queen extends Piece {
      * @return ArrayList<Coordinate> Object
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
-        int current_x_coord = this.getX_coordinate();       // get current x coord of pawn
-        int current_y_coord = this.getY_coordinate();       // get current y coord of pawn
+        int current_x_coord = this.x_coordinate;       // get current x coord of pawn
+        int current_y_coord = this.y_coordinate;       // get current y coord of pawn
         ChessBoard board = this.getChessBoard();            // get chess board
         ArrayList<Coordinate> coords = new ArrayList<Coordinate>();          // create return ArrayList
 
@@ -48,7 +48,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){            // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()) {  // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player) {  // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -60,7 +60,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){            // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -72,7 +72,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){           // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -84,7 +84,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){          // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -96,7 +96,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(i, current_y_coord) == null){   // the square is not occupied by any piece
                 coords.add(new Coordinate(i, current_y_coord));
             }
-            else if (board.getPieceAtCoordinate(i, current_y_coord).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if (board.getPieceAtCoordinate(i, current_y_coord).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(i, current_y_coord));
                 break;
             }
@@ -109,7 +109,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(i, current_y_coord) == null){   // the square is not occupied by any piece
                 coords.add(new Coordinate(i, current_y_coord));
             }
-            else if (board.getPieceAtCoordinate(i, current_y_coord).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if (board.getPieceAtCoordinate(i, current_y_coord).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(i, current_y_coord));
                 break;
             }
@@ -122,7 +122,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(current_x_coord, i) == null){   // the square is not occupied by any piece
                 coords.add(new Coordinate(current_x_coord, i));
             }
-            else if (board.getPieceAtCoordinate(current_x_coord, i).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if (board.getPieceAtCoordinate(current_x_coord, i).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(current_x_coord, i));
                 break;
             }
@@ -135,7 +135,7 @@ public class Queen extends Piece {
             if(board.getPieceAtCoordinate(current_x_coord, i) == null){   // the square is not occupied by any piece
                 coords.add(new Coordinate(current_x_coord, i));
             }
-            else if (board.getPieceAtCoordinate(current_x_coord, i).getPlayer() != this.getPlayer()){  // meet opponent's piece
+            else if (board.getPieceAtCoordinate(current_x_coord, i).player != this.player){  // meet opponent's piece
                 coords.add(new Coordinate(current_x_coord, i));
                 break;
             }

@@ -37,12 +37,12 @@ public class Pawn extends Piece {
      * @return ArrayList<Coordinate> Object
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
-        int current_x_coord = this.getX_coordinate();       // get current x coord of pawn
-        int current_y_coord = this.getY_coordinate();       // get current y coord of pawn
+        int current_x_coord = this.x_coordinate;       // get current x coord of pawn
+        int current_y_coord = this.y_coordinate;       // get current y coord of pawn
         ChessBoard board = this.getChessBoard();            // get chess board
 
         ArrayList<Coordinate> coords = new ArrayList<Coordinate>();          // create return ArrayList
-        int possible_move = (this.getPlayer() == 1) ? 1 : -1;                // if White player, then move +1, otherwise move -1
+        int possible_move = (this.player == 1) ? 1 : -1;                // if White player, then move +1, otherwise move -1
         if (current_y_coord + possible_move >= board.getHeight() || current_y_coord + possible_move < 0) { // reach top/bottom
             return coords;
         }
@@ -59,12 +59,12 @@ public class Pawn extends Piece {
         }
 
         if (board.getPieceAtCoordinate(current_x_coord - 1, current_y_coord + possible_move) != null &&
-                board.getPieceAtCoordinate(current_x_coord - 1, current_y_coord + possible_move).getPlayer() != this.getPlayer()) {  // there is an opponent piece on the left side
+                board.getPieceAtCoordinate(current_x_coord - 1, current_y_coord + possible_move).player != this.player) {  // there is an opponent piece on the left side
             coords.add(new Coordinate(current_x_coord - 1, current_y_coord + possible_move));
         }
 
         if (board.getPieceAtCoordinate(current_x_coord + 1, current_y_coord + possible_move) != null &&
-                board.getPieceAtCoordinate(current_x_coord + 1, current_y_coord + possible_move).getPlayer() != this.getPlayer()) {  // there is an opponent piece on the right side
+                board.getPieceAtCoordinate(current_x_coord + 1, current_y_coord + possible_move).player != this.player) {  // there is an opponent piece on the right side
             coords.add(new Coordinate(current_x_coord + 1, current_y_coord + possible_move));
         }
         return coords;
@@ -78,7 +78,7 @@ public class Pawn extends Piece {
      * @return
      */
     public boolean setCoordinate(int x, int y) {
-        if (this.getX_coordinate() == -1 || this.getY_coordinate() == -1) { // first time init
+        if (this.x_coordinate == -1 || this.y_coordinate == -1) { // first time init
             this.first_time_move = true;
         } else {
             this.first_time_move = false;

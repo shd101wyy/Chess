@@ -19,10 +19,10 @@ public class Bishop extends Piece {
 
         // set piece image path
         if(player == 1){  // White player
-            this.setPiece_image_path("assets/white_bishop.png");
+            this.piece_image_path = "assets/white_bishop.png";
         }
         else{ // Black player
-            this.setPiece_image_path("assets/black_bishop.png");
+            this.piece_image_path = "assets/black_bishop.png";
         }
     }
 
@@ -43,9 +43,9 @@ public class Bishop extends Piece {
      * @return ArrayList<Coordinate> Object
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
-        int current_x_coord = this.getX_coordinate();       // get current x coord of pawn
-        int current_y_coord = this.getY_coordinate();       // get current y coord of pawn
-        ChessBoard board = this.getChessBoard();            // get chess board
+        int current_x_coord = this.x_coordinate;       // get current x coord of pawn
+        int current_y_coord = this.y_coordinate;       // get current y coord of pawn
+        ChessBoard board = this.board;            // get chess board
         ArrayList<Coordinate> coords = new ArrayList<Coordinate>();          // create return ArrayList
 
         int i, j;
@@ -54,7 +54,7 @@ public class Bishop extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){     // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()) {  // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player) {  // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -66,7 +66,7 @@ public class Bishop extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){ // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){ // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player){ // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -78,7 +78,7 @@ public class Bishop extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){ // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){ // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player){ // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
@@ -90,7 +90,7 @@ public class Bishop extends Piece {
             if(board.getPieceAtCoordinate(i, j) == null){ // the square is not occupied by any piece
                 coords.add(new Coordinate(i, j));
             }
-            else if(board.getPieceAtCoordinate(i, j).getPlayer() != this.getPlayer()){ // meet opponent's piece
+            else if(board.getPieceAtCoordinate(i, j).player != this.player){ // meet opponent's piece
                 coords.add(new Coordinate(i, j));
                 break;
             }
