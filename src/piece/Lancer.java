@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Lancer extends Piece{
     /**
-     * Constructor: initialize an Archor Object
+     * Constructor: initialize an Lancer Object
      * @param board
      * @param player
      */
@@ -48,7 +48,7 @@ public class Lancer extends Piece{
      *         # # #                  #: is enemy
      *       # # p # #                 @: is possible move area
      *                                P: archer
-     *
+     *  if there is enemy/friend on left/top/right that block the way, then archer cannot go further
      *
      * @return
      */
@@ -60,14 +60,15 @@ public class Lancer extends Piece{
 
         int i = (this.player == Player.WHITE) ? 1 : -1;
         // check area
-        addToCoordinatesIfValid(coords, current_x_coord - 2, current_y_coord);
-        addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord);
-        addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord);
-        addToCoordinatesIfValid(coords, current_x_coord + 2, current_y_coord);
+
+        if(addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord) == false) // check no block way
+            addToCoordinatesIfValid(coords, current_x_coord - 2, current_y_coord);
+        if(addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord) == false) // check no block way
+            addToCoordinatesIfValid(coords, current_x_coord + 2, current_y_coord);
         addToCoordinatesIfValid(coords, current_x_coord - 1, current_y_coord + 1*i);
         addToCoordinatesIfValid(coords, current_x_coord + 1, current_y_coord + 1*i);
-        addToCoordinatesIfValid(coords, current_x_coord, current_y_coord + 1*i);
-        addToCoordinatesIfValid(coords, current_x_coord, current_y_coord + 2*i);
+        if(addToCoordinatesIfValid(coords, current_x_coord, current_y_coord + 1*i) == false) // check no block way
+            addToCoordinatesIfValid(coords, current_x_coord, current_y_coord + 2*i);
 
         return coords;
     }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by wangyiyi on 2/18/15.
  */
+
 public class Archer extends Piece{
 
     /**
