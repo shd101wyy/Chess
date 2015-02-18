@@ -1,4 +1,7 @@
-package chess;
+package piece;
+
+import chess.ChessBoard;
+import piece.Coordinate;
 
 import java.util.ArrayList;
 
@@ -7,17 +10,17 @@ import java.util.ArrayList;
  *
  * Piece Class
  */
-public class Piece {
-    private String piece_name; // name of the piece: king, rook, bishop, queen, knight, pawn.
+public abstract class Piece {
+    protected String piece_name; // name of the piece: king, rook, bishop, queen, knight, pawn.
 
     // Assume left bottom corner is (0, 0)
-    private int x_coordinate;  // piece x coordinate
-    private int y_coordinate;  // piece y coordinate
+    protected int x_coordinate;  // piece x coordinate
+    protected int y_coordinate;  // piece y coordinate
 
-    private int player;        // #player, 1 => White, 2 => Black
-    private ChessBoard board;  // the current chessboard object
+    protected int player;        // #player, 1 => White, 2 => Black
+    protected ChessBoard board;  // the current chessboard object
 
-    private String piece_image_path; // piece image path
+    protected String piece_image_path; // piece image path
 
     /**
      * Initialize a piece object
@@ -136,7 +139,5 @@ public class Piece {
      * As this function is implemented in each subclass, it will return null.
      * @return
      */
-    public ArrayList<Coordinate> getPossibleMoveCoordinate() {
-        return null;
-    }
+    public abstract ArrayList<Coordinate> getPossibleMoveCoordinate();
 }

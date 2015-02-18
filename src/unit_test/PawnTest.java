@@ -2,6 +2,9 @@ package unit_test;
 
 import chess.*;
 import org.junit.Test;
+import piece.Pawn;
+import piece.Piece;
+
 import static org.junit.Assert.*;
 
 public class PawnTest {

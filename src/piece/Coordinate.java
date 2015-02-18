@@ -1,4 +1,4 @@
-package chess;
+package piece;
 
 /**
  * Created by wangyiyi on 2/12/15.

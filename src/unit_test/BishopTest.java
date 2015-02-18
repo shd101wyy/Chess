@@ -1,8 +1,8 @@
 package unit_test;
 
-import chess.Bishop;
+import piece.Bishop;
 import chess.ChessBoard;
-import chess.Piece;
+import piece.Piece;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

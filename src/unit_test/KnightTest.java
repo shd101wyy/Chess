@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import chess.*;
+import piece.Knight;
+import piece.Pawn;
+import piece.Piece;
 
 public class KnightTest {
     /**

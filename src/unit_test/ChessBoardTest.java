@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import chess.*;
+import piece.*;
+
 public class ChessBoardTest {
 
     /**

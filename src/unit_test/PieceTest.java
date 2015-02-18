@@ -2,6 +2,7 @@ package unit_test;
 
 import chess.*;
 import org.junit.Test;
+import piece.*;
 
 import static org.junit.Assert.*;
 

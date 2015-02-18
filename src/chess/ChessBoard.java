@@ -1,6 +1,6 @@
 package chess;
 
-import com.sun.codemodel.internal.JOp;
+import piece.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ChessBoard {
     private int width;           // the width of chess board
     private int height;          // the height of chess board
-    private Piece pieces[][];    // this 2d array is used to save pieces
+    private Piece tiles[][];    // this 2d array is used to save pieces
     private Piece chosen_piece;  // the piece that is chosen by player
     private int turns;           // count number of moves
     private Piece king1;         // king for player1 White
@@ -41,9 +41,9 @@ public class ChessBoard {
         this.height = height;
 
         // initialize the 2d array to store pieces
-        this.pieces = new Piece[height][];
+        this.tiles = new Piece[height][];
         for(int i = 0; i < height; i++) {
-            this.pieces[i] = new Piece[width];
+            this.tiles[i] = new Piece[width];
         }
 
         this.chosen_piece = null; // no piece is chosen by player yet
@@ -111,7 +111,7 @@ public class ChessBoard {
     public Piece getPieceAtCoordinate(int x, int y){
         if(x >= this.width || x < 0 || y >= this.height || y < 0) // outside the boundary
             return null;
-        return this.pieces[y][x];
+        return this.tiles[y][x];
     }
 
     /**
@@ -121,7 +121,7 @@ public class ChessBoard {
      * @param y
      */
     public void setPieceAtCoordinate(Piece p, int x, int y){
-        this.pieces[y][x] = p;
+        this.tiles[y][x] = p;
     }
 
     /**
@@ -158,7 +158,7 @@ public class ChessBoard {
     public void removePiece(Piece p){
         int x = p.getX_coordinate();
         int y = p.getY_coordinate();
-        this.pieces[y][x] = null;
+        this.tiles[y][x] = null;
     }
 
     /**
@@ -234,8 +234,8 @@ public class ChessBoard {
 
         for(i = 0; i < this.width; i++){
             for(j = 0; j < this.height; j++){
-                if (this.pieces[j][i] != null && this.pieces[j][i].getPlayer() != current_player){ // opponent's piece
-                    ArrayList<Coordinate> coords = this.pieces[j][i].getPossibleMoveCoordinate();
+                if (this.tiles[j][i] != null && this.tiles[j][i].getPlayer() != current_player){ // opponent's piece
+                    ArrayList<Coordinate> coords = this.tiles[j][i].getPossibleMoveCoordinate();
                     for(Coordinate coord : coords){
                         if(coord.getX() == king.getX_coordinate() && coord.getY() == king.getY_coordinate()){ // will go to king's coord
                             is_suicide = true;
@@ -439,7 +439,7 @@ public class ChessBoard {
                                 // System.out.println("You captured a piece");
 
                                 /*  remove that opponent's piece */
-                                this.pieces[p.getY_coordinate()][p.getX_coordinate()] = null;
+                                this.tiles[p.getY_coordinate()][p.getX_coordinate()] = null;
 
                                 /* move player's piece to that coordinate */
                                 p.removeSelf(); // remove opponent's piece

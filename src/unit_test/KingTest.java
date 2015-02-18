@@ -2,6 +2,9 @@ package unit_test;
 
 import chess.*;
 import org.junit.Test;
+import piece.King;
+import piece.Pawn;
+import piece.Rook;
 
 import static org.junit.Assert.*;
 

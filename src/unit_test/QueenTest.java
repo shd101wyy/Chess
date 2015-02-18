@@ -4,6 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import chess.*;
+import piece.Pawn;
+import piece.Piece;
+import piece.Queen;
+
 public class QueenTest {
     /**
      *  test valid possible moves
