@@ -144,11 +144,11 @@ public class ChessBoard {
      * Get the player for this turn
      * @return
      */
-    public Piece.Player getPlayerForThisTurn(){
+    public Player getPlayerForThisTurn(){
         if (this.turns % 2 == 0){
-            return Piece.Player.WHITE; // White
+            return Player.WHITE; // White
         }
-        return Piece.Player.BLACK; // Black
+        return Player.BLACK; // Black
     }
 
     /**
@@ -214,13 +214,13 @@ public class ChessBoard {
      * @return return true if this move will cause king being checked.
      */
     public boolean isSuicideMove(Piece p, int move_to_x, int move_to_y){
-        Piece.Player current_player = p.getPlayer();       // get player
+        Player current_player = p.getPlayer();       // get player
         int current_x_coord = p.getX_coordinate();
         int current_y_coord = p.getY_coordinate();
         int i, j;
         boolean is_suicide = false;
 
-        Piece king = (current_player == Piece.Player.WHITE ? this.king1 : this.king2);  // get king
+        Piece king = (current_player == Player.WHITE ? this.king1 : this.king2);  // get king
 
         Piece remove_piece = getPieceAtCoordinate(move_to_x, move_to_y); // get piece that need to be removed
 
@@ -267,7 +267,7 @@ public class ChessBoard {
      * If a player can not move any piece, then return true
      * @return true if player cannot move any piece; otherwise return false
      */
-    public boolean playerCannotMove(Piece.Player player){
+    public boolean playerCannotMove(Player player){
         int i, j;
         for (i = 0; i < this.width; i++){
             for(j = 0; j < this.height; j++){
@@ -293,8 +293,8 @@ public class ChessBoard {
      * @param player
      * @return
      */
-    public boolean isStalemate(Piece.Player player){
-        King king = player == Piece.Player.WHITE ? (King)this.king1 : (King)this.king2;
+    public boolean isStalemate(Player player){
+        King king = player == Player.WHITE ? (King)this.king1 : (King)this.king2;
         if(king.isInCheck() == false){ // king is not in check.
             // check whether is there any legal move
             // if there is no legal move, then return true
@@ -373,7 +373,7 @@ public class ChessBoard {
         /*
          * Check checkmate and slatemate
          */
-        if (playerCannotMove(this.turns%2 == 0 ? Piece.Player.WHITE : Piece.Player.BLACK)){ // so right now that player cannot move any chess
+        if (playerCannotMove(this.turns%2 == 0 ? Player.WHITE : Player.BLACK)){ // so right now that player cannot move any chess
             King king = (this.turns%2 == 0) ? (King)this.king1 : (King)this.king2;  // get current player's king
             this.gameover = true;
             if(king.isInCheck()){ // checkmate
@@ -497,104 +497,104 @@ public class ChessBoard {
         // ===============
         //  player1 white
         // ===============
-        p = new Rook(this, Piece.Player.WHITE); // a1 white rook
+        p = new Rook(this, Player.WHITE); // a1 white rook
         p.setCoordinate(0, 0);
 
-        p = new Knight(this, Piece.Player.WHITE); // b1 white knight
+        p = new Knight(this, Player.WHITE); // b1 white knight
         p.setCoordinate(1, 0);
 
-        p = new Bishop(this, Piece.Player.WHITE); // c1 white bishop
+        p = new Bishop(this, Player.WHITE); // c1 white bishop
         p.setCoordinate(2, 0);
 
-        p = new Queen(this, Piece.Player.WHITE); // d1 white queen
+        p = new Queen(this, Player.WHITE); // d1 white queen
         p.setCoordinate(3, 0);
 
-        p = new King(this, Piece.Player.WHITE);   // e1 white king
+        p = new King(this, Player.WHITE);   // e1 white king
         p.setCoordinate(4, 0);
 
-        p = new Bishop(this, Piece.Player.WHITE); // f1 white bishop
+        p = new Bishop(this, Player.WHITE); // f1 white bishop
         p.setCoordinate(5, 0);
 
-        p = new Knight(this, Piece.Player.WHITE); // g1 white knight
+        p = new Knight(this, Player.WHITE); // g1 white knight
         p.setCoordinate(6, 0);
 
-        p = new Rook(this, Piece.Player.WHITE);   // h2 white rook
+        p = new Rook(this, Player.WHITE);   // h2 white rook
         p.setCoordinate(7, 0);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // a2 white pawn
+        p = new Pawn(this, Player.WHITE);   // a2 white pawn
         p.setCoordinate(0, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // b2 white pawn
+        p = new Pawn(this, Player.WHITE);   // b2 white pawn
         p.setCoordinate(1, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // c2 white pawn
+        p = new Pawn(this, Player.WHITE);   // c2 white pawn
         p.setCoordinate(2, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // d2 white pawn
+        p = new Pawn(this, Player.WHITE);   // d2 white pawn
         p.setCoordinate(3, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // e2 white pawn
+        p = new Pawn(this, Player.WHITE);   // e2 white pawn
         p.setCoordinate(4, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // f2 white pawn
+        p = new Pawn(this, Player.WHITE);   // f2 white pawn
         p.setCoordinate(5, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // g2 white pawn
+        p = new Pawn(this, Player.WHITE);   // g2 white pawn
         p.setCoordinate(6, 1);
 
-        p = new Pawn(this, Piece.Player.WHITE);   // h2 white pawn
+        p = new Pawn(this, Player.WHITE);   // h2 white pawn
         p.setCoordinate(7, 1);
 
 
         // ===============
         //  player2 black
         // ===============
-        p = new Rook(this, Piece.Player.BLACK); // a8 black rook
+        p = new Rook(this, Player.BLACK); // a8 black rook
         p.setCoordinate(0, 7);
 
-        p = new Knight(this, Piece.Player.BLACK); // b8 black knight
+        p = new Knight(this, Player.BLACK); // b8 black knight
         p.setCoordinate(1, 7);
 
-        p = new Bishop(this, Piece.Player.BLACK); // c8 black bishop
+        p = new Bishop(this, Player.BLACK); // c8 black bishop
         p.setCoordinate(2, 7);
 
-        p = new Queen(this, Piece.Player.BLACK); // d8 black queen
+        p = new Queen(this, Player.BLACK); // d8 black queen
         p.setCoordinate(3, 7);
 
-        p = new King(this, Piece.Player.BLACK);   // e8 black king
+        p = new King(this, Player.BLACK);   // e8 black king
         p.setCoordinate(4, 7);
 
-        p = new Bishop(this, Piece.Player.BLACK); // f8 black bishop
+        p = new Bishop(this, Player.BLACK); // f8 black bishop
         p.setCoordinate(5, 7);
 
-        p = new Knight(this, Piece.Player.BLACK); // g8 black knight
+        p = new Knight(this, Player.BLACK); // g8 black knight
         p.setCoordinate(6, 7);
 
-        p = new Rook(this, Piece.Player.BLACK);   // h8 black rook
+        p = new Rook(this, Player.BLACK);   // h8 black rook
         p.setCoordinate(7, 7);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // a7 black pawn
+        p = new Pawn(this, Player.BLACK);   // a7 black pawn
         p.setCoordinate(0, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // b7 black pawn
+        p = new Pawn(this, Player.BLACK);   // b7 black pawn
         p.setCoordinate(1, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // c7 black pawn
+        p = new Pawn(this, Player.BLACK);   // c7 black pawn
         p.setCoordinate(2, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // d7 black pawn
+        p = new Pawn(this, Player.BLACK);   // d7 black pawn
         p.setCoordinate(3, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // e7 black pawn
+        p = new Pawn(this, Player.BLACK);   // e7 black pawn
         p.setCoordinate(4, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // f7 black pawn
+        p = new Pawn(this, Player.BLACK);   // f7 black pawn
         p.setCoordinate(5, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // g7 black pawn
+        p = new Pawn(this, Player.BLACK);   // g7 black pawn
         p.setCoordinate(6, 6);
 
-        p = new Pawn(this, Piece.Player.BLACK);   // h7 black pawn
+        p = new Pawn(this, Player.BLACK);   // h7 black pawn
         p.setCoordinate(7, 6);
     }
 }

@@ -1,6 +1,7 @@
 package unit_test;
 
-import chess.*;
+import chess.ChessBoard;
+import chess.Player;
 import org.junit.Test;
 import piece.*;
 
@@ -17,11 +18,11 @@ public class PieceTest {
     public void testGetPlayer() throws Exception {
         ChessBoard board = new ChessBoard(8, 8);  // create chess board
 
-        Piece p1 = new King(board, Piece.Player.WHITE);            // check player id valid
-        assertEquals(Piece.Player.WHITE, p1.getPlayer());
+        Piece p1 = new King(board, Player.WHITE);            // check player id valid
+        assertEquals(Player.WHITE, p1.getPlayer());
 
-        Piece p2 = new King(board, Piece.Player.BLACK);            // check player id valid
-        assertEquals(Piece.Player.BLACK, p2.getPlayer());
+        Piece p2 = new King(board, Player.BLACK);            // check player id valid
+        assertEquals(Player.BLACK, p2.getPlayer());
     }
 
     /**
@@ -34,22 +35,22 @@ public class PieceTest {
 
         Piece p;
 
-        p = new King(board, Piece.Player.WHITE);
+        p = new King(board, Player.WHITE);
         assertEquals("king", p.getPiece_name());
 
-        p = new Bishop(board, Piece.Player.WHITE);
+        p = new Bishop(board, Player.WHITE);
         assertEquals("bishop", p.getPiece_name());
 
-        p = new Knight(board, Piece.Player.WHITE);
+        p = new Knight(board, Player.WHITE);
         assertEquals("knight", p.getPiece_name());
 
-        p = new Pawn(board, Piece.Player.WHITE);
+        p = new Pawn(board, Player.WHITE);
         assertEquals("pawn", p.getPiece_name());
 
-        p = new Queen(board, Piece.Player.WHITE);
+        p = new Queen(board, Player.WHITE);
         assertEquals("queen", p.getPiece_name());
 
-        p = new Rook(board, Piece.Player.WHITE);
+        p = new Rook(board, Player.WHITE);
         assertEquals("rook", p.getPiece_name());
     }
     /**
@@ -62,42 +63,42 @@ public class PieceTest {
         Piece p;
 
         // test player 1
-        p = new King(board, Piece.Player.WHITE);
+        p = new King(board, Player.WHITE);
         assertEquals("assets/white_king.png", p.getPiece_image_path());
 
-        p = new Bishop(board, Piece.Player.WHITE);
+        p = new Bishop(board, Player.WHITE);
         assertEquals("assets/white_bishop.png", p.getPiece_image_path());
 
-        p = new Knight(board, Piece.Player.WHITE);
+        p = new Knight(board, Player.WHITE);
         assertEquals("assets/white_knight.png", p.getPiece_image_path());
 
-        p = new Pawn(board, Piece.Player.WHITE);
+        p = new Pawn(board, Player.WHITE);
         assertEquals("assets/white_pawn.png", p.getPiece_image_path());
 
-        p = new Queen(board, Piece.Player.WHITE);
+        p = new Queen(board, Player.WHITE);
         assertEquals( "assets/white_queen.png", p.getPiece_image_path());
 
-        p = new Rook(board, Piece.Player.WHITE);
+        p = new Rook(board, Player.WHITE);
         assertEquals("assets/white_rook.png", p.getPiece_image_path());
 
 
         // test player 2
-        p = new King(board, Piece.Player.BLACK);
+        p = new King(board, Player.BLACK);
         assertEquals("assets/black_king.png", p.getPiece_image_path());
 
-        p = new Bishop(board, Piece.Player.BLACK);
+        p = new Bishop(board, Player.BLACK);
         assertEquals("assets/black_bishop.png", p.getPiece_image_path());
 
-        p = new Knight(board, Piece.Player.BLACK);
+        p = new Knight(board, Player.BLACK);
         assertEquals("assets/black_knight.png", p.getPiece_image_path());
 
-        p = new Pawn(board, Piece.Player.BLACK);
+        p = new Pawn(board, Player.BLACK);
         assertEquals("assets/black_pawn.png", p.getPiece_image_path());
 
-        p = new Queen(board, Piece.Player.BLACK);
+        p = new Queen(board, Player.BLACK);
         assertEquals("assets/black_queen.png", p.getPiece_image_path());
 
-        p = new Rook(board, Piece.Player.BLACK);
+        p = new Rook(board, Player.BLACK);
         assertEquals("assets/black_rook.png", p.getPiece_image_path());
     }
 
@@ -112,7 +113,7 @@ public class PieceTest {
         Piece p;
         boolean result;
 
-        p = new King(board, Piece.Player.WHITE);
+        p = new King(board, Player.WHITE);
 
         /*      1 |   2          | 3
          *    -----------------------
@@ -171,7 +172,7 @@ public class PieceTest {
 
 
         // create new piece, test whether we can put it at p's location
-        Piece p2 = new King(board, Piece.Player.BLACK);
+        Piece p2 = new King(board, Player.BLACK);
         result = p2.setCoordinate(2, 2);  // this should return false
         assertEquals(false, result);
 
@@ -191,7 +192,7 @@ public class PieceTest {
     public void testRemoveSelf() throws Exception {
         ChessBoard board = new ChessBoard(8, 8);
 
-        Piece p = new King(board, Piece.Player.WHITE);
+        Piece p = new King(board, Player.WHITE);
         p.setCoordinate(0, 0);
 
         p.removeSelf();      // piece removes itself from the chess board

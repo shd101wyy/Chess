@@ -3,7 +3,8 @@ package unit_test;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import chess.*;
+import chess.ChessBoard;
+import chess.Player;
 import piece.*;
 
 public class ChessBoardTest {
@@ -27,9 +28,9 @@ public class ChessBoardTest {
          *     case 2: if I move rook1 forward, then king1 is not in check; this is not a suicide move
          */
         ChessBoard board = new ChessBoard(8, 8);
-        King king1 = new King(board, Piece.Player.WHITE);
-        Rook rook1 = new Rook(board, Piece.Player.WHITE);
-        Rook rook2 = new Rook(board, Piece.Player.BLACK);
+        King king1 = new King(board, Player.WHITE);
+        Rook rook1 = new Rook(board, Player.WHITE);
+        Rook rook2 = new Rook(board, Player.BLACK);
 
         king1.setCoordinate(4, 1);
         rook1.setCoordinate(4, 2);
@@ -48,9 +49,9 @@ public class ChessBoardTest {
         ChessBoard board = new ChessBoard(8, 8);
 
         /* create king */
-        King king1 = new King(board, Piece.Player.WHITE);
+        King king1 = new King(board, Player.WHITE);
         king1.setCoordinate(0, 0);
-        assertEquals(false, board.playerCannotMove(Piece.Player.WHITE)); // right now player can move
+        assertEquals(false, board.playerCannotMove(Player.WHITE)); // right now player can move
 
         /*
 
@@ -63,16 +64,16 @@ public class ChessBoardTest {
 
          in this case player 1 cannot move
          */
-        Rook player2_rook1 = new Rook(board, Piece.Player.BLACK);
-        Rook player2_rook2 = new Rook(board, Piece.Player.BLACK);
-        Queen player2_queen1 = new Queen(board, Piece.Player.BLACK);
-        Rook player1_rook1 = new Rook(board, Piece.Player.WHITE);
+        Rook player2_rook1 = new Rook(board, Player.BLACK);
+        Rook player2_rook2 = new Rook(board, Player.BLACK);
+        Queen player2_queen1 = new Queen(board, Player.BLACK);
+        Rook player1_rook1 = new Rook(board, Player.WHITE);
 
         player2_rook1.setCoordinate(0, 5);
         player2_rook2.setCoordinate(4, 0);
         player2_queen1.setCoordinate(2, 2);
         player1_rook1.setCoordinate(4, 1);
-        assertEquals(true, board.playerCannotMove(Piece.Player.WHITE));
+        assertEquals(true, board.playerCannotMove(Player.WHITE));
 
     }
 
@@ -87,20 +88,20 @@ public class ChessBoardTest {
         /*
          * the case from wikipedia http://en.wikipedia.org/wiki/Stalemate
          */
-        King king1 = new King(board, Piece.Player.WHITE);
-        King king2 = new King(board, Piece.Player.BLACK);
-        Queen queen2 = new Queen(board, Piece.Player.BLACK);
+        King king1 = new King(board, Player.WHITE);
+        King king2 = new King(board, Player.BLACK);
+        Queen queen2 = new Queen(board, Player.BLACK);
 
         king1.setCoordinate(7, 7);
         king2.setCoordinate(5, 6);
         queen2.setCoordinate(6, 5);
-        assertEquals(true, board.isStalemate(Piece.Player.WHITE));
+        assertEquals(true, board.isStalemate(Player.WHITE));
 
         /*
          * the case that is not stalemate
          */
         king1.setCoordinate(0, 0);
-        assertEquals(false, board.isStalemate(Piece.Player.WHITE));
+        assertEquals(false, board.isStalemate(Player.WHITE));
 
 
         /*
@@ -111,24 +112,24 @@ public class ChessBoardTest {
         queen2.removeSelf();
 
         // Diagram1
-        Pawn pawn1 = new Pawn(board, Piece.Player.WHITE);
+        Pawn pawn1 = new Pawn(board, Player.WHITE);
         king2.setCoordinate(5, 7);
         pawn1.setCoordinate(5, 6);
         king1.setCoordinate(5, 5);
         board.setTurns(1);
-        assertEquals(true, board.isStalemate(Piece.Player.BLACK));
+        assertEquals(true, board.isStalemate(Player.BLACK));
         pawn1.removeSelf();
         king1.removeSelf();
         king2.removeSelf();
 
         // Diagram2
-        Bishop bishop2 = new Bishop(board, Piece.Player.BLACK);
-        Rook rook1 = new Rook(board, Piece.Player.WHITE);
+        Bishop bishop2 = new Bishop(board, Player.BLACK);
+        Rook rook1 = new Rook(board, Player.WHITE);
         king2.setCoordinate(0, 7);
         bishop2.setCoordinate(1, 7);
         king1.setCoordinate(1, 5);
         rook1.setCoordinate(7, 7);
-        assertEquals(true, board.isStalemate(Piece.Player.BLACK));
+        assertEquals(true, board.isStalemate(Player.BLACK));
         king1.removeSelf();
         king2.removeSelf();
         bishop2.removeSelf();
@@ -138,17 +139,17 @@ public class ChessBoardTest {
         king2.setCoordinate(0, 0);
         king1.setCoordinate(2, 2);
         rook1.setCoordinate(1, 1);
-        assertEquals(true, board.isStalemate(Piece.Player.BLACK));
+        assertEquals(true, board.isStalemate(Player.BLACK));
         king1.removeSelf();
         king2.removeSelf();
         rook1.removeSelf();
 
         // Diagram4
         king2.setCoordinate(0, 0);
-        Queen queen1 = new Queen(board, Piece.Player.WHITE);
+        Queen queen1 = new Queen(board, Player.WHITE);
         queen1.setCoordinate(1, 2);
         king1.setCoordinate(6, 4);
-        assertEquals(true, board.isStalemate(Piece.Player.BLACK));
+        assertEquals(true, board.isStalemate(Player.BLACK));
 
     }
 }

@@ -1,8 +1,7 @@
 package piece;
 
 import chess.ChessBoard;
-import piece.Coordinate;
-
+import chess.Player;
 import java.util.ArrayList;
 
 /**
@@ -11,9 +10,6 @@ import java.util.ArrayList;
  * Piece Class
  */
 public abstract class Piece {
-    public enum Player{          // 2 players, white and black
-        WHITE, BLACK
-    }
     protected String piece_name; // name of the piece: king, rook, bishop, queen, knight, pawn.
 
     // Assume left bottom corner is (0, 0)

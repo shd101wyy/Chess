@@ -2,6 +2,7 @@ package unit_test;
 
 import piece.Bishop;
 import chess.ChessBoard;
+import chess.Player;
 import piece.Piece;
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class BishopTest {
         Piece p;
 
         // put p at left bottom corner
-        p = new Bishop(board, Piece.Player.WHITE);
+        p = new Bishop(board, Player.WHITE);
         p.setCoordinate(0, 0);
         assertEquals(7, p.getPossibleMoveCoordinate().size());
 
@@ -27,7 +28,7 @@ public class BishopTest {
         assertEquals(13, p.getPossibleMoveCoordinate().size());
 
         // put opponent piece at one possible move coordinate
-        Piece opponent_piece = new Bishop(board, Piece.Player.BLACK);
+        Piece opponent_piece = new Bishop(board, Player.BLACK);
         opponent_piece.setCoordinate(5, 5);
         assertEquals(11, p.getPossibleMoveCoordinate().size());
     }

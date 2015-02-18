@@ -1,6 +1,7 @@
 package unit_test;
 
-import chess.*;
+import chess.ChessBoard;
+import chess.Player;
 import org.junit.Test;
 import piece.Pawn;
 import piece.Piece;
@@ -17,7 +18,7 @@ public class PawnTest {
         ChessBoard board = new ChessBoard(8, 8);
         Piece p;
 
-        p = new Pawn(board, Piece.Player.WHITE);
+        p = new Pawn(board, Player.WHITE);
         p.setCoordinate(0, 0);
         assertEquals(2, p.getPossibleMoveCoordinate().size()); // first time move, therefore it should be able to advance two squares.
 
@@ -30,7 +31,7 @@ public class PawnTest {
          * create a pawn in same group
          * put it ahead p, then p couldn't move
          */
-        Piece friend = new Pawn(board, Piece.Player.WHITE);
+        Piece friend = new Pawn(board, Player.WHITE);
         friend.setCoordinate(0, 2);
         assertEquals(0, p.getPossibleMoveCoordinate().size());
 
@@ -38,7 +39,7 @@ public class PawnTest {
          * create an opponent piece at top right
          * therefore, p can move top right
          */
-        Piece opponent_piece = new Pawn(board, Piece.Player.BLACK);
+        Piece opponent_piece = new Pawn(board, Player.BLACK);
         opponent_piece.setCoordinate(1, 2);
         assertEquals(1, p.getPossibleMoveCoordinate().size());
 
