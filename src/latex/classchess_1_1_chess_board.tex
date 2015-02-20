@@ -1,0 +1,502 @@
+\hypertarget{classchess_1_1_chess_board}{}\section{chess.\+Chess\+Board Class Reference}
+\label{classchess_1_1_chess_board}\index{chess.\+Chess\+Board@{chess.\+Chess\+Board}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classchess_1_1_chess_board_aa5156220e39dfc196616ec027a602901}{Chess\+Board} (int width, int height)
+\item 
+void \hyperlink{classchess_1_1_chess_board_a10ec830ed5f42a0d269cfd8e7357482b}{add\+Piece\+To\+List} (\hyperlink{classpiece_1_1_piece}{Piece} p)
+\item 
+Array\+List$<$ \hyperlink{classpiece_1_1_piece}{Piece} $>$ \hyperlink{classchess_1_1_chess_board_a10397175a3ba6a70251604502f62449d}{get\+White\+\_\+pieces} ()
+\item 
+Array\+List$<$ \hyperlink{classpiece_1_1_piece}{Piece} $>$ \hyperlink{classchess_1_1_chess_board_ac7bc7bbe8fe20fec74bde65be0a85f8b}{get\+Black\+\_\+pieces} ()
+\item 
+\hyperlink{classpiece_1_1_piece}{Piece} \hyperlink{classchess_1_1_chess_board_a6d3fa6814faec0a97181d11c7c7c38b2}{get\+King1} ()
+\item 
+void \hyperlink{classchess_1_1_chess_board_a51bb798d92b0db194b07b9ee4911b76d}{set\+King1} (\hyperlink{classpiece_1_1_piece}{Piece} p)
+\item 
+\hyperlink{classpiece_1_1_piece}{Piece} \hyperlink{classchess_1_1_chess_board_a9ba6bbc41fa21cad31dfc055445c7bdf}{get\+King2} ()
+\item 
+void \hyperlink{classchess_1_1_chess_board_a313acef6ab77ae8b15ca03c7a9bb7f9a}{set\+King2} (\hyperlink{classpiece_1_1_piece}{Piece} p)
+\item 
+void \hyperlink{classchess_1_1_chess_board_a6807f49031043b17436bf3c4cb1993e6}{set\+Turns} (int turns)
+\item 
+int \hyperlink{classchess_1_1_chess_board_ac17fec5fcc2de5cd4084d129648c16fb}{get\+Turns} ()
+\item 
+\hyperlink{classpiece_1_1_piece}{Piece} \hyperlink{classchess_1_1_chess_board_a9215cfd241796e40b3f4ad8db0fd706f}{get\+Piece\+At\+Coordinate} (int x, int y)
+\item 
+void \hyperlink{classchess_1_1_chess_board_ae9d535deacab87c0de3ee10c8b8868f4}{set\+Piece\+At\+Coordinate} (\hyperlink{classpiece_1_1_piece}{Piece} p, int x, int y)
+\item 
+int \hyperlink{classchess_1_1_chess_board_a29781b412843a9db6c65adbaed0a5c07}{get\+Width} ()
+\item 
+int \hyperlink{classchess_1_1_chess_board_aae882150e2ecfda4defceabadff016c3}{get\+Height} ()
+\item 
+\hyperlink{enumchess_1_1_player}{Player} \hyperlink{classchess_1_1_chess_board_ae6fe2b06940fa56971e174e01fa22df1}{get\+Player\+For\+This\+Turn} ()
+\item 
+void \hyperlink{classchess_1_1_chess_board_af2f8678df1f61c42e6abb2591716451a}{remove\+Piece} (\hyperlink{classpiece_1_1_piece}{Piece} p)
+\item 
+void \hyperlink{classchess_1_1_chess_board_a1511b7e9055bbc9daff70f294bff92bc}{draw\+Tile\+For\+Board} (Graphics2\+D g2d, int x, int y, Color color, int tile\+\_\+size)
+\item 
+void \hyperlink{classchess_1_1_chess_board_a879f102e91c76d41ef78ccabf1174046}{draw\+Piece} (Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} p, int tile\+\_\+size)
+\item 
+boolean \hyperlink{classchess_1_1_chess_board_a9afd8643586328685ca7bcbcf1cec4a4}{is\+Suicide\+Move} (\hyperlink{classpiece_1_1_piece}{Piece} p, int move\+\_\+to\+\_\+x, int move\+\_\+to\+\_\+y)
+\item 
+boolean \hyperlink{classchess_1_1_chess_board_a1eef0b88f595b1501b2d12ab5e373e6f}{player\+Cannot\+Move} (\hyperlink{enumchess_1_1_player}{Player} player)
+\item 
+boolean \hyperlink{classchess_1_1_chess_board_ae8b13d31ee134f4365bc051b6178b2b5}{is\+Stalemate} (\hyperlink{enumchess_1_1_player}{Player} player)
+\item 
+void \hyperlink{classchess_1_1_chess_board_a81c34b69d1ab11b82272beb72bdb3555}{game\+\_\+over} (J\+Panel panel)
+\item 
+void \hyperlink{classchess_1_1_chess_board_aa85109bb8788435e3dfedcde5a32af6f}{show\+And\+Draw\+Possible\+Moves\+For\+Piece} (Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} p, int tile\+\_\+size)
+\item 
+void \hyperlink{classchess_1_1_chess_board_ad0d122018033f24e0c4b3e58778730f9}{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid} (J\+Panel panel, Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} opponent\+\_\+piece, int tile\+\_\+size)
+\item 
+void \hyperlink{classchess_1_1_chess_board_af5fb1ac8858d925db2debaa34fe6846a}{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid} (J\+Panel panel, Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} p, int x, int y, int tile\+\_\+size)
+\item 
+void \hyperlink{classchess_1_1_chess_board_a92c424d422829b5491cf7f70ee965c42}{draw\+Board} (J\+Panel panel, Graphics2\+D g2d, double clicked\+\_\+x\+\_\+coord, double clicked\+\_\+y\+\_\+coord)
+\item 
+void \hyperlink{classchess_1_1_chess_board_aea4a5c9bbf2a5bb942548a3f692cf894}{generate\+Standard\+Board} ()
+\item 
+void \hyperlink{classchess_1_1_chess_board_a887d2d0e66876f0c00390a9b50e8fced}{generate\+Fantasy\+Board} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created by wangyiyi on 2/12/15. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classchess_1_1_chess_board_aa5156220e39dfc196616ec027a602901}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!Chess\+Board@{Chess\+Board}}
+\index{Chess\+Board@{Chess\+Board}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{Chess\+Board}]{\setlength{\rightskip}{0pt plus 5cm}chess.\+Chess\+Board.\+Chess\+Board (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_aa5156220e39dfc196616ec027a602901}
+Construct chess board given width and height \begin{DoxyVerb} Coordinate system
+
+ +
+ |
+ |
+ |
+ |
+ (0, 0) -------->  +
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & set the width of chessboard \\
+\hline
+{\em height} & set the height of chessboard \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classchess_1_1_chess_board_a10ec830ed5f42a0d269cfd8e7357482b}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!add\+Piece\+To\+List@{add\+Piece\+To\+List}}
+\index{add\+Piece\+To\+List@{add\+Piece\+To\+List}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{add\+Piece\+To\+List}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+add\+Piece\+To\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf Piece}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a10ec830ed5f42a0d269cfd8e7357482b}
+add piece to white\+\_\+pieces or black\+\_\+pieces array list 
+\begin{DoxyParams}{Parameters}
+{\em p} & The piece we want to save. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a92c424d422829b5491cf7f70ee965c42}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!draw\+Board@{draw\+Board}}
+\index{draw\+Board@{draw\+Board}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{draw\+Board}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+draw\+Board (
+\begin{DoxyParamCaption}
+\item[{J\+Panel}]{panel, }
+\item[{Graphics2\+D}]{g2d, }
+\item[{double}]{clicked\+\_\+x\+\_\+coord, }
+\item[{double}]{clicked\+\_\+y\+\_\+coord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a92c424d422829b5491cf7f70ee965c42}
+Draw current chessboard
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel} & The J\+Panel object where we draw our chessboard \\
+\hline
+{\em g2d} & \\
+\hline
+{\em clicked\+\_\+x\+\_\+coord} & the x coordinate where we clicked \\
+\hline
+{\em clicked\+\_\+y\+\_\+coord} & the y coordinate where we clicked \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a879f102e91c76d41ef78ccabf1174046}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!draw\+Piece@{draw\+Piece}}
+\index{draw\+Piece@{draw\+Piece}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{draw\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+draw\+Piece (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{{\bf Piece}}]{p, }
+\item[{int}]{tile\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a879f102e91c76d41ef78ccabf1174046}
+Draw Piece on Chessboard 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+{\em p} & \\
+\hline
+{\em tile\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a1511b7e9055bbc9daff70f294bff92bc}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!draw\+Tile\+For\+Board@{draw\+Tile\+For\+Board}}
+\index{draw\+Tile\+For\+Board@{draw\+Tile\+For\+Board}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{draw\+Tile\+For\+Board}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+draw\+Tile\+For\+Board (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{Color}]{color, }
+\item[{int}]{tile\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a1511b7e9055bbc9daff70f294bff92bc}
+Draw tile on board. \begin{DoxyVerb} Coordinate System
+ (0, 0) -----------------------> x
+ |
+ |
+ |
+ |      canvas coordinate system.
+ |     (x, y)
+ |
+ y
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em color} & \\
+\hline
+{\em tile\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a81c34b69d1ab11b82272beb72bdb3555}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!game\+\_\+over@{game\+\_\+over}}
+\index{game\+\_\+over@{game\+\_\+over}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{game\+\_\+over}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+game\+\_\+over (
+\begin{DoxyParamCaption}
+\item[{J\+Panel}]{panel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a81c34b69d1ab11b82272beb72bdb3555}
+\hyperlink{classchess_1_1_game}{Game} Over, popup a gameover window. 
+\begin{DoxyParams}{Parameters}
+{\em panel} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a887d2d0e66876f0c00390a9b50e8fced}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!generate\+Fantasy\+Board@{generate\+Fantasy\+Board}}
+\index{generate\+Fantasy\+Board@{generate\+Fantasy\+Board}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{generate\+Fantasy\+Board}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+generate\+Fantasy\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a887d2d0e66876f0c00390a9b50e8fced}
+Generate fantasy 8 x 8 chess board \hypertarget{classchess_1_1_chess_board_aea4a5c9bbf2a5bb942548a3f692cf894}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!generate\+Standard\+Board@{generate\+Standard\+Board}}
+\index{generate\+Standard\+Board@{generate\+Standard\+Board}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{generate\+Standard\+Board}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+generate\+Standard\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_aea4a5c9bbf2a5bb942548a3f692cf894}
+Generate standard 8 x 8 chess board \hypertarget{classchess_1_1_chess_board_ac7bc7bbe8fe20fec74bde65be0a85f8b}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Black\+\_\+pieces@{get\+Black\+\_\+pieces}}
+\index{get\+Black\+\_\+pieces@{get\+Black\+\_\+pieces}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+Black\+\_\+pieces}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Piece}$>$ chess.\+Chess\+Board.\+get\+Black\+\_\+pieces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ac7bc7bbe8fe20fec74bde65be0a85f8b}
+Getter\+: return this.\+black\+\_\+pieces \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_aae882150e2ecfda4defceabadff016c3}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int chess.\+Chess\+Board.\+get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_aae882150e2ecfda4defceabadff016c3}
+Getter\+: get the height of chessboard \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_a6d3fa6814faec0a97181d11c7c7c38b2}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+King1@{get\+King1}}
+\index{get\+King1@{get\+King1}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+King1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece} chess.\+Chess\+Board.\+get\+King1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a6d3fa6814faec0a97181d11c7c7c38b2}
+Getter\+: get king1 from W\+H\+I\+T\+E player \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_a9ba6bbc41fa21cad31dfc055445c7bdf}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+King2@{get\+King2}}
+\index{get\+King2@{get\+King2}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+King2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece} chess.\+Chess\+Board.\+get\+King2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a9ba6bbc41fa21cad31dfc055445c7bdf}
+Getter\+: get king2 from B\+L\+A\+C\+K player \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_a9215cfd241796e40b3f4ad8db0fd706f}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Piece\+At\+Coordinate@{get\+Piece\+At\+Coordinate}}
+\index{get\+Piece\+At\+Coordinate@{get\+Piece\+At\+Coordinate}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+Piece\+At\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Piece} chess.\+Chess\+Board.\+get\+Piece\+At\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a9215cfd241796e40b3f4ad8db0fd706f}
+Return the piece at given coordinate if there is no piece at that coordinate, or that coordinate is invalid, return null 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_ae6fe2b06940fa56971e174e01fa22df1}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Player\+For\+This\+Turn@{get\+Player\+For\+This\+Turn}}
+\index{get\+Player\+For\+This\+Turn@{get\+Player\+For\+This\+Turn}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+Player\+For\+This\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} chess.\+Chess\+Board.\+get\+Player\+For\+This\+Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ae6fe2b06940fa56971e174e01fa22df1}
+Get the player for this turn \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_ac17fec5fcc2de5cd4084d129648c16fb}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Turns@{get\+Turns}}
+\index{get\+Turns@{get\+Turns}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+Turns}]{\setlength{\rightskip}{0pt plus 5cm}int chess.\+Chess\+Board.\+get\+Turns (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ac17fec5fcc2de5cd4084d129648c16fb}
+Getter\+: get turns \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_a10397175a3ba6a70251604502f62449d}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+White\+\_\+pieces@{get\+White\+\_\+pieces}}
+\index{get\+White\+\_\+pieces@{get\+White\+\_\+pieces}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+White\+\_\+pieces}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Piece}$>$ chess.\+Chess\+Board.\+get\+White\+\_\+pieces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a10397175a3ba6a70251604502f62449d}
+Getter\+: return this.\+white\+\_\+pieces \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_a29781b412843a9db6c65adbaed0a5c07}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{get\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int chess.\+Chess\+Board.\+get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a29781b412843a9db6c65adbaed0a5c07}
+Getter\+: get the width of chessboard \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_ae8b13d31ee134f4365bc051b6178b2b5}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!is\+Stalemate@{is\+Stalemate}}
+\index{is\+Stalemate@{is\+Stalemate}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{is\+Stalemate}]{\setlength{\rightskip}{0pt plus 5cm}boolean chess.\+Chess\+Board.\+is\+Stalemate (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ae8b13d31ee134f4365bc051b6178b2b5}
+Check whether player\textquotesingle{}s king is in stalemate.
+
+when not checked, check whether is there any legal move.
+
+if there is no legal move, return true; otherwise return false. 
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_a9afd8643586328685ca7bcbcf1cec4a4}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!is\+Suicide\+Move@{is\+Suicide\+Move}}
+\index{is\+Suicide\+Move@{is\+Suicide\+Move}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{is\+Suicide\+Move}]{\setlength{\rightskip}{0pt plus 5cm}boolean chess.\+Chess\+Board.\+is\+Suicide\+Move (
+\begin{DoxyParamCaption}
+\item[{{\bf Piece}}]{p, }
+\item[{int}]{move\+\_\+to\+\_\+x, }
+\item[{int}]{move\+\_\+to\+\_\+y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a9afd8643586328685ca7bcbcf1cec4a4}
+Check whether this is a suicide move.
+
+Suppose p moves to (move\+\_\+to\+\_\+x, move\+\_\+to\+\_\+y) coordinate, then check if the king is in check.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The piece we want to move \\
+\hline
+{\em move\+\_\+to\+\_\+x} & the x coordinate we want to move our piece to \\
+\hline
+{\em move\+\_\+to\+\_\+y} & the y coordinate we want to move our piece to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return true if this move will cause king being checked. 
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_ad0d122018033f24e0c4b3e58778730f9}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}}
+\index{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid (
+\begin{DoxyParamCaption}
+\item[{J\+Panel}]{panel, }
+\item[{Graphics2\+D}]{g2d, }
+\item[{{\bf Piece}}]{opponent\+\_\+piece, }
+\item[{int}]{tile\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ad0d122018033f24e0c4b3e58778730f9}
+\hyperlink{enumchess_1_1_player}{Player}\textquotesingle{}s piece captures opponent piece
+
+If it can be done, redraw the chessboard; otherwise do nothing 
+\begin{DoxyParams}{Parameters}
+{\em panel} & \\
+\hline
+{\em g2d} & \\
+\hline
+{\em opponent\+\_\+piece} & opponent piece \\
+\hline
+{\em tile\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_af5fb1ac8858d925db2debaa34fe6846a}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}}
+\index{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid (
+\begin{DoxyParamCaption}
+\item[{J\+Panel}]{panel, }
+\item[{Graphics2\+D}]{g2d, }
+\item[{{\bf Piece}}]{p, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{tile\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_af5fb1ac8858d925db2debaa34fe6846a}
+Move player\textquotesingle{}s piece to unoccupied tile if valid, which means the move is not a suicide move 
+\begin{DoxyParams}{Parameters}
+{\em panel} & \\
+\hline
+{\em g2d} & \\
+\hline
+{\em p} & the piece to move \\
+\hline
+{\em x} & the x coord to move to \\
+\hline
+{\em y} & the y coord to move to \\
+\hline
+{\em tile\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a1eef0b88f595b1501b2d12ab5e373e6f}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!player\+Cannot\+Move@{player\+Cannot\+Move}}
+\index{player\+Cannot\+Move@{player\+Cannot\+Move}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{player\+Cannot\+Move}]{\setlength{\rightskip}{0pt plus 5cm}boolean chess.\+Chess\+Board.\+player\+Cannot\+Move (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a1eef0b88f595b1501b2d12ab5e373e6f}
+Check whether player can move a piece If a player can not move any piece, then return true \begin{DoxyReturn}{Returns}
+true if player cannot move any piece; otherwise return false 
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_chess_board_af2f8678df1f61c42e6abb2591716451a}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!remove\+Piece@{remove\+Piece}}
+\index{remove\+Piece@{remove\+Piece}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{remove\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+remove\+Piece (
+\begin{DoxyParamCaption}
+\item[{{\bf Piece}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_af2f8678df1f61c42e6abb2591716451a}
+Remove a piece from the chessboard 
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a51bb798d92b0db194b07b9ee4911b76d}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!set\+King1@{set\+King1}}
+\index{set\+King1@{set\+King1}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{set\+King1}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+set\+King1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Piece}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a51bb798d92b0db194b07b9ee4911b76d}
+Setter\+: set king1 
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a313acef6ab77ae8b15ca03c7a9bb7f9a}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!set\+King2@{set\+King2}}
+\index{set\+King2@{set\+King2}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{set\+King2}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+set\+King2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Piece}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a313acef6ab77ae8b15ca03c7a9bb7f9a}
+Setter\+: set king2 
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_ae9d535deacab87c0de3ee10c8b8868f4}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!set\+Piece\+At\+Coordinate@{set\+Piece\+At\+Coordinate}}
+\index{set\+Piece\+At\+Coordinate@{set\+Piece\+At\+Coordinate}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{set\+Piece\+At\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+set\+Piece\+At\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{{\bf Piece}}]{p, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ae9d535deacab87c0de3ee10c8b8868f4}
+Store the piece at (x, y) coordinate 
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_a6807f49031043b17436bf3c4cb1993e6}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!set\+Turns@{set\+Turns}}
+\index{set\+Turns@{set\+Turns}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{set\+Turns}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+set\+Turns (
+\begin{DoxyParamCaption}
+\item[{int}]{turns}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a6807f49031043b17436bf3c4cb1993e6}
+Setter\+: set turns 
+\begin{DoxyParams}{Parameters}
+{\em turns} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chess_board_aa85109bb8788435e3dfedcde5a32af6f}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!show\+And\+Draw\+Possible\+Moves\+For\+Piece@{show\+And\+Draw\+Possible\+Moves\+For\+Piece}}
+\index{show\+And\+Draw\+Possible\+Moves\+For\+Piece@{show\+And\+Draw\+Possible\+Moves\+For\+Piece}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
+\subsubsection[{show\+And\+Draw\+Possible\+Moves\+For\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+show\+And\+Draw\+Possible\+Moves\+For\+Piece (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{{\bf Piece}}]{p, }
+\item[{int}]{tile\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_aa85109bb8788435e3dfedcde5a32af6f}
+Show and draw tiles that the piece can move to 
+\begin{DoxyParams}{Parameters}
+{\em p} & the piece to move \\
+\hline
+{\em g2d} & \\
+\hline
+{\em tile\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+chess/Chess\+Board.\+java\end{DoxyCompactItemize}

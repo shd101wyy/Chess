@@ -1,0 +1,232 @@
+\hypertarget{classpiece_1_1_piece}{}\section{piece.\+Piece Class Reference}
+\label{classpiece_1_1_piece}\index{piece.\+Piece@{piece.\+Piece}}
+Inheritance diagram for piece.\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classpiece_1_1_piece}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpiece_1_1_piece_a2a951c56b9c86a93fab817ddb7da4413}{Piece} (String piece\+\_\+name, \hyperlink{classchess_1_1_chess_board}{Chess\+Board} board, \hyperlink{enumchess_1_1_player}{Player} player)
+\item 
+boolean \hyperlink{classpiece_1_1_piece_a22f311f1704a5fff7041bf311a88bb80}{set\+Coordinate} (int x, int y)
+\item 
+void \hyperlink{classpiece_1_1_piece_a2b2074610fdf598443fcc3f0b1a32f13}{remove\+Self} ()
+\item 
+\hyperlink{classchess_1_1_chess_board}{Chess\+Board} \hyperlink{classpiece_1_1_piece_a1004705760b36db3185de90faaf76bbc}{get\+Chess\+Board} ()
+\item 
+void \hyperlink{classpiece_1_1_piece_a01948cad1916776f6a900c2918f395c3}{set\+Player} (\hyperlink{enumchess_1_1_player}{Player} player)
+\item 
+\hyperlink{enumchess_1_1_player}{Player} \hyperlink{classpiece_1_1_piece_ac2f9d5a3cef28997c6bfab69792a2898}{get\+Player} ()
+\item 
+int \hyperlink{classpiece_1_1_piece_a0b9fa85eb166a0290e7825daddd7d129}{get\+X\+\_\+coordinate} ()
+\item 
+int \hyperlink{classpiece_1_1_piece_a12a8ca4143a3d3937ad8071d9e29c171}{get\+Y\+\_\+coordinate} ()
+\item 
+String \hyperlink{classpiece_1_1_piece_afb5b4b2899fb574b421125c12e4adc31}{get\+Piece\+\_\+name} ()
+\item 
+void \hyperlink{classpiece_1_1_piece_a07277fb8549c95d3522223790bf8a7c5}{set\+Piece\+\_\+image\+\_\+path} (String piece\+\_\+image\+\_\+path)
+\item 
+String \hyperlink{classpiece_1_1_piece_a0e49c966ed4a5dde90300825502ae4fd}{get\+Piece\+\_\+image\+\_\+path} ()
+\item 
+boolean \hyperlink{classpiece_1_1_piece_a9e8b91312f7a03a15cc987b5f5a99989}{add\+To\+Coordinates\+If\+Valid} (Array\+List$<$ \hyperlink{classpiece_1_1_coordinate}{Coordinate} $>$ coords, int x, int y)
+\item 
+abstract Array\+List$<$ \hyperlink{classpiece_1_1_coordinate}{Coordinate} $>$ \hyperlink{classpiece_1_1_piece_a9ac176ed64bf25c3fdbf5668ba4011e4}{get\+Possible\+Move\+Coordinate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpiece_1_1_piece_a670862c335c65ea88dce5269c9ce9bfb}{}String {\bfseries piece\+\_\+name}\label{classpiece_1_1_piece_a670862c335c65ea88dce5269c9ce9bfb}
+
+\item 
+\hypertarget{classpiece_1_1_piece_aedff76d42dc52074d88776c447d75aac}{}int {\bfseries x\+\_\+coordinate}\label{classpiece_1_1_piece_aedff76d42dc52074d88776c447d75aac}
+
+\item 
+\hypertarget{classpiece_1_1_piece_a5eb75915739d2aac27293242b4b062c3}{}int {\bfseries y\+\_\+coordinate}\label{classpiece_1_1_piece_a5eb75915739d2aac27293242b4b062c3}
+
+\item 
+\hypertarget{classpiece_1_1_piece_a7aef88c8a61c1cd4a469aa15393ae1c2}{}\hyperlink{enumchess_1_1_player}{Player} {\bfseries player}\label{classpiece_1_1_piece_a7aef88c8a61c1cd4a469aa15393ae1c2}
+
+\item 
+\hypertarget{classpiece_1_1_piece_a89bee87e940fc2718964d92e842517d7}{}\hyperlink{classchess_1_1_chess_board}{Chess\+Board} {\bfseries board}\label{classpiece_1_1_piece_a89bee87e940fc2718964d92e842517d7}
+
+\item 
+\hypertarget{classpiece_1_1_piece_af66e4d5f1b6324a93d43f7778be2da36}{}String {\bfseries piece\+\_\+image\+\_\+path}\label{classpiece_1_1_piece_af66e4d5f1b6324a93d43f7778be2da36}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created by wangyiyi on 2/12/15.
+
+\hyperlink{classpiece_1_1_piece}{Piece} Class 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpiece_1_1_piece_a2a951c56b9c86a93fab817ddb7da4413}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!Piece@{Piece}}
+\index{Piece@{Piece}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{Piece}]{\setlength{\rightskip}{0pt plus 5cm}piece.\+Piece.\+Piece (
+\begin{DoxyParamCaption}
+\item[{String}]{piece\+\_\+name, }
+\item[{{\bf Chess\+Board}}]{board, }
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a2a951c56b9c86a93fab817ddb7da4413}
+Initialize a piece object 
+\begin{DoxyParams}{Parameters}
+{\em piece\+\_\+name} & set the piece name \\
+\hline
+{\em board} & the chess board where we put this piece \\
+\hline
+{\em player} & the player id \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpiece_1_1_piece_a9e8b91312f7a03a15cc987b5f5a99989}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!add\+To\+Coordinates\+If\+Valid@{add\+To\+Coordinates\+If\+Valid}}
+\index{add\+To\+Coordinates\+If\+Valid@{add\+To\+Coordinates\+If\+Valid}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{add\+To\+Coordinates\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}boolean piece.\+Piece.\+add\+To\+Coordinates\+If\+Valid (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ {\bf Coordinate} $>$}]{coords, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a9e8b91312f7a03a15cc987b5f5a99989}
+Given coordinate (x, y), check whether the piece can move there. If the piece can move to that coordinate, save (x, y) to coords. If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way =$>$ return true; otherwise return false 
+\begin{DoxyParams}{Parameters}
+{\em coords} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a1004705760b36db3185de90faaf76bbc}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Chess\+Board@{get\+Chess\+Board}}
+\index{get\+Chess\+Board@{get\+Chess\+Board}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+Chess\+Board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Chess\+Board} piece.\+Piece.\+get\+Chess\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a1004705760b36db3185de90faaf76bbc}
+Chess\+Boarder getter \begin{DoxyReturn}{Returns}
+board 
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a0e49c966ed4a5dde90300825502ae4fd}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Piece\+\_\+image\+\_\+path@{get\+Piece\+\_\+image\+\_\+path}}
+\index{get\+Piece\+\_\+image\+\_\+path@{get\+Piece\+\_\+image\+\_\+path}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+Piece\+\_\+image\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}String piece.\+Piece.\+get\+Piece\+\_\+image\+\_\+path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a0e49c966ed4a5dde90300825502ae4fd}
+Getter, return piece image path of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_afb5b4b2899fb574b421125c12e4adc31}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Piece\+\_\+name@{get\+Piece\+\_\+name}}
+\index{get\+Piece\+\_\+name@{get\+Piece\+\_\+name}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+Piece\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}String piece.\+Piece.\+get\+Piece\+\_\+name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_afb5b4b2899fb574b421125c12e4adc31}
+Getter, return the piece name of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_ac2f9d5a3cef28997c6bfab69792a2898}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Player@{get\+Player}}
+\index{get\+Player@{get\+Player}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+Player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} piece.\+Piece.\+get\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_ac2f9d5a3cef28997c6bfab69792a2898}
+Getter, return player \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a9ac176ed64bf25c3fdbf5668ba4011e4}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}}
+\index{get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+Possible\+Move\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}abstract Array\+List$<${\bf Coordinate}$>$ piece.\+Piece.\+get\+Possible\+Move\+Coordinate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}\label{classpiece_1_1_piece_a9ac176ed64bf25c3fdbf5668ba4011e4}
+Get possible move coordinates for this piece As this function is implemented in each subclass, it will return null. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a0b9fa85eb166a0290e7825daddd7d129}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+X\+\_\+coordinate@{get\+X\+\_\+coordinate}}
+\index{get\+X\+\_\+coordinate@{get\+X\+\_\+coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+X\+\_\+coordinate}]{\setlength{\rightskip}{0pt plus 5cm}int piece.\+Piece.\+get\+X\+\_\+coordinate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a0b9fa85eb166a0290e7825daddd7d129}
+Getter, return the x coordinate of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a12a8ca4143a3d3937ad8071d9e29c171}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Y\+\_\+coordinate@{get\+Y\+\_\+coordinate}}
+\index{get\+Y\+\_\+coordinate@{get\+Y\+\_\+coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{get\+Y\+\_\+coordinate}]{\setlength{\rightskip}{0pt plus 5cm}int piece.\+Piece.\+get\+Y\+\_\+coordinate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a12a8ca4143a3d3937ad8071d9e29c171}
+Getter, return the y coordinate of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a2b2074610fdf598443fcc3f0b1a32f13}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!remove\+Self@{remove\+Self}}
+\index{remove\+Self@{remove\+Self}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{remove\+Self}]{\setlength{\rightskip}{0pt plus 5cm}void piece.\+Piece.\+remove\+Self (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a2b2074610fdf598443fcc3f0b1a32f13}
+\hyperlink{classpiece_1_1_piece}{Piece} removes itself from chess board \hypertarget{classpiece_1_1_piece_a22f311f1704a5fff7041bf311a88bb80}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!set\+Coordinate@{set\+Coordinate}}
+\index{set\+Coordinate@{set\+Coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{set\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}boolean piece.\+Piece.\+set\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a22f311f1704a5fff7041bf311a88bb80}
+Set the coordinate of piece on chess board 
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate to put the piece \\
+\hline
+{\em y} & the y coordinate to put the piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if can put the piece at that coordinate, return true; otherwise return true. 
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_piece_a07277fb8549c95d3522223790bf8a7c5}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!set\+Piece\+\_\+image\+\_\+path@{set\+Piece\+\_\+image\+\_\+path}}
+\index{set\+Piece\+\_\+image\+\_\+path@{set\+Piece\+\_\+image\+\_\+path}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{set\+Piece\+\_\+image\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}void piece.\+Piece.\+set\+Piece\+\_\+image\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{String}]{piece\+\_\+image\+\_\+path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a07277fb8549c95d3522223790bf8a7c5}
+Setter, set the piece image path of this piece 
+\begin{DoxyParams}{Parameters}
+{\em piece\+\_\+image\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpiece_1_1_piece_a01948cad1916776f6a900c2918f395c3}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!set\+Player@{set\+Player}}
+\index{set\+Player@{set\+Player}!piece\+::\+Piece@{piece\+::\+Piece}}
+\subsubsection[{set\+Player}]{\setlength{\rightskip}{0pt plus 5cm}void piece.\+Piece.\+set\+Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a01948cad1916776f6a900c2918f395c3}
+Setter, set player 
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+piece/Piece.\+java\end{DoxyCompactItemize}

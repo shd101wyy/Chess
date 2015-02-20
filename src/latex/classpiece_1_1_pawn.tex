@@ -1,0 +1,99 @@
+\hypertarget{classpiece_1_1_pawn}{}\section{piece.\+Pawn Class Reference}
+\label{classpiece_1_1_pawn}\index{piece.\+Pawn@{piece.\+Pawn}}
+Inheritance diagram for piece.\+Pawn\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpiece_1_1_pawn}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpiece_1_1_pawn_a4f7b4f8e849019f15398ed007e89e942}{Pawn} (\hyperlink{classchess_1_1_chess_board}{Chess\+Board} board, \hyperlink{enumchess_1_1_player}{Player} player)
+\item 
+Array\+List$<$ \hyperlink{classpiece_1_1_coordinate}{Coordinate} $>$ \hyperlink{classpiece_1_1_pawn_aca9da51119ce8972a9897a69c3ef5033}{get\+Possible\+Move\+Coordinate} ()
+\item 
+boolean \hyperlink{classpiece_1_1_pawn_adaf68cbd144297f69817229018d54e36}{set\+Coordinate} (int x, int y)
+\item 
+boolean \hyperlink{classpiece_1_1_pawn_a266eebe5a89125e60a4eb9bb345bd16e}{set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Created by wangyiyi on 2/12/15. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpiece_1_1_pawn_a4f7b4f8e849019f15398ed007e89e942}{}\index{piece\+::\+Pawn@{piece\+::\+Pawn}!Pawn@{Pawn}}
+\index{Pawn@{Pawn}!piece\+::\+Pawn@{piece\+::\+Pawn}}
+\subsubsection[{Pawn}]{\setlength{\rightskip}{0pt plus 5cm}piece.\+Pawn.\+Pawn (
+\begin{DoxyParamCaption}
+\item[{{\bf Chess\+Board}}]{board, }
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_pawn_a4f7b4f8e849019f15398ed007e89e942}
+Constructor\+: initialize a \hyperlink{classpiece_1_1_pawn}{Pawn} Object 
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+{\em player} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpiece_1_1_pawn_aca9da51119ce8972a9897a69c3ef5033}{}\index{piece\+::\+Pawn@{piece\+::\+Pawn}!get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}}
+\index{get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}!piece\+::\+Pawn@{piece\+::\+Pawn}}
+\subsubsection[{get\+Possible\+Move\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Coordinate}$>$ piece.\+Pawn.\+get\+Possible\+Move\+Coordinate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_pawn_aca9da51119ce8972a9897a69c3ef5033}
+Assume no promotion for pawn Get all possible move coordinates for this pawn piece at current coordinate
+
+@ X @ X @\+: Possible \hyperlink{classpiece_1_1_coordinate}{Coordinate} to move to X @ X P P\+: this piece P X\+: opponent\textquotesingle{}s piece
+
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Coordinate$>$ Object 
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_pawn_adaf68cbd144297f69817229018d54e36}{}\index{piece\+::\+Pawn@{piece\+::\+Pawn}!set\+Coordinate@{set\+Coordinate}}
+\index{set\+Coordinate@{set\+Coordinate}!piece\+::\+Pawn@{piece\+::\+Pawn}}
+\subsubsection[{set\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}boolean piece.\+Pawn.\+set\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_pawn_adaf68cbd144297f69817229018d54e36}
+Set coordinate for pawn object. Change its first\+\_\+time\+\_\+move flag if necessary 
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate to put the piece \\
+\hline
+{\em y} & the y coordinate to put the piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_pawn_a266eebe5a89125e60a4eb9bb345bd16e}{}\index{piece\+::\+Pawn@{piece\+::\+Pawn}!set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag@{set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag}}
+\index{set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag@{set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag}!piece\+::\+Pawn@{piece\+::\+Pawn}}
+\subsubsection[{set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}boolean piece.\+Pawn.\+set\+Coordinate\+Without\+Changing\+First\+Time\+Move\+Flag (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_pawn_a266eebe5a89125e60a4eb9bb345bd16e}
+Set coordinate for pawn object without modifying the first\+\_\+time\+\_\+move\+\_\+flag 
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate to put the piece \\
+\hline
+{\em y} & the y coordinate to put the piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+piece/Pawn.\+java\end{DoxyCompactItemize}

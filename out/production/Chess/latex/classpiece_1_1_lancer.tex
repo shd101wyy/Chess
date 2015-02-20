@@ -1,0 +1,83 @@
+\hypertarget{classpiece_1_1_lancer}{}\section{piece.\+Lancer Class Reference}
+\label{classpiece_1_1_lancer}\index{piece.\+Lancer@{piece.\+Lancer}}
+Inheritance diagram for piece.\+Lancer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpiece_1_1_lancer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpiece_1_1_lancer_a50616ad4693ed4d3923a447ecc36d893}{Lancer} (\hyperlink{classchess_1_1_chess_board}{Chess\+Board} board, \hyperlink{enumchess_1_1_player}{Player} player)
+\item 
+void \hyperlink{classpiece_1_1_lancer_a2a1b43010845295b4e652ac1db26512f}{add\+To\+Coord\+If\+There\+Is\+Enemy} (Array\+List$<$ \hyperlink{classpiece_1_1_coordinate}{Coordinate} $>$ coords, int x, int y)
+\item 
+Array\+List$<$ \hyperlink{classpiece_1_1_coordinate}{Coordinate} $>$ \hyperlink{classpiece_1_1_lancer_ad347a5eb8ae6db14e7a112ae640d3c88}{get\+Possible\+Move\+Coordinate} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Created by wangyiyi on 2/18/15. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpiece_1_1_lancer_a50616ad4693ed4d3923a447ecc36d893}{}\index{piece\+::\+Lancer@{piece\+::\+Lancer}!Lancer@{Lancer}}
+\index{Lancer@{Lancer}!piece\+::\+Lancer@{piece\+::\+Lancer}}
+\subsubsection[{Lancer}]{\setlength{\rightskip}{0pt plus 5cm}piece.\+Lancer.\+Lancer (
+\begin{DoxyParamCaption}
+\item[{{\bf Chess\+Board}}]{board, }
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_lancer_a50616ad4693ed4d3923a447ecc36d893}
+Constructor\+: initialize an \hyperlink{classpiece_1_1_lancer}{Lancer} Object 
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+{\em player} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpiece_1_1_lancer_a2a1b43010845295b4e652ac1db26512f}{}\index{piece\+::\+Lancer@{piece\+::\+Lancer}!add\+To\+Coord\+If\+There\+Is\+Enemy@{add\+To\+Coord\+If\+There\+Is\+Enemy}}
+\index{add\+To\+Coord\+If\+There\+Is\+Enemy@{add\+To\+Coord\+If\+There\+Is\+Enemy}!piece\+::\+Lancer@{piece\+::\+Lancer}}
+\subsubsection[{add\+To\+Coord\+If\+There\+Is\+Enemy}]{\setlength{\rightskip}{0pt plus 5cm}void piece.\+Lancer.\+add\+To\+Coord\+If\+There\+Is\+Enemy (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ {\bf Coordinate} $>$}]{coords, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_lancer_a2a1b43010845295b4e652ac1db26512f}
+add (x, y) to coords if there is enemy 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classpiece_1_1_lancer_ad347a5eb8ae6db14e7a112ae640d3c88}{}\index{piece\+::\+Lancer@{piece\+::\+Lancer}!get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}}
+\index{get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}!piece\+::\+Lancer@{piece\+::\+Lancer}}
+\subsubsection[{get\+Possible\+Move\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Coordinate}$>$ piece.\+Lancer.\+get\+Possible\+Move\+Coordinate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_lancer_ad347a5eb8ae6db14e7a112ae640d3c88}
+Attack and Move coordinate\+: \begin{DoxyVerb}      #
+    # # #                  #: is enemy
+  # # p # #                 @: is possible move area
+                           P: archer
+\end{DoxyVerb}
+ if there is enemy/friend on left/top/right that block the way, then archer cannot go further
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+piece/Lancer.\+java\end{DoxyCompactItemize}
