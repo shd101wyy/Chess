@@ -49,10 +49,10 @@ public class Game extends JPanel{
         board = new ChessBoard(8, 8); // create standard 8 x 8 chess board.
 
         // initialize standard 8 x 8 chess board
-        //board.generateStandardBoard();;
+        board.generateStandardBoard();;
 
         // initialize fantasy 8 x 8 chess board
-        board.generateFantasyBoard();
+        //board.generateFantasyBoard();
 
         // Initialize JFrame
         frame = new JFrame("Chess");  // init jframe object

@@ -1,0 +1,11 @@
+To manually test the chess game.
+
+1, try to move all different types of pieces, see if their possible move coordinates are correct.
+
+2, try capture opponent’s piece, see if that works fine.
+
+3, try to make checkmate, and see if the game over dialog show up.
+
+4, try to make stalemate, and see if the game over dialog show up.
+
+5, test whether we can make a suicide move (the move that will kill our king).
