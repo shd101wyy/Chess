@@ -94,17 +94,21 @@ Initialize a piece object
 \item[{int}]{y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a9e8b91312f7a03a15cc987b5f5a99989}
-Given coordinate (x, y), check whether the piece can move there. If the piece can move to that coordinate, save (x, y) to coords. If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way =$>$ return true; otherwise return false 
+Given coordinate (x, y), check whether the piece can move there.
+
+If the piece can move to that coordinate, save (x, y) to coords.
+
+If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way =$>$ return true; otherwise return false 
 \begin{DoxyParams}{Parameters}
-{\em coords} & \\
+{\em coords} & the coordinates array list \\
 \hline
-{\em x} & \\
+{\em x} & the x coordinate to check \\
 \hline
-{\em y} & \\
+{\em y} & the y coordinate to check \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+true if the piece at that coordinate is opponent\textquotesingle{}s piece or player\textquotesingle{}s piece, thus it will block the way. 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_a1004705760b36db3185de90faaf76bbc}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Chess\+Board@{get\+Chess\+Board}}
 \index{get\+Chess\+Board@{get\+Chess\+Board}!piece\+::\+Piece@{piece\+::\+Piece}}
@@ -124,7 +128,7 @@ board
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a0e49c966ed4a5dde90300825502ae4fd}
 Getter, return piece image path of this piece \begin{DoxyReturn}{Returns}
-
+image path of this piece 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_afb5b4b2899fb574b421125c12e4adc31}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Piece\+\_\+name@{get\+Piece\+\_\+name}}
 \index{get\+Piece\+\_\+name@{get\+Piece\+\_\+name}!piece\+::\+Piece@{piece\+::\+Piece}}
@@ -134,7 +138,7 @@ Getter, return piece image path of this piece \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_afb5b4b2899fb574b421125c12e4adc31}
 Getter, return the piece name of this piece \begin{DoxyReturn}{Returns}
-
+piece name of this piece 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_ac2f9d5a3cef28997c6bfab69792a2898}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Player@{get\+Player}}
 \index{get\+Player@{get\+Player}!piece\+::\+Piece@{piece\+::\+Piece}}
@@ -144,7 +148,7 @@ Getter, return the piece name of this piece \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_ac2f9d5a3cef28997c6bfab69792a2898}
 Getter, return player \begin{DoxyReturn}{Returns}
-
+player 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_a9ac176ed64bf25c3fdbf5668ba4011e4}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}}
 \index{get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
@@ -153,8 +157,12 @@ Getter, return player \begin{DoxyReturn}{Returns}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [abstract]}}\label{classpiece_1_1_piece_a9ac176ed64bf25c3fdbf5668ba4011e4}
-Get possible move coordinates for this piece As this function is implemented in each subclass, it will return null. \begin{DoxyReturn}{Returns}
+Get possible move coordinates for this piece
 
+As this function is implemented in each subclass, it will return null.
+
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_a0b9fa85eb166a0290e7825daddd7d129}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+X\+\_\+coordinate@{get\+X\+\_\+coordinate}}
 \index{get\+X\+\_\+coordinate@{get\+X\+\_\+coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
@@ -164,7 +172,7 @@ Get possible move coordinates for this piece As this function is implemented in 
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a0b9fa85eb166a0290e7825daddd7d129}
 Getter, return the x coordinate of this piece \begin{DoxyReturn}{Returns}
-
+x coordinate of this piece 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_a12a8ca4143a3d3937ad8071d9e29c171}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!get\+Y\+\_\+coordinate@{get\+Y\+\_\+coordinate}}
 \index{get\+Y\+\_\+coordinate@{get\+Y\+\_\+coordinate}!piece\+::\+Piece@{piece\+::\+Piece}}
@@ -174,7 +182,7 @@ Getter, return the x coordinate of this piece \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_piece_a12a8ca4143a3d3937ad8071d9e29c171}
 Getter, return the y coordinate of this piece \begin{DoxyReturn}{Returns}
-
+y coordinate of this piece 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_piece_a2b2074610fdf598443fcc3f0b1a32f13}{}\index{piece\+::\+Piece@{piece\+::\+Piece}!remove\+Self@{remove\+Self}}
 \index{remove\+Self@{remove\+Self}!piece\+::\+Piece@{piece\+::\+Piece}}

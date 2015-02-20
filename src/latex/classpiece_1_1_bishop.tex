@@ -30,9 +30,9 @@ Created by wangyiyi on 2/12/15.
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_bishop_ac48ed9faad6e77272086e3d6bce54244}
 Constructor\+: initialize a \hyperlink{classpiece_1_1_bishop}{Bishop} Object 
 \begin{DoxyParams}{Parameters}
-{\em board} & \\
+{\em board} & the board we are currently using \\
 \hline
-{\em player} & \\
+{\em player} & the player that holds the piece \\
 \hline
 \end{DoxyParams}
 
@@ -45,10 +45,21 @@ Constructor\+: initialize a \hyperlink{classpiece_1_1_bishop}{Bishop} Object
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_bishop_aee0c8f13e3014881bb397a48bfce4ccf}
-Get all possible move coordinates for this bishop piece at current coordinate @ @ @ @ P\+: this piece @ @ @\+: Possible coordinates to move @ @ @ @ P @ @ @ @ @ @ @ @
+Get all possible move coordinates for this bishop piece at current coordinate \begin{DoxyVerb} @         @
+  @       @          P: this piece
+   @     @           @: Possible coordinates to move
+    @   @
+     @ @
+      P
+     @ @
+    @   @
+   @     @
+  @       @
+\end{DoxyVerb}
+
 
 \begin{DoxyReturn}{Returns}
-Array\+List$<$\+Coordinate$>$ Object 
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 
 

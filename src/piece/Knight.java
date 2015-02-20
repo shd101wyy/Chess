@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class Knight extends Piece {
     /**
      * Constructor: initialize a Knight Object
-     * @param board
-     * @param player
+     * @param board the board that we are currently using
+     * @param player the player that holds the piece
      */
     public Knight(ChessBoard board, Player player) {
         super("knight", board, player);
@@ -25,17 +25,16 @@ public class Knight extends Piece {
     /**
      *  Get all possible move coordinates for this knight piece at current coordinate
      *
-     *         @      @
-     *   @                   @       P: this piece
-     *             P                 @: Possible coordinates to move
-     *   @                   @
-     *         @       @
+     *
+     *               @      @
+     *        @                   @       P: this piece
+     *                 P                 @: Possible coordinates to move
+     *        @                   @
+     *              @       @
 
-     * @return ArrayList<Coordinate> Object
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
-        int current_x_coord = this.x_coordinate;       // get current x coord of pawn
-        int current_y_coord = this.y_coordinate;       // get current y coord of pawn
         ChessBoard board = this.getChessBoard();            // get chess board
         ArrayList<Coordinate> coords = new ArrayList<Coordinate>();          // create return ArrayList
         int x, y;

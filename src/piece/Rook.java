@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class Rook extends Piece {
     /**
      * Constructor: initialize a Rook Object
-     * @param board
-     * @param player
+     * @param board the board that we are currently using
+     * @param player the player that holds the piece
      */
     public Rook(ChessBoard board, Player player){
         super("rook", board, player);
@@ -26,15 +26,15 @@ public class Rook extends Piece {
     /**
      *Get all possible move coordinates for this rook piece at current coordinate
      *
-     *        @
-     *        @          P: this piece
-     *        @          @: Possible coordinates to move
-     *  @ @ @ P @ @ @
-     *        @
-     *        @
-     *        @
+     *            @
+     *            @          P: this piece
+     *            @          @: Possible coordinates to move
+     *      @ @ @ P @ @ @
+     *            @
+     *            @
+     *            @
      *
-     * @return ArrayList<Coordinate> Object
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
         int current_x_coord = this.x_coordinate;       // get current x coord of pawn

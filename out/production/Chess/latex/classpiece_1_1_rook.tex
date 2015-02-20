@@ -30,9 +30,9 @@ Created by wangyiyi on 2/12/15.
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_rook_a0a79f7132a0afa353f13cb3a526e8bc7}
 Constructor\+: initialize a \hyperlink{classpiece_1_1_rook}{Rook} Object 
 \begin{DoxyParams}{Parameters}
-{\em board} & \\
+{\em board} & the board that we are currently using \\
 \hline
-{\em player} & \\
+{\em player} & the player that holds the piece \\
 \hline
 \end{DoxyParams}
 
@@ -45,14 +45,18 @@ Constructor\+: initialize a \hyperlink{classpiece_1_1_rook}{Rook} Object
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_rook_ae4bd548b81c1224b1db56517315063aa}
-Get all possible move coordinates for this rook piece at current coordinate \begin{DoxyVerb}    @
-    @          P: this piece
-    @          @: Possible coordinates to move
+Get all possible move coordinates for this rook piece at current coordinate \begin{DoxyVerb}        @
+        @          P: this piece
+        @          @: Possible coordinates to move
+  @ @ @ P @ @ @
+        @
+        @
+        @
 \end{DoxyVerb}
- @ @ @ P @ @ @ @ @ @
+
 
 \begin{DoxyReturn}{Returns}
-Array\+List$<$\+Coordinate$>$ Object 
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 
 

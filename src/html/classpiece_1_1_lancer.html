@@ -196,8 +196,8 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><div class="memdoc">
 <p>Constructor: initialize an <a class="el" href="classpiece_1_1_lancer.html">Lancer</a> Object </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">board</td><td></td></tr>
-    <tr><td class="paramname">player</td><td></td></tr>
+    <tr><td class="paramname">board</td><td>the board that we are currently using </td></tr>
+    <tr><td class="paramname">player</td><td>the player that holds the piece </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,12 +244,12 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><div class="memdoc">
 <p>add (x, y) to coords if there is enemy </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">coords</td><td>the array list that contains all possible move coords </td></tr>
+    <tr><td class="paramname">x</td><td>the x coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>the y coordinate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -275,10 +275,10 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><div class="memdoc">
 <p>Attack and Move coordinate: </p><pre class="fragment">      #
     # # #                  #: is enemy
-  # # p # #                 @: is possible move area
+  # # p # #                @: is possible move area
                            P: archer
 </pre><p> if there is enemy/friend on left/top/right that block the way, then archer cannot go further</p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ArrayList&lt;Coordinate&gt; Object that contains all possible move coordinates. </dd></dl>
 
 </div>
 </div>
@@ -288,7 +288,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 20 2015 13:21:53 for Chess by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 20 2015 13:36:29 for Chess by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

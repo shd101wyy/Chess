@@ -32,9 +32,9 @@ Created by wangyiyi on 2/18/15.
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_lancer_a50616ad4693ed4d3923a447ecc36d893}
 Constructor\+: initialize an \hyperlink{classpiece_1_1_lancer}{Lancer} Object 
 \begin{DoxyParams}{Parameters}
-{\em board} & \\
+{\em board} & the board that we are currently using \\
 \hline
-{\em player} & \\
+{\em player} & the player that holds the piece \\
 \hline
 \end{DoxyParams}
 
@@ -51,14 +51,13 @@ Constructor\+: initialize an \hyperlink{classpiece_1_1_lancer}{Lancer} Object
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_lancer_a2a1b43010845295b4e652ac1db26512f}
 add (x, y) to coords if there is enemy 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em coords} & the array list that contains all possible move coords \\
 \hline
-{\em y} & \\
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
 \hypertarget{classpiece_1_1_lancer_ad347a5eb8ae6db14e7a112ae640d3c88}{}\index{piece\+::\+Lancer@{piece\+::\+Lancer}!get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}}
 \index{get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}!piece\+::\+Lancer@{piece\+::\+Lancer}}
 \subsubsection[{get\+Possible\+Move\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Coordinate}$>$ piece.\+Lancer.\+get\+Possible\+Move\+Coordinate (
@@ -68,13 +67,13 @@ add (x, y) to coords if there is enemy
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_lancer_ad347a5eb8ae6db14e7a112ae640d3c88}
 Attack and Move coordinate\+: \begin{DoxyVerb}      #
     # # #                  #: is enemy
-  # # p # #                 @: is possible move area
+  # # p # #                @: is possible move area
                            P: archer
 \end{DoxyVerb}
  if there is enemy/friend on left/top/right that block the way, then archer cannot go further
 
 \begin{DoxyReturn}{Returns}
-
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 
 

@@ -34,9 +34,9 @@ Created by wangyiyi on 2/12/15.
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_pawn_a4f7b4f8e849019f15398ed007e89e942}
 Constructor\+: initialize a \hyperlink{classpiece_1_1_pawn}{Pawn} Object 
 \begin{DoxyParams}{Parameters}
-{\em board} & \\
+{\em board} & the board that we are currently using \\
 \hline
-{\em player} & \\
+{\em player} & the player that holds the piece \\
 \hline
 \end{DoxyParams}
 
@@ -49,12 +49,16 @@ Constructor\+: initialize a \hyperlink{classpiece_1_1_pawn}{Pawn} Object
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_pawn_aca9da51119ce8972a9897a69c3ef5033}
-Assume no promotion for pawn Get all possible move coordinates for this pawn piece at current coordinate
+Assume no promotion for pawn
 
-@ X @ X @\+: Possible \hyperlink{classpiece_1_1_coordinate}{Coordinate} to move to X @ X P P\+: this piece P X\+: opponent\textquotesingle{}s piece
+Get all possible move coordinates for this pawn piece at current coordinate \begin{DoxyVerb}  @             X @ X         @: Possible Coordinate to move to
+X @ X             P           P: this piece
+  P                           X: opponent's piece
+\end{DoxyVerb}
+
 
 \begin{DoxyReturn}{Returns}
-Array\+List$<$\+Coordinate$>$ Object 
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_pawn_adaf68cbd144297f69817229018d54e36}{}\index{piece\+::\+Pawn@{piece\+::\+Pawn}!set\+Coordinate@{set\+Coordinate}}
 \index{set\+Coordinate@{set\+Coordinate}!piece\+::\+Pawn@{piece\+::\+Pawn}}

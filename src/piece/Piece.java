@@ -84,7 +84,7 @@ public abstract class Piece {
 
     /**
      * Getter, return player
-     * @return
+     * @return player
      */
     public Player getPlayer(){
         return this.player;
@@ -92,7 +92,7 @@ public abstract class Piece {
 
     /**
      * Getter, return the x coordinate of this piece
-     * @return
+     * @return x coordinate of this piece
      */
     public int getX_coordinate(){
         return this.x_coordinate;
@@ -100,7 +100,7 @@ public abstract class Piece {
 
     /**
      * Getter, return the y coordinate of this piece
-     * @return
+     * @return y coordinate of this piece
      */
     public int getY_coordinate(){
         return  this.y_coordinate;
@@ -108,7 +108,7 @@ public abstract class Piece {
 
     /**
      * Getter, return the piece name of this piece
-     * @return
+     * @return piece name of this piece
      */
     public String getPiece_name(){
         return this.piece_name;
@@ -124,7 +124,7 @@ public abstract class Piece {
 
     /**
      * Getter, return piece image path of this piece
-     * @return
+     * @return image path of this piece
      */
     public String getPiece_image_path(){
         return this.piece_image_path;
@@ -132,12 +132,14 @@ public abstract class Piece {
 
     /**
      * Given coordinate (x, y), check whether the piece can move there.
+     *
      * If the piece can move to that coordinate, save (x, y) to coords.
+     *
      * If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way => return true; otherwise return false
-     * @param coords
-     * @param x
-     * @param y
-     * @return
+     * @param coords  the coordinates array list
+     * @param x       the x coordinate to check
+     * @param y       the y coordinate to check
+     * @return true if the piece at that coordinate is opponent's piece or player's piece, thus it will block the way.
      */
     public boolean addToCoordinatesIfValid(ArrayList<Coordinate> coords, int x, int y){
         if (x < 0 || y < 0 || x >= this.board.getWidth() || y >= this.board.getHeight()) // invalid coordinate
@@ -155,8 +157,10 @@ public abstract class Piece {
     }
     /**
      * Get possible move coordinates for this piece
+     *
      * As this function is implemented in each subclass, it will return null.
-     * @return
+     *
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public abstract ArrayList<Coordinate> getPossibleMoveCoordinate();
 }

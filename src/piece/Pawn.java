@@ -13,8 +13,8 @@ public class Pawn extends Piece {
 
     /**
      * Constructor: initialize a Pawn Object
-     * @param board
-     * @param player
+     * @param board the board that we are currently using
+     * @param player the player that holds the piece
      */
     public Pawn(ChessBoard board, Player player) {
         super("pawn", board, player);
@@ -28,13 +28,14 @@ public class Pawn extends Piece {
 
     /**
      * Assume no promotion for pawn
+     *
      * Get all possible move coordinates for this pawn piece at current coordinate
      *
-     *   @             X @ X         @: Possible Coordinate to move to
-     * X @ X             P           P: this piece
-     *   P                           X: opponent's piece
+     *       @             X @ X         @: Possible Coordinate to move to
+     *     X @ X             P           P: this piece
+     *       P                           X: opponent's piece
      *
-     * @return ArrayList<Coordinate> Object
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
         int current_x_coord = this.x_coordinate;       // get current x coord of pawn

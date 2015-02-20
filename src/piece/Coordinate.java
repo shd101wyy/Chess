@@ -25,8 +25,8 @@ public class Coordinate {
 
     /**
      * Constructor: set x and y
-     * @param x
-     * @param y
+     * @param x the x coordinate
+     * @param y the y coordinate
      */
     public Coordinate(int x, int y){
         this.x = x;
@@ -35,7 +35,7 @@ public class Coordinate {
 
     /**
      * Getter, return x
-     * @return
+     * @return the x coordinate
      */
     public int getX(){
         return this.x;
@@ -43,7 +43,7 @@ public class Coordinate {
 
     /**
      * Setter, set x
-     * @param x
+     * @param x set value
      */
     public void setX(int x){
         this.x = x;
@@ -51,7 +51,7 @@ public class Coordinate {
 
     /**
      * Getter, return Y
-     * @return
+     * @return the y coordinate
      */
     public int getY(){
         return this.y;
@@ -59,7 +59,7 @@ public class Coordinate {
 
     /**
      * Setter, set Y
-     * @param y
+     * @param y set value
      */
     public void setY(int y){
         this.y = y;

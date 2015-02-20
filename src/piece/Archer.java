@@ -13,8 +13,8 @@ public class Archer extends Piece{
 
     /**
      * Constructor: initialize an Archor Object
-     * @param board
-     * @param player
+     * @param board  the board we are currently using
+     * @param player the player holds this piece
      */
     public Archer(ChessBoard board, Player player){
         super("archer", board, player);
@@ -29,9 +29,8 @@ public class Archer extends Piece{
 
     /**
      * add (x, y) to coords if there is enemy
-     * @param x
-     * @param y
-     * @return
+     * @param x  the x coordinate
+     * @param y  the y coordinate
      */
     public void addToCoordIfThereIsEnemy(ArrayList<Coordinate> coords, int x, int y){
         if (x < 0 || x >= this.board.getWidth() || y < 0 || y >= this.board.getHeight()) // invalid coordinate
@@ -45,12 +44,14 @@ public class Archer extends Piece{
     }
     /**
      * Attack and Move coordinate:
+     *
      *         # # #                #: is enemy
      *       #   @   #              @: is possible move area
      *       # @ P @ #              P: archer
      *       #   @   #
      *         # # #
-     * @return
+     *
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate(){
         int current_x_coord = this.x_coordinate;       // get current x coord of pawn

@@ -250,15 +250,17 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Given coordinate (x, y), check whether the piece can move there. If the piece can move to that coordinate, save (x, y) to coords. If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way =&gt; return true; otherwise return false </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Given coordinate (x, y), check whether the piece can move there.</p>
+<p>If the piece can move to that coordinate, save (x, y) to coords.</p>
+<p>If the piece cannot move anywhere further after reach that coordinate, like there is an another piece there, which blocks the way =&gt; return true; otherwise return false </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coords</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">coords</td><td>the coordinates array list </td></tr>
+    <tr><td class="paramname">x</td><td>the x coordinate to check </td></tr>
+    <tr><td class="paramname">y</td><td>the y coordinate to check </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the piece at that coordinate is opponent's piece or player's piece, thus it will block the way. </dd></dl>
 
 </div>
 </div>
@@ -306,7 +308,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Getter, return piece image path of this piece </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Getter, return piece image path of this piece </p><dl class="section return"><dt>Returns</dt><dd>image path of this piece </dd></dl>
 
 </div>
 </div>
@@ -330,7 +332,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Getter, return the piece name of this piece </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Getter, return the piece name of this piece </p><dl class="section return"><dt>Returns</dt><dd>piece name of this piece </dd></dl>
 
 </div>
 </div>
@@ -354,7 +356,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Getter, return player </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Getter, return player </p><dl class="section return"><dt>Returns</dt><dd>player </dd></dl>
 
 </div>
 </div>
@@ -378,7 +380,9 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get possible move coordinates for this piece As this function is implemented in each subclass, it will return null. </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Get possible move coordinates for this piece</p>
+<p>As this function is implemented in each subclass, it will return null.</p>
+<dl class="section return"><dt>Returns</dt><dd>ArrayList&lt;Coordinate&gt; Object that contains all possible move coordinates. </dd></dl>
 
 </div>
 </div>
@@ -402,7 +406,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Getter, return the x coordinate of this piece </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Getter, return the x coordinate of this piece </p><dl class="section return"><dt>Returns</dt><dd>x coordinate of this piece </dd></dl>
 
 </div>
 </div>
@@ -426,7 +430,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Getter, return the y coordinate of this piece </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Getter, return the y coordinate of this piece </p><dl class="section return"><dt>Returns</dt><dd>y coordinate of this piece </dd></dl>
 
 </div>
 </div>
@@ -562,7 +566,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 20 2015 13:11:17 for Chess by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 20 2015 13:36:29 for Chess by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

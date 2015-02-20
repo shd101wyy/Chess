@@ -32,9 +32,9 @@ Created by wangyiyi on 2/12/15.
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_king_a8d0f35dc55155899732ded91c9e515a1}
 Constructor\+: Initialize a \hyperlink{classpiece_1_1_king}{King} Object 
 \begin{DoxyParams}{Parameters}
-{\em board} & \\
+{\em board} & the board we are currently using \\
 \hline
-{\em player} & \\
+{\em player} & the player that holds the piece \\
 \hline
 \end{DoxyParams}
 
@@ -56,7 +56,7 @@ Get all possible move coordinates for this king piece at current coordinate \beg
 
 
 \begin{DoxyReturn}{Returns}
-Array\+List$<$\+Coordinate$>$ Object 
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 \hypertarget{classpiece_1_1_king_a1f07ebf057c6ae0c607c83b58f2e12c6}{}\index{piece\+::\+King@{piece\+::\+King}!is\+In\+Check@{is\+In\+Check}}
 \index{is\+In\+Check@{is\+In\+Check}!piece\+::\+King@{piece\+::\+King}}
@@ -66,7 +66,7 @@ Array\+List$<$\+Coordinate$>$ Object
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_king_a1f07ebf057c6ae0c607c83b58f2e12c6}
 Check whether the king is in check \begin{DoxyReturn}{Returns}
-
+true if the king is in check; otherwise return false 
 \end{DoxyReturn}
 
 

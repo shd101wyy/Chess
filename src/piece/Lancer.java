@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class Lancer extends Piece{
     /**
      * Constructor: initialize an Lancer Object
-     * @param board
-     * @param player
+     * @param board the board that we are currently using
+     * @param player the player that holds the piece
      */
     public Lancer(ChessBoard board, Player player){
         super("lancer", board, player);
@@ -27,9 +27,9 @@ public class Lancer extends Piece{
 
     /**
      * add (x, y) to coords if there is enemy
-     * @param x
-     * @param y
-     * @return
+     * @param coords the array list that contains all possible move coords
+     * @param x the x coordinate
+     * @param y the y coordinate
      */
     public void addToCoordIfThereIsEnemy(ArrayList<Coordinate> coords, int x, int y){
         if (x < 0 || x >= this.board.getWidth() || y < 0 || y >= this.board.getHeight()) // invalid coordinate
@@ -46,11 +46,11 @@ public class Lancer extends Piece{
      *
      *           #
      *         # # #                  #: is enemy
-     *       # # p # #                 @: is possible move area
+     *       # # p # #                @: is possible move area
      *                                P: archer
      *  if there is enemy/friend on left/top/right that block the way, then archer cannot go further
      *
-     * @return
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate(){
         int current_x_coord = this.x_coordinate;       // get current x coord of pawn

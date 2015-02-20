@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class King extends Piece {
     /**
      * Constructor: Initialize a King Object
-     * @param board
-     * @param player
+     * @param board the board we are currently using
+     * @param player the player that holds the piece
      */
     public King(ChessBoard board, Player player){
         super("king", board, player);
@@ -44,7 +44,7 @@ public class King extends Piece {
      *     @ P @
      *     @ @ @
      *
-     * @return ArrayList<Coordinate> Object
+     * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
      */
     public ArrayList<Coordinate> getPossibleMoveCoordinate() {
         int current_x_coord = this.x_coordinate;       // get current x coord of pawn
@@ -87,7 +87,7 @@ public class King extends Piece {
 
     /**
      * Check whether the king is in check
-     * @return
+     * @return true if the king is in check; otherwise return false
      */
     public boolean isInCheck(){
         ChessBoard board = this.board;   // get current chess board

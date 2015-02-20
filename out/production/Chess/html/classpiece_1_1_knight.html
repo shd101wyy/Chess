@@ -194,8 +194,8 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><div class="memdoc">
 <p>Constructor: initialize a <a class="el" href="classpiece_1_1_knight.html">Knight</a> Object </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">board</td><td></td></tr>
-    <tr><td class="paramname">player</td><td></td></tr>
+    <tr><td class="paramname">board</td><td>the board that we are currently using </td></tr>
+    <tr><td class="paramname">player</td><td>the player that holds the piece </td></tr>
   </table>
   </dd>
 </dl>
@@ -223,9 +223,13 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get all possible move coordinates for this knight piece at current coordinate </p><pre class="fragment">   @      @
-</pre><p> @ @ P: this piece P @: Possible coordinates to move @ @ @ @</p>
-<dl class="section return"><dt>Returns</dt><dd>ArrayList&lt;Coordinate&gt; Object </dd></dl>
+<p>Get all possible move coordinates for this knight piece at current coordinate</p>
+<pre class="fragment">          @      @
+   @                   @       P: this piece
+            P                 @: Possible coordinates to move
+   @                   @
+         @       @
+</pre><dl class="section return"><dt>Returns</dt><dd>ArrayList&lt;Coordinate&gt; Object that contains all possible move coordinates. </dd></dl>
 
 </div>
 </div>
@@ -235,7 +239,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>piece_image_path</b
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 20 2015 13:11:17 for Chess by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 20 2015 13:36:29 for Chess by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

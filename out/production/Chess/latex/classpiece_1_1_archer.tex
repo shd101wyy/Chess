@@ -32,9 +32,9 @@ Created by wangyiyi on 2/18/15.
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_archer_a0a99d10d9c827a180e8743ec10489344}
 Constructor\+: initialize an Archor Object 
 \begin{DoxyParams}{Parameters}
-{\em board} & \\
+{\em board} & the board we are currently using \\
 \hline
-{\em player} & \\
+{\em player} & the player holds this piece \\
 \hline
 \end{DoxyParams}
 
@@ -51,14 +51,11 @@ Constructor\+: initialize an Archor Object
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_archer_ae536059b2403dfe1ca315b8166d90c45}
 add (x, y) to coords if there is enemy 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em x} & the x coordinate \\
 \hline
-{\em y} & \\
+{\em y} & the y coordinate \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
 \hypertarget{classpiece_1_1_archer_afaddadc53c41508da32f6c14e5e57317}{}\index{piece\+::\+Archer@{piece\+::\+Archer}!get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}}
 \index{get\+Possible\+Move\+Coordinate@{get\+Possible\+Move\+Coordinate}!piece\+::\+Archer@{piece\+::\+Archer}}
 \subsubsection[{get\+Possible\+Move\+Coordinate}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Coordinate}$>$ piece.\+Archer.\+get\+Possible\+Move\+Coordinate (
@@ -66,16 +63,16 @@ add (x, y) to coords if there is enemy
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_1_1_archer_afaddadc53c41508da32f6c14e5e57317}
-Attack and Move coordinate\+: \subsection*{\# \# \#\+: is enemy}
+Attack and Move coordinate\+: \begin{DoxyVerb}    # # #                #: is enemy
+  #   @   #              @: is possible move area
+  # @ P @ #              P: archer
+  #   @   #
+    # # #
+\end{DoxyVerb}
 
-\subsection*{@ \# @\+: is possible move area}
-
-\subsection*{@ P @ \# P\+: archer}
-
-\subsection*{$<$/h1$>$ }
 
 \begin{DoxyReturn}{Returns}
-
+Array\+List$<$\+Coordinate$>$ Object that contains all possible move coordinates. 
 \end{DoxyReturn}
 
 
