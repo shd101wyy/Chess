@@ -49,9 +49,9 @@ void \hyperlink{classchess_1_1_chess_board_a81c34b69d1ab11b82272beb72bdb3555}{ga
 \item 
 void \hyperlink{classchess_1_1_chess_board_aa85109bb8788435e3dfedcde5a32af6f}{show\+And\+Draw\+Possible\+Moves\+For\+Piece} (Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} p, int tile\+\_\+size)
 \item 
-void \hyperlink{classchess_1_1_chess_board_ad0d122018033f24e0c4b3e58778730f9}{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid} (J\+Panel panel, Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} opponent\+\_\+piece, int tile\+\_\+size)
+void \hyperlink{classchess_1_1_chess_board_a583d2c3e9a1397a9cc1c0cef3552c8e2}{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid} (J\+Panel panel, \hyperlink{classpiece_1_1_piece}{Piece} opponent\+\_\+piece)
 \item 
-void \hyperlink{classchess_1_1_chess_board_af5fb1ac8858d925db2debaa34fe6846a}{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid} (J\+Panel panel, Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} p, int x, int y, int tile\+\_\+size)
+void \hyperlink{classchess_1_1_chess_board_a971ca79078046512f84732e92afa59ab}{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid} (J\+Panel panel, int x, int y)
 \item 
 void \hyperlink{classchess_1_1_chess_board_a92c424d422829b5491cf7f70ee965c42}{draw\+Board} (J\+Panel panel, Graphics2\+D g2d, double clicked\+\_\+x\+\_\+coord, double clicked\+\_\+y\+\_\+coord)
 \item 
@@ -142,9 +142,9 @@ Draw Piece on Chessboard
 \begin{DoxyParams}{Parameters}
 {\em g2d} & \\
 \hline
-{\em p} & \\
+{\em p} & the piece we want to draw \\
 \hline
-{\em tile\+\_\+size} & \\
+{\em tile\+\_\+size} & the size of piece(img) \\
 \hline
 \end{DoxyParams}
 \hypertarget{classchess_1_1_chess_board_a1511b7e9055bbc9daff70f294bff92bc}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!draw\+Tile\+For\+Board@{draw\+Tile\+For\+Board}}
@@ -174,13 +174,13 @@ Draw tile on board. \begin{DoxyVerb} Coordinate System
 \begin{DoxyParams}{Parameters}
 {\em g2d} & \\
 \hline
-{\em x} & \\
+{\em x} & the x coordinate \\
 \hline
-{\em y} & \\
+{\em y} & the y coordinate \\
 \hline
-{\em color} & \\
+{\em color} & the color to draw \\
 \hline
-{\em tile\+\_\+size} & \\
+{\em tile\+\_\+size} & the size of tile \\
 \hline
 \end{DoxyParams}
 \hypertarget{classchess_1_1_chess_board_a81c34b69d1ab11b82272beb72bdb3555}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!game\+\_\+over@{game\+\_\+over}}
@@ -217,7 +217,7 @@ Generate standard 8 x 8 chess board \hypertarget{classchess_1_1_chess_board_ac7b
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ac7bc7bbe8fe20fec74bde65be0a85f8b}
 Getter\+: return this.\+black\+\_\+pieces \begin{DoxyReturn}{Returns}
-
+black\+\_\+piece array list that contains all black pieces 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_aae882150e2ecfda4defceabadff016c3}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Height@{get\+Height}}
 \index{get\+Height@{get\+Height}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -227,7 +227,7 @@ Getter\+: return this.\+black\+\_\+pieces \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_aae882150e2ecfda4defceabadff016c3}
 Getter\+: get the height of chessboard \begin{DoxyReturn}{Returns}
-
+the height of chessboard 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_a6d3fa6814faec0a97181d11c7c7c38b2}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+King1@{get\+King1}}
 \index{get\+King1@{get\+King1}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -237,7 +237,7 @@ Getter\+: get the height of chessboard \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a6d3fa6814faec0a97181d11c7c7c38b2}
 Getter\+: get king1 from W\+H\+I\+T\+E player \begin{DoxyReturn}{Returns}
-
+king piece from W\+H\+I\+T\+E player 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_a9ba6bbc41fa21cad31dfc055445c7bdf}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+King2@{get\+King2}}
 \index{get\+King2@{get\+King2}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -247,7 +247,7 @@ Getter\+: get king1 from W\+H\+I\+T\+E player \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a9ba6bbc41fa21cad31dfc055445c7bdf}
 Getter\+: get king2 from B\+L\+A\+C\+K player \begin{DoxyReturn}{Returns}
-
+king piece from B\+L\+A\+C\+K player 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_a9215cfd241796e40b3f4ad8db0fd706f}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Piece\+At\+Coordinate@{get\+Piece\+At\+Coordinate}}
 \index{get\+Piece\+At\+Coordinate@{get\+Piece\+At\+Coordinate}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -259,13 +259,13 @@ Getter\+: get king2 from B\+L\+A\+C\+K player \begin{DoxyReturn}{Returns}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a9215cfd241796e40b3f4ad8db0fd706f}
 Return the piece at given coordinate if there is no piece at that coordinate, or that coordinate is invalid, return null 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em x} & the x coordinate \\
 \hline
-{\em y} & \\
+{\em y} & the y coordinate \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+the piece at that (x, y) coordinate. If coordinate not valid, return null. 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_ae6fe2b06940fa56971e174e01fa22df1}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Player\+For\+This\+Turn@{get\+Player\+For\+This\+Turn}}
 \index{get\+Player\+For\+This\+Turn@{get\+Player\+For\+This\+Turn}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -275,7 +275,7 @@ Return the piece at given coordinate if there is no piece at that coordinate, or
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ae6fe2b06940fa56971e174e01fa22df1}
 Get the player for this turn \begin{DoxyReturn}{Returns}
-
+the player for this turn 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_ac17fec5fcc2de5cd4084d129648c16fb}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Turns@{get\+Turns}}
 \index{get\+Turns@{get\+Turns}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -285,7 +285,7 @@ Get the player for this turn \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ac17fec5fcc2de5cd4084d129648c16fb}
 Getter\+: get turns \begin{DoxyReturn}{Returns}
-
+turns of the game 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_a10397175a3ba6a70251604502f62449d}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+White\+\_\+pieces@{get\+White\+\_\+pieces}}
 \index{get\+White\+\_\+pieces@{get\+White\+\_\+pieces}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -295,7 +295,7 @@ Getter\+: get turns \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a10397175a3ba6a70251604502f62449d}
 Getter\+: return this.\+white\+\_\+pieces \begin{DoxyReturn}{Returns}
-
+white\+\_\+piece array list that contains all white pieces 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_a29781b412843a9db6c65adbaed0a5c07}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!get\+Width@{get\+Width}}
 \index{get\+Width@{get\+Width}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -305,7 +305,7 @@ Getter\+: return this.\+white\+\_\+pieces \begin{DoxyReturn}{Returns}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a29781b412843a9db6c65adbaed0a5c07}
 Getter\+: get the width of chessboard \begin{DoxyReturn}{Returns}
-
+the width of chessboard 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_ae8b13d31ee134f4365bc051b6178b2b5}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!is\+Stalemate@{is\+Stalemate}}
 \index{is\+Stalemate@{is\+Stalemate}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -324,7 +324,7 @@ if there is no legal move, return true; otherwise return false.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+true if there is stalemate; otherwise return false. 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_a9afd8643586328685ca7bcbcf1cec4a4}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!is\+Suicide\+Move@{is\+Suicide\+Move}}
 \index{is\+Suicide\+Move@{is\+Suicide\+Move}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -351,54 +351,39 @@ Suppose p moves to (move\+\_\+to\+\_\+x, move\+\_\+to\+\_\+y) coordinate, then c
 \begin{DoxyReturn}{Returns}
 return true if this move will cause king being checked. 
 \end{DoxyReturn}
-\hypertarget{classchess_1_1_chess_board_ad0d122018033f24e0c4b3e58778730f9}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}}
+\hypertarget{classchess_1_1_chess_board_a583d2c3e9a1397a9cc1c0cef3552c8e2}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}}
 \index{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
 \subsubsection[{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid (
 \begin{DoxyParamCaption}
 \item[{J\+Panel}]{panel, }
-\item[{Graphics2\+D}]{g2d, }
-\item[{{\bf Piece}}]{opponent\+\_\+piece, }
-\item[{int}]{tile\+\_\+size}
+\item[{{\bf Piece}}]{opponent\+\_\+piece}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ad0d122018033f24e0c4b3e58778730f9}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a583d2c3e9a1397a9cc1c0cef3552c8e2}
 \hyperlink{enumchess_1_1_player}{Player}\textquotesingle{}s piece captures opponent piece
 
 If it can be done, redraw the chessboard; otherwise do nothing 
 \begin{DoxyParams}{Parameters}
 {\em panel} & \\
 \hline
-{\em g2d} & \\
-\hline
 {\em opponent\+\_\+piece} & opponent piece \\
 \hline
-{\em tile\+\_\+size} & \\
-\hline
 \end{DoxyParams}
-\hypertarget{classchess_1_1_chess_board_af5fb1ac8858d925db2debaa34fe6846a}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}}
+\hypertarget{classchess_1_1_chess_board_a971ca79078046512f84732e92afa59ab}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}}
 \index{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
 \subsubsection[{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chess\+Board.\+move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid (
 \begin{DoxyParamCaption}
 \item[{J\+Panel}]{panel, }
-\item[{Graphics2\+D}]{g2d, }
-\item[{{\bf Piece}}]{p, }
 \item[{int}]{x, }
-\item[{int}]{y, }
-\item[{int}]{tile\+\_\+size}
+\item[{int}]{y}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_af5fb1ac8858d925db2debaa34fe6846a}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a971ca79078046512f84732e92afa59ab}
 Move player\textquotesingle{}s piece to unoccupied tile if valid, which means the move is not a suicide move 
 \begin{DoxyParams}{Parameters}
 {\em panel} & \\
 \hline
-{\em g2d} & \\
-\hline
-{\em p} & the piece to move \\
-\hline
 {\em x} & the x coord to move to \\
 \hline
 {\em y} & the y coord to move to \\
-\hline
-{\em tile\+\_\+size} & \\
 \hline
 \end{DoxyParams}
 \hypertarget{classchess_1_1_chess_board_a1eef0b88f595b1501b2d12ab5e373e6f}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!player\+Cannot\+Move@{player\+Cannot\+Move}}
@@ -408,8 +393,12 @@ Move player\textquotesingle{}s piece to unoccupied tile if valid, which means th
 \item[{{\bf Player}}]{player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_a1eef0b88f595b1501b2d12ab5e373e6f}
-Check whether player can move a piece If a player can not move any piece, then return true \begin{DoxyReturn}{Returns}
-true if player cannot move any piece; otherwise return false 
+Check whether player can move a piece
+
+If a player can not move any piece, then return true
+
+\begin{DoxyReturn}{Returns}
+return true if player cannot move any piece; otherwise return false 
 \end{DoxyReturn}
 \hypertarget{classchess_1_1_chess_board_af2f8678df1f61c42e6abb2591716451a}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!remove\+Piece@{remove\+Piece}}
 \index{remove\+Piece@{remove\+Piece}!chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}}
@@ -420,7 +409,7 @@ true if player cannot move any piece; otherwise return false
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_af2f8678df1f61c42e6abb2591716451a}
 Remove a piece from the chessboard 
 \begin{DoxyParams}{Parameters}
-{\em p} & \\
+{\em p} & the piece we want to remove from chessboard \\
 \hline
 \end{DoxyParams}
 \hypertarget{classchess_1_1_chess_board_a51bb798d92b0db194b07b9ee4911b76d}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!set\+King1@{set\+King1}}
@@ -458,11 +447,11 @@ Setter\+: set king2
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chess_board_ae9d535deacab87c0de3ee10c8b8868f4}
 Store the piece at (x, y) coordinate 
 \begin{DoxyParams}{Parameters}
-{\em p} & \\
+{\em p} & the piece we want to set \\
 \hline
-{\em x} & \\
+{\em x} & the x coordinate \\
 \hline
-{\em y} & \\
+{\em y} & the y coordinate \\
 \hline
 \end{DoxyParams}
 \hypertarget{classchess_1_1_chess_board_a6807f49031043b17436bf3c4cb1993e6}{}\index{chess\+::\+Chess\+Board@{chess\+::\+Chess\+Board}!set\+Turns@{set\+Turns}}
@@ -492,7 +481,7 @@ Show and draw tiles that the piece can move to
 \hline
 {\em g2d} & \\
 \hline
-{\em tile\+\_\+size} & \\
+{\em tile\+\_\+size} & the size of tile/img to draw \\
 \hline
 \end{DoxyParams}
 

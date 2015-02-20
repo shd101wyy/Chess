@@ -79,7 +79,7 @@ public class ChessBoard {
 
     /**
      * Getter: return this.white_pieces
-     * @return
+     * @return white_piece array list that contains all white pieces
      */
     public ArrayList<Piece> getWhite_pieces(){
         return this.white_pieces;
@@ -87,7 +87,7 @@ public class ChessBoard {
 
     /**
      * Getter: return this.black_pieces
-     * @return
+     * @return black_piece array list that contains all black pieces
      */
     public ArrayList<Piece> getBlack_pieces(){
         return this.black_pieces;
@@ -96,7 +96,7 @@ public class ChessBoard {
 
     /**
      * Getter: get king1 from WHITE player
-     * @return
+     * @return king piece from WHITE player
      */
     public Piece getKing1(){
         return this.king1;
@@ -112,7 +112,7 @@ public class ChessBoard {
 
     /**
      * Getter: get king2 from BLACK player
-     * @return
+     * @return king piece from BLACK player
      */
     public Piece getKing2(){
         return this.king2;
@@ -136,7 +136,7 @@ public class ChessBoard {
 
     /**
      * Getter: get turns
-     * @return
+     * @return turns of the game
      */
     public int getTurns(){
         return this.turns;
@@ -145,9 +145,9 @@ public class ChessBoard {
      *
      * Return the piece at given coordinate
      * if there is no piece at that coordinate, or that coordinate is invalid, return null
-     * @param x
-     * @param y
-     * @return
+     * @param x  the x coordinate
+     * @param y  the y coordinate
+     * @return   the piece at that (x, y) coordinate. If coordinate not valid, return null.
      */
     public Piece getPieceAtCoordinate(int x, int y){
         if(x >= this.width || x < 0 || y >= this.height || y < 0) // outside the boundary
@@ -157,9 +157,9 @@ public class ChessBoard {
 
     /**
      * Store the piece at (x, y) coordinate
-     * @param p
-     * @param x
-     * @param y
+     * @param p  the piece we want to set
+     * @param x  the x coordinate
+     * @param y  the y coordinate
      */
     public void setPieceAtCoordinate(Piece p, int x, int y){
         this.tiles[y][x] = p;
@@ -167,7 +167,7 @@ public class ChessBoard {
 
     /**
      * Getter: get the width of chessboard
-     * @return
+     * @return the width of chessboard
      */
     public int getWidth(){
         return this.width;
@@ -175,7 +175,7 @@ public class ChessBoard {
 
     /**
      * Getter: get the height of chessboard
-     * @return
+     * @return the height of chessboard
      */
     public int getHeight(){
         return this.height;
@@ -183,7 +183,7 @@ public class ChessBoard {
 
     /**
      * Get the player for this turn
-     * @return
+     * @return the player for this turn
      */
     public Player getPlayerForThisTurn(){
         if (this.turns % 2 == 0){
@@ -194,7 +194,7 @@ public class ChessBoard {
 
     /**
      * Remove a piece from the chessboard
-     * @param p
+     * @param p the piece we want to remove from chessboard
      */
     public void removePiece(Piece p){
         int x = p.getX_coordinate();
@@ -216,21 +216,21 @@ public class ChessBoard {
      *      y
      *
      * @param g2d
-     * @param x
-     * @param y
-     * @param color
-     * @param tile_size
+     * @param x      the x coordinate
+     * @param y      the y coordinate
+     * @param color  the color to draw
+     * @param tile_size  the size of tile
      */
     public void drawTileForBoard(Graphics2D g2d, int x, int y, Color color, int tile_size){
         g2d.setColor(color);       // set color
-        g2d.fillRect(x, y, tile_size, tile_size); // draw square
+        g2d.fillRect(x, y, tile_size, tile_size); // draw tile
     }
 
     /**
      * Draw Piece on Chessboard
      * @param g2d
-     * @param p
-     * @param tile_size
+     * @param p           the piece we want to draw
+     * @param tile_size   the size of piece(img)
      */
     public void drawPiece(Graphics2D g2d, Piece p, int tile_size){
         int piece_x_coord = p.getX_coordinate();                // get piece x coordinate (left-bottom coordinate system)
@@ -306,8 +306,10 @@ public class ChessBoard {
     /**
      *
      * Check whether player can move a piece
+     *
      * If a player can not move any piece, then return true
-     * @return true if player cannot move any piece; otherwise return false
+     *
+     * @return return true if player cannot move any piece; otherwise return false
      */
     public boolean playerCannotMove(Player player){
         int i, j;
@@ -334,7 +336,7 @@ public class ChessBoard {
      *
      * if there is no legal move, return true; otherwise return false.
      * @param player
-     * @return
+     * @return true if there is stalemate; otherwise return false.
      */
     public boolean isStalemate(Player player){
         King king = player == Player.WHITE ? (King)this.king1 : (King)this.king2;
@@ -364,7 +366,7 @@ public class ChessBoard {
      * Show and draw tiles that the piece can move to
      * @param p      the piece to move
      * @param g2d
-     * @param tile_size
+     * @param tile_size  the size of tile/img to draw
      */
     public void showAndDrawPossibleMovesForPiece(Graphics2D g2d, Piece p, int tile_size){
         ArrayList<Coordinate> coords = p.getPossibleMoveCoordinate(); // get all possible move coordinates for this choesn piece
