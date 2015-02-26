@@ -36,9 +36,8 @@ public class ChessBoardTest {
         rook1.setCoordinate(4, 2);
         rook2.setCoordinate(4, 5);
 
-        assertEquals(true, board.isSuicideMove(rook1, 3, 2));  // case 1
-        assertEquals(false, board.isSuicideMove(rook1, 4, 3)); // case 2
-
+        assertEquals(true, rook1.isSuicideMove(3, 2));  // case 1
+        assertEquals(false, rook1.isSuicideMove(4, 3)); // case 2
     }
 
     /*

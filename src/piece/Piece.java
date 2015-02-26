@@ -155,6 +155,62 @@ public abstract class Piece {
         else  // meet player's own piece
             return true;
     }
+
+    /**
+     *
+     * Check whether this is a suicide move.
+     *
+     * Suppose piece moves to (move_to_x, move_to_y) coordinate, then check if the king is in check.
+     *
+     * @param move_to_x:   the x coordinate we want to move our piece to
+     * @param move_to_y:   the y coordinate we want to move our piece to
+     * @return return true if this move will cause king being checked.
+     */
+    public boolean isSuicideMove(int move_to_x, int move_to_y){
+        Player current_player = this.player;
+        int current_x_coord = this.x_coordinate ;
+        int current_y_coord = this.y_coordinate;
+        boolean is_suicide = false;
+
+        Piece king = (current_player == Player.WHITE ? this.board.getKing1() : this.board.getKing2());  // get king
+
+        Piece remove_piece = this.board.getPieceAtCoordinate(move_to_x, move_to_y); // get piece that need to be removed
+
+        ArrayList<Piece> opponent_pieces = (current_player == Player.WHITE ? this.board.getBlack_pieces() : this.board.getWhite_pieces()); // get opponent's pieces
+
+        if(remove_piece != null) {
+            remove_piece.removeSelf();  // remove self temporarily
+        }
+        if(this.piece_name.equals("pawn"))  // if it is pawn, we don't want to change its first_time_move flag
+            ((Pawn)this).setCoordinateWithoutChangingFirstTimeMoveFlag(move_to_x, move_to_y);
+        else
+            this.setCoordinate(move_to_x, move_to_y); // move p to that coordinate;
+
+        for(Piece opponent_piece : opponent_pieces){
+            if(opponent_piece.getX_coordinate() == -1 || opponent_piece.getY_coordinate() == -1) // invalid coordinate
+                continue;
+            ArrayList<Coordinate> coords = opponent_piece.getPossibleMoveCoordinate();
+            for(Coordinate coord : coords){
+                if(coord.getX() == king.getX_coordinate() && coord.getY() == king.getY_coordinate()){ // will go to king's coord
+                    is_suicide = true;
+                    break;
+                }
+            }
+        }
+        // restore remove_piece and p
+        if(this.piece_name.equals("pawn"))
+            ((Pawn)this).setCoordinateWithoutChangingFirstTimeMoveFlag(current_x_coord, current_y_coord);
+        else
+            this.setCoordinate(current_x_coord, current_y_coord);
+        if(remove_piece != null) {
+            if (remove_piece.getPiece_name().equals("pawn"))
+                ((Pawn)remove_piece).setCoordinateWithoutChangingFirstTimeMoveFlag(move_to_x, move_to_y);
+            else
+                remove_piece.setCoordinate(move_to_x, move_to_y);
+        }
+        // System.out.println("Is suicide: " + is_suicide);
+        return is_suicide;
+    }
     /**
      * Get possible move coordinates for this piece
      *
