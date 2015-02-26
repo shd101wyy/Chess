@@ -11,6 +11,8 @@ import piece.Piece;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -19,20 +21,68 @@ import java.util.ArrayList;
  *
  * Draw GUI for chess game
  */
-public class GameView {
+public class GameView  extends JPanel{
     private ChessBoard board; // chessboard that we are using
-    protected JPanel panel; // jpanel where we draw GUI
+    private GameController game_controller; // game controller
     protected int tile_size; // size of tile
+
+    // used to store the coordinate of mouse click
+    double clicked_x_coord = -1;
+    double clicked_y_coord = -1;
+
     /**
      * Constructor: init game view
-     * @param board
-     * @param panel
-     * @param tile_size
+     * @param board  the chessboard that we are using now
+     * @param tile_size this size of tile
      */
-    public GameView(ChessBoard board, JPanel panel, int tile_size){
+    public GameView(ChessBoard board, int tile_size){
         this.board = board;
-        this.panel = panel;
         this.tile_size = tile_size;
+
+        /**
+         * Mouse press event
+         */
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+
+                // save mouse click (x, y) coordinate
+                clicked_x_coord = e.getPoint().getX();
+                clicked_y_coord = e.getPoint().getY();
+                // System.out.println("X: " + clicked_x_coord + " Y: " + clicked_y_coord);
+                repaint(); // this will call this.paint function
+            }
+        });
+    }
+
+    /**
+     * Bing game controller to this game view
+     * @param game_controller the game controller that we are going to use.
+     */
+    public void bindGameController(GameController game_controller){
+        this.game_controller = game_controller;
+    }
+
+    /**
+     * Draw images on canvas
+     * @param g
+     */
+    @Override
+    public void paint(Graphics g){
+        // System.out.println("paint");
+        Graphics2D g2d = (Graphics2D) g;
+        this.drawBoard(g2d, clicked_x_coord, clicked_y_coord); // draw empty board
+        String checkmate_or_slatemate = game_controller.isCheckmateOrStalemate();
+        if(checkmate_or_slatemate == null) { // neither checkmate nor stalemate
+            game_controller.checkUserClick(g2d, clicked_x_coord, clicked_y_coord); // check user mouse click
+        }
+        else if (checkmate_or_slatemate.equals("checkmate")){ // checkmate
+            JOptionPane.showMessageDialog(this, "Checkmate!", "", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else { // stalemate
+            JOptionPane.showMessageDialog(this, "Player"+(this.board.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     /**
@@ -81,7 +131,7 @@ public class GameView {
      * Game Over, popup a gameover window.
      */
     public void game_over(){
-        JOptionPane.showMessageDialog(this.panel, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**

@@ -4,52 +4,42 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Game extends JPanel{
+public class Game{
     static JFrame frame;
-    static ChessBoard board;    // chess board
-    static GameController game_controller; // game controller
-    static GameView game_view;  // game view
-    static Game game_panel;         // game
-    // used to store the coordinate of mouse click
-    double clicked_x_coord = -1;
-    double clicked_y_coord = -1;
-    public Game(){
-        /**
-         * Mouse press event
-         */
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                super.mousePressed(e);
+    private ChessBoard board;    // chess board
+    private GameController game_controller; // game controller
+    private GameView game_view;  // game view
+    private JFrame game_frame;  // game frame
+    /**
+     * Constructor: init game, set necessary properties.
+     * @param board
+     * @param game_controller
+     * @param game_view
+     * @param game_frame  game window(frame)
+     */
+    public Game(ChessBoard board, GameController game_controller, GameView game_view, JFrame game_frame){
+        this.board = board;
+        this.game_controller = game_controller;
+        this.game_view = game_view;
+        this.game_frame = game_frame;
 
-                // save mouse click (x, y) coordinate
-                clicked_x_coord = e.getPoint().getX();
-                clicked_y_coord = e.getPoint().getY();
-                // System.out.println("X: " + clicked_x_coord + " Y: " + clicked_y_coord);
-                repaint(); // this will call this.paint function
-            }
-        });
+        this.game_view.bindGameController(game_controller); // bind game controller to game view
     }
 
     /**
-     * Draw images on canvas
-     * @param g
+     *
      */
-    @Override
-    public void paint(Graphics g){
-        // System.out.println("paint");
-        Graphics2D g2d = (Graphics2D) g;
-        game_view.drawBoard(g2d, clicked_x_coord, clicked_y_coord); // draw empty board
-        String checkmate_or_slatemate = game_controller.isCheckmateOrStalemate();
-        if(checkmate_or_slatemate == null) { // neither checkmate nor stalemate
-            game_controller.checkUserClick(g2d, clicked_x_coord, clicked_y_coord); // check user mouse click
+    public void setMode(String mode){
+        if (mode.equals("classic")){
+            this.board.generateStandardBoard();
         }
-        else if (checkmate_or_slatemate.equals("checkmate")){ // checkmate
-            JOptionPane.showMessageDialog(this, "Checkmate!", "", JOptionPane.INFORMATION_MESSAGE);
+        else{
+            this.board.generateFantasyBoard();
         }
-        else { // stalemate
-            JOptionPane.showMessageDialog(this, "Player"+(this.board.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
-        }
+    }
+
+    public void startGame(){
+        this.game_frame.add(this.game_view);        // draw canvas
     }
 
     /**
@@ -57,12 +47,33 @@ public class Game extends JPanel{
      * @param args
      */
     public static void main(String [] args){
-        // init game
-        game_panel = new Game();
         // initialize Chessboard(model), game view, and game controller
+        ChessBoard board;
+        GameView game_view;
+        GameController game_controller;
         board = new ChessBoard(8, 8); // create standard 8 x 8 chess board.
-        game_view = new GameView(board, game_panel, 64); // initialize game view
+        game_view = new GameView(board, 64); // initialize game view
         game_controller = new GameController(board, game_view); // initialize game constroller
+
+        // Initialize JFrame
+        frame = new JFrame("Chess");  // init jframe object
+        frame.getContentPane().setPreferredSize(new Dimension(8 * 64, 8 * 64));  // set height and width
+        frame.setResizable(false);    // disable resizable
+        frame.pack();
+        frame.setVisible(true);       // set as visible
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // set close operation
+
+        // init game
+        Game game = new Game(board, game_controller, game_view, frame);
+
+        // set board mode
+        game.setMode("classic");
+
+        // start game
+        game.startGame();
+
+
+
 
         // initialize standard 8 x 8 chess board
         // board.generateStandardBoard();;
@@ -70,13 +81,8 @@ public class Game extends JPanel{
         // initialize fantasy 8 x 8 chess board
         board.generateFantasyBoard();
 
-        // Initialize JFrame
-        frame = new JFrame("Chess");  // init jframe object
-        frame.add(game_panel);        // draw canvas
-        frame.getContentPane().setPreferredSize(new Dimension(8 * 64, 8 * 64));  // set height and width
-        frame.setResizable(false);    // disable resizable
-        frame.pack();
-        frame.setVisible(true);       // set as visible
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // set close operation
+
+
+
     }
 }

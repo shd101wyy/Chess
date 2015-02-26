@@ -164,11 +164,11 @@ public class GameController {
                 else{ // player clicked opponent's piece
                     if(this.chosen_piece == null) // do nothing
                         return;
-                    this.movePieceToOpponentPieceLocationIfValid(this.game_view.panel, p);
+                    this.movePieceToOpponentPieceLocationIfValid(this.game_view, p);
                 }
             }
             else if (this.chosen_piece != null) { // that means  p == null, and player clicked a tile that is not occupied
-                this.movePlayerPieceToEmptyTileIfValid(this.game_view.panel, x, y);
+                this.movePlayerPieceToEmptyTileIfValid(this.game_view, x, y);
             }
         }
     }
