@@ -47,6 +47,22 @@ public class GameController {
     }
 
     /**
+     * Check whether player's king is in check
+     * @param player check this player's king
+     * @return true if king is in check.
+     */
+    public boolean playersKingIsInCheck(Player player){
+        Piece king;
+        if (player == Player.WHITE){
+            king = this.board.getKing1();
+        }
+        else{
+            king = this.board.getKing2();
+        }
+        return ((King)king).isInCheck();
+    }
+
+    /**
      * check whether is checkmate or stalemate
      * @return null if neither checkmate nor stalemate; return "checkmate" if checkmate; return "stalemate" if stalemate
      */
@@ -151,7 +167,9 @@ public class GameController {
                     // update turns and redraw the canvas
                     this.chosen_piece = null;
                     this.board.incrementTurns();
-                    this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
+                    this.message = (this.playersKingIsInCheck(this.getPlayerForThisTurn()) ? "Check! " : "") +     // show king in check
+                                   (this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn"; // show which player's turn
+                    this.updateMessage(this.message);
                     panel.repaint();
                     return;
                 }
@@ -188,7 +206,9 @@ public class GameController {
                 // update turns and redraw the canvas
                 this.chosen_piece = null;
                 this.board.incrementTurns();
-                this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
+                this.message = (this.playersKingIsInCheck(this.getPlayerForThisTurn()) ? "Check! " : "") +     // show king in check
+                        (this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn"; // show which player's turn
+                this.updateMessage(this.message);
                 panel.repaint();
                 return;
             }
