@@ -2,7 +2,7 @@ package unit_test;
 
 import piece.Bishop;
 import chessboard.ChessBoard;
-import chess.Player;
+import chessboard.Player;
 import piece.Piece;
 import org.junit.Test;
 

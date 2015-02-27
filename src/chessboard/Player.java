@@ -1,4 +1,4 @@
-package chess;
+package chessboard;
 
 /**
  * Created by wangyiyi on 2/17/15.

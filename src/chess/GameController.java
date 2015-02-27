@@ -1,6 +1,7 @@
 package chess;
 import chessboard.ChessBoard;
 import chessboard.Chessboard_Log;
+import chessboard.Player;
 import piece.Coordinate;
 import piece.King;
 import piece.Piece;

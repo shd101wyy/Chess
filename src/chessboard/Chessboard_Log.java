@@ -4,8 +4,6 @@ package chessboard;
  * Created by wangyiyi on 2/27/15.
  */
 
-import chess.Player;
-import chessboard.ChessBoard;
 import piece.*;
 
 /**

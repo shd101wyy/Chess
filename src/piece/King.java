@@ -1,7 +1,7 @@
 package piece;
 
 import chessboard.ChessBoard;
-import chess.Player;
+import chessboard.Player;
 import java.util.ArrayList;
 
 /**
