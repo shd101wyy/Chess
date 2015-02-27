@@ -65,6 +65,37 @@ public class GameController {
     }
 
     /**
+     * Game is over
+     * @param status
+     */
+    public void gameIsOver(String status){
+        Player current_player = this.getPlayerForThisTurn(); // get current player
+        this.message = (status.equals("checkmate") ? "Checkmate! " : "Stalemate! " ) + (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
+        this.game_start = false; // game not started now.
+
+        // update player score
+        if (current_player == Player.WHITE){
+            this.player2_score++;
+        }
+        else{
+            this.player1_score++;
+        }
+
+        ChessBoard new_board = new ChessBoard(8, 8); // create new board;
+
+        // rebind the chessboard to GameView, GameConstroller
+        this.board = new_board;
+        this.game_view.board = new_board;
+        this.game_view.chessboard_view.board = new_board;
+
+        // redraw menu
+        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
+
+        // redraw everything
+        this.game_view.redraw();
+    }
+
+    /**
      * Return possible move coordinates for piece; eliminate suicide move
      * @param p the piece we want to move.
      * @return coordinate lists

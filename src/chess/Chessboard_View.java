@@ -70,10 +70,10 @@ public class Chessboard_View extends JPanel {
             game_controller.checkUserClick(g2d, clicked_x_coord, clicked_y_coord); // check user mouse click
         }
         else if (checkmate_or_slatemate.equals("checkmate")){ // checkmate
-            JOptionPane.showMessageDialog(this, "Checkmate!", "", JOptionPane.INFORMATION_MESSAGE);
+            game_controller.gameIsOver(checkmate_or_slatemate);
         }
         else { // stalemate
-            JOptionPane.showMessageDialog(this, "Player"+(this.board.getTurns()%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
+            game_controller.gameIsOver(checkmate_or_slatemate);
         }
     }
 
