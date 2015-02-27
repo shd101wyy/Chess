@@ -19,7 +19,6 @@ public class ChessBoard {
     private Piece tiles[][];    // this 2d array is used to save pieces
     protected Piece king1;         // king for player1 White
     protected Piece king2;         // king for player2 Black
-    private boolean gameover;    // check whether game is over
     private ArrayList<Piece> white_pieces; // array list used to save all white pieces
     private ArrayList<Piece> black_pieces; // array list used to save all black pieces
     protected int turns;  // game turn
@@ -58,7 +57,6 @@ public class ChessBoard {
         // initialize other variables
         this.king1 = null;        // no king is set yet
         this.king2 = null;
-        this.gameover = false;    // game not over yet
         this.turns = 0; // if it is even number, then it's White turn, otherwise Black turn
     }
 

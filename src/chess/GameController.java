@@ -3,7 +3,7 @@ import com.sun.codemodel.internal.JOp;
 import piece.Coordinate;
 import piece.King;
 import piece.Piece;
-
+import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -21,6 +21,7 @@ public class GameController {
     protected int player1_score; // player1 score
     protected int player2_score; // player2 score
     protected String message;    // game message
+    Stack<ChessBoard> chessboard_history_log; // used to save move history
 
     /**
      * Constructor: initialize game controller
@@ -37,6 +38,7 @@ public class GameController {
         this.player1_score = 0;
         this.player2_score = 0;
         this.message = "Press Start button to start the game";
+        this.chessboard_history_log = null;
     }
 
     /**
@@ -243,9 +245,13 @@ public class GameController {
         else{
             return; // do nothing
         }
+
+        // init chessboard history log
+        this.chessboard_history_log = new Stack<ChessBoard>();
+
         this.game_start = true; // start game
         this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
-        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
+        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
     }
 
     /**
@@ -282,10 +288,17 @@ public class GameController {
             else{ // fantasy
                 new_board.generateFantasyBoard();
             }
+
+            // init chessboard history log
+            this.chessboard_history_log = new Stack<ChessBoard>();
+
             // rebind the chessboard to GameView, GameConstroller
             this.board = new_board;
             this.game_view.board = new_board;
             this.game_view.chessboard_view.board = new_board;
+
+            this.game_start = true; // start game
+            this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
 
             // redraw everything
             this.game_view.redraw();
@@ -304,7 +317,7 @@ public class GameController {
         int entry = JOptionPane.showConfirmDialog(null, (current_player == Player.WHITE ? this.player1_name : this.player2_name) + "! Do you want to give up the game?", "Please select", JOptionPane.YES_NO_OPTION);
         if (entry == JOptionPane.YES_OPTION){ // player want to forfeit
             this.message = (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
-            this.game_start = false;
+            this.game_start = false; // game not started now.
             // update player score
             if (current_player == Player.WHITE){
                 this.player2_score++;
