@@ -17,8 +17,8 @@ import java.awt.event.ActionListener;
 public class MenuView extends JPanel {
     private String player1_name;  // name of player1
     private String player2_name;  // name of player2
-    private String player1_score; // score of player1
-    private String player2_score; // score of player2
+    private int player1_score; // score of player1
+    private int player2_score; // score of player2
     private String message;      // game message
     protected GameView game_view; // game view associated with the menu view
     /**
@@ -48,7 +48,7 @@ public class MenuView extends JPanel {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                game_view.game_controller.clickStartButton(); // run click start button event
+                game_view.game_controller.clickedStartButton(); // run click start button event
             }
         });
 
@@ -63,13 +63,23 @@ public class MenuView extends JPanel {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                game_view.game_controller.clickRestartButton(); // run click restart button event
+                game_view.game_controller.clickedRestartButton(); // run click restart button event
             }
         });
 
         JButton forfeit_btn = new JButton("Forfeit");
         forfeit_btn.setBounds(230, 10, 100, 50);
         this.add(forfeit_btn);
+        forfeit_btn.addActionListener(new ActionListener() {
+            /**
+             * Clicked forfeit button
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                game_view.game_controller.clickedForfeitButton();  // run click forfeit button event
+            }
+        });
 
         JButton undo_btn = new JButton("Undo");
         undo_btn.setBounds(340, 10, 100, 50);
@@ -87,9 +97,9 @@ public class MenuView extends JPanel {
         this.setBackground(new Color(100, 175, 89)); // draw menu background
 
         player1_name = "WHITE";
-        player1_score = "0";
+        player1_score = 0;
         player2_name = "BLACK";
-        player2_score = "0";
+        player2_score = 0;
         message = "Press Start button to start the game";
     }
 
@@ -108,12 +118,12 @@ public class MenuView extends JPanel {
 
         // draw score for player1(WHITE)
         g.setColor(new Color(255, 255, 255));
-        g.drawString(this.player1_score, 70, 200);    // draw score for player1(WHITE)
+        g.drawString(Integer.toString(this.player1_score), 70, 200);    // draw score for player1(WHITE)
 
         // draw score for player2(BLACK)
         String score2 = "Score2";
         g.setColor(new Color(0, 0, 0));
-        g.drawString(this.player2_score, 390, 200);   // draw score for player2(BLACK)
+        g.drawString(Integer.toString(this.player2_score), 390, 200);   // draw score for player2(BLACK)
 
         // draw game message
         g.setColor(new Color(241, 255, 163));
@@ -126,7 +136,7 @@ public class MenuView extends JPanel {
      * @param player2_score
      * @param message
      */
-    public void drawMenu(String player1_score, String player2_score, String message){
+    public void drawMenu(int player1_score, int player2_score, String message){
         // update player1_score player2_score and message
         this.player1_score = player1_score;
         this.player2_score = player2_score;

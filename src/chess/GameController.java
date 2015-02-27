@@ -18,8 +18,8 @@ public class GameController {
     protected boolean game_start; // game already starts?
     protected String player1_name; // player1 name
     protected String player2_name; // player2 name
-    protected String player1_score; // player1 score
-    protected String player2_score; // player2 score
+    protected int player1_score; // player1 score
+    protected int player2_score; // player2 score
     protected String message;    // game message
 
     /**
@@ -34,8 +34,8 @@ public class GameController {
         this.game_start = false;  // game is not started yet, need to click start button.
         this.player1_name = "WHITE";
         this.player2_name = "BLACK";
-        this.player1_score = "0";
-        this.player2_score = "0";
+        this.player1_score = 0;
+        this.player2_score = 0;
         this.message = "Press Start button to start the game";
     }
 
@@ -111,9 +111,10 @@ public class GameController {
                     //}
                     this.chosen_piece.setCoordinate(coord.getX(), coord.getY());
 
-                                /* update turns and redraw the canvas */
+                    /* update turns and redraw the canvas */
                     this.chosen_piece = null;
                     this.board.turns++;
+                    this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
                     panel.repaint();
                     return;
                 }
@@ -145,11 +146,21 @@ public class GameController {
                 // update turns and redraw the canvas
                 this.chosen_piece = null;
                 this.board.turns++;
+                this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
                 panel.repaint();
                 return;
             }
         }
     }
+
+    /**
+     *
+     * @return Player for this turn.
+     */
+    public Player getPlayerForThisTurn(){
+        return this.board.getPlayerForThisTurn();
+    }
+
     /**
      * Check user mouse click, and update gui.
      * @param g2d
@@ -192,9 +203,21 @@ public class GameController {
     }
 
     /**
+     * Update game message
+     * @param message
+     */
+    public void updateMessage(String message){
+        // reset message
+        this.message = message;
+
+        // redraw menu
+        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
+    }
+
+    /**
      * Player clicked start button
      */
-    public void clickStartButton(){
+    public void clickedStartButton(){
         if(this.game_start){ // game already started, so this func should do nothing
             JOptionPane.showMessageDialog(null, "Game already started");
             return;
@@ -221,14 +244,18 @@ public class GameController {
             return; // do nothing
         }
         this.game_start = true; // start game
-        this.message = "Have fun in game";
+        this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
         this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
     }
 
     /**
      * Player clicked restart button
      */
-    public void clickRestartButton(){
+    public void clickedRestartButton(){
+        if(this.game_start == false){ // game not started yet, cannot restart.
+            JOptionPane.showMessageDialog(null, "Game not started");
+            return;
+        }
         int entry = JOptionPane.showConfirmDialog(null, this.player1_name + "! Do you want to restart the game?", "Please select", JOptionPane.YES_NO_OPTION);
         if(entry == JOptionPane.NO_OPTION) { // player1 doesn't agree to restart the game
             return;
@@ -262,6 +289,43 @@ public class GameController {
 
             // redraw everything
             this.game_view.redraw();
+        }
+    }
+
+    /**
+     * Player clicked forfeit button
+     */
+    public void clickedForfeitButton(){
+        if(this.game_start == false){ // game not started yet, cannot forfeit.
+            JOptionPane.showMessageDialog(null, "Game not started");
+            return;
+        }
+        Player current_player = this.getPlayerForThisTurn();
+        int entry = JOptionPane.showConfirmDialog(null, (current_player == Player.WHITE ? this.player1_name : this.player2_name) + "! Do you want to restart the game?", "Please select", JOptionPane.YES_NO_OPTION);
+        if (entry == JOptionPane.YES_OPTION){ // player want to forfeit
+            this.message = (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
+            this.game_start = false;
+            // update player score
+            if (current_player == Player.WHITE){
+                this.player2_score++;
+            }
+            else{
+                this.player1_score++;
+            }
+
+            ChessBoard new_board = new ChessBoard(8, 8); // create new board;
+
+            // rebind the chessboard to GameView, GameConstroller
+            this.board = new_board;
+            this.game_view.board = new_board;
+            this.game_view.chessboard_view.board = new_board;
+
+            // redraw menu
+            this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
+
+            // redraw everything
+            this.game_view.redraw();
+
         }
     }
 }
