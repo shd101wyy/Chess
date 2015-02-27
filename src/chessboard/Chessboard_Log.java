@@ -12,10 +12,10 @@ import piece.*;
  * This class is used to save chessboard piece move history
  */
 public class Chessboard_Log {
-    private int width;  // width of chessboard
-    private int height; // height of chessboard
-    private String tiles[][]; // 2d array used to store piece information
-    private int turns; // player turn
+    protected int width;  // width of chessboard
+    protected int height; // height of chessboard
+    protected String tiles[][]; // 2d array used to store piece information
+    protected int turns; // player turn
     /**
      * Generate chessboard log according to board
      * @param board
@@ -110,7 +110,40 @@ public class Chessboard_Log {
                 }
             }
         }
-
         return board;
     }
+
+    /**
+     * Getter: get turns
+     * @return turns of the game
+     */
+    public int getTurns(){
+        return this.turns;
+    }
+    /**
+     * Getter: get the width of chessboard
+     * @return the width of chessboard
+     */
+    public int getWidth(){
+        return this.width;
+    }
+
+    /**
+     * Getter: get the height of chessboard
+     * @return the height of chessboard
+     */
+    public int getHeight(){
+        return this.height;
+    }
+
+    /**
+     * Return tile at given (x, y) coordinate
+     * @param x
+     * @param y
+     * @return the string at that coordinate
+     */
+    public String getTileAtCoordinate(int x, int y){
+        return this.tiles[y][x];
+    }
+
 }
