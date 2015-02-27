@@ -12,6 +12,10 @@ import java.util.ArrayList;
 /**
  * Created by wangyiyi on 2/25/15.
  */
+
+/**
+ * Game Controller
+ */
 public class GameController {
     protected ChessBoard board;  // chess board
     protected GameView game_view; // game view
@@ -30,16 +34,16 @@ public class GameController {
      * @param game_view
      */
     public GameController(ChessBoard board, GameView game_view){
-        this.board = board;
-        this.game_view = game_view;
+        this.board = board;      // bind chessboard to current game controller
+        this.game_view = game_view; // bind game view to current game controller
         this.chosen_piece = null; // no piece is chosen by player yet
         this.game_start = false;  // game is not started yet, need to click start button.
-        this.player1_name = "WHITE";
-        this.player2_name = "BLACK";
-        this.player1_score = 0;
-        this.player2_score = 0;
-        this.message = "Press Start button to start the game";
-        this.chessboard_history_log = null;
+        this.player1_name = "WHITE"; // player1 name
+        this.player2_name = "BLACK"; // player2 name
+        this.player1_score = 0; // player1 score
+        this.player2_score = 0; // player2 score
+        this.message = "Press Start button to start the game"; // game message
+        this.chessboard_history_log = null; // no piece move history yet
     }
 
     /**
@@ -87,13 +91,13 @@ public class GameController {
             this.message = "Stalemate!"; // reset message
         }
 
-
         // redraw menu
         this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
     }
 
     /**
      * Return possible move coordinates for piece; eliminate suicide move
+     *
      * @param p the piece we want to move.
      * @return coordinate lists
      */
@@ -135,17 +139,16 @@ public class GameController {
                     Chessboard_Log log = new Chessboard_Log(this.board);
                     chessboard_history_log.push(log);
 
-                    /*  remove that opponent's piece */
+                    //  remove that opponent's piece
                     this.board.removePiece(opponent_piece);
 
-                    /* move player's piece to that coordinate */
+                    // move player's piece to that coordinate
                     opponent_piece.removeSelf(); // remove opponent's piece
-                    //if(opponent_piece.getPiece_name().equals("king")){ // check whether game over
-                    //    game_over(panel); // game over
-                    //}
+
+                    // move the chosen piece to coordinate of opponent's piece
                     this.chosen_piece.setCoordinate(coord.getX(), coord.getY());
 
-                    /* update turns and redraw the canvas */
+                    // update turns and redraw the canvas
                     this.chosen_piece = null;
                     this.board.incrementTurns();
                     this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
@@ -221,7 +224,7 @@ public class GameController {
             p = this.board.getPieceAtCoordinate(x, y);
 
             /*
-             *  Now we clicked a piece
+             *  Now we clicked a spot/piece
              *
              */
             if (p != null) { // player clicked a piece; show its possible moves
@@ -246,7 +249,7 @@ public class GameController {
      * @param message
      */
     public void updateMessage(String message){
-        // reset message
+        // set message
         this.message = message;
 
         // redraw menu
@@ -263,6 +266,7 @@ public class GameController {
         ChessBoard new_board = new ChessBoard(8, 8); // create new board;
         this.game_view.chessboard_view.clicked_x_coord = -1;  // reset click x coord
         this.game_view.chessboard_view.clicked_y_coord = -1;  // reset click y coord
+
         // rebind the chessboard to GameView, GameConstroller
         this.board = new_board;
         this.game_view.board = new_board;
@@ -283,6 +287,7 @@ public class GameController {
         this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
         this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
     }
+
     /**
      * Player clicked start button
      */
@@ -302,7 +307,7 @@ public class GameController {
                 options,
                 options[2]);
 
-        if(chosen_option == 1 || chosen_option == 2){
+        if(chosen_option == 2 || chosen_option == 1){
             this.startNewGame(chosen_option);
         }
         else{
@@ -349,11 +354,12 @@ public class GameController {
             JOptionPane.showMessageDialog(null, "Game not started");
             return;
         }
-        Player current_player = this.getPlayerForThisTurn();
+        Player current_player = this.getPlayerForThisTurn(); // get player for the turn
         int entry = JOptionPane.showConfirmDialog(null, (current_player == Player.WHITE ? this.player1_name : this.player2_name) + "! Do you want to give up the game?", "Please select", JOptionPane.YES_NO_OPTION);
-        if (entry == JOptionPane.YES_OPTION){ // player want to forfeit
+        if (entry == JOptionPane.YES_OPTION){ // player wants to forfeit
             this.message = (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
             this.game_start = false; // game not started now.
+
             // update player score
             if (current_player == Player.WHITE){
                 this.player2_score++;
@@ -375,7 +381,7 @@ public class GameController {
             JOptionPane.showMessageDialog(null, "Cannot undo");
             return;
         }
-        Chessboard_Log log = chessboard_history_log.pop();
+        Chessboard_Log log = chessboard_history_log.pop(); // get most recent log
         ChessBoard new_board = log.toChessboard(); // create new chessboard from log.
 
         // rebind the chessboard to GameView, GameConstroller

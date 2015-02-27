@@ -57,8 +57,6 @@ public class GameView  extends JPanel{
 
         this.chessboard_view = null; // set to null first
         this.setPreferredSize(new Dimension(this.view_width, this.view_height)); // set game view size
-
-        // this.setBackground(new Color(46, 123, 166));
     }
 
     /**
@@ -69,17 +67,6 @@ public class GameView  extends JPanel{
         this.game_controller = game_controller;
     }
 
-
-    /**
-     * Draw images on canvas
-     * @param g
-     */
-    /*
-    @Override
-    public void paint(Graphics g) {
-        //Graphics2D g2d = (Graphics2D) g;
-        this.chessboard_view.repaint();
-    }*/
 
     /**
      * redraw the whole game view
@@ -99,15 +86,12 @@ public class GameView  extends JPanel{
         this.add(this.menu_view/*, BorderLayout.LINE_END*/); // add menu view to game view
 
 
-        JFrame game_frame = new JFrame("Chess");  // init jframe object
+        JFrame game_frame = new JFrame("Chess");  // init JFrame object
         game_frame.getContentPane().setPreferredSize(new Dimension(this.view_width, this.view_height));  // set height and width
         game_frame.setResizable(false);    // disable resizable
         game_frame.pack();
         game_frame.setVisible(true);       // set as visible
         game_frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // set close operation
         game_frame.add(this);        // draw canvas
-
-        //JOptionPane.showMessageDialog(null, this);
-
     }
 }

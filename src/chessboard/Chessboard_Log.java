@@ -9,15 +9,15 @@ import chessboard.ChessBoard;
 import piece.*;
 
 /**
- * This class is used to save chessboard history
+ * This class is used to save chessboard piece move history
  */
 public class Chessboard_Log {
-    private int width;
-    private int height;
-    private String tiles[][];
-    private int turns;
+    private int width;  // width of chessboard
+    private int height; // height of chessboard
+    private String tiles[][]; // 2d array used to store piece information
+    private int turns; // player turn
     /**
-     * Generate chsesboard log according to board
+     * Generate chessboard log according to board
      * @param board
      */
     public Chessboard_Log(ChessBoard board){
@@ -32,13 +32,16 @@ public class Chessboard_Log {
             this.tiles[i] = new String[width];
         }
 
-        // copy status
+        // copy piece status
+        // I will store piece information in format of color+name
+        // eg: "white_rook", "black_queen"
+        // pawn is the special case, I also need to store the first_time_move flag for it.
         for(int i = 0; i < height; i++){
             for(int j = 0; j < width; j++){
                 Piece p = board.getPieceAtCoordinate(j, i);
-                if (p == null)
+                if (p == null) // not a piece
                     continue;
-                String piece_name = p.getPiece_name();
+                String piece_name = p.getPiece_name(); // get piece name
                 if(piece_name.equals("pawn")){ // check pawn first time move
                     if(((Pawn)p).isFirstTimeMove() == true){
                         this.tiles[i][j] = (p.getPlayer() == Player.WHITE ? "white_" : "black_") + "pawn_first";
@@ -66,7 +69,7 @@ public class Chessboard_Log {
                 int x = j; // get x coord
                 int y = i; // get y coord
                 String piece_name = this.tiles[i][j]; // get piece name
-                if (piece_name == null){
+                if (piece_name == null){ // not a piece
                     continue;
                 }
                 Piece p;

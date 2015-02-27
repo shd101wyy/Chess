@@ -28,20 +28,22 @@ public class MenuView extends JPanel {
     /**
      * MenuView constructor
      * This constructor is used to put several components on panel
-     * eg: start button, restart button, forfeit button, undo button.
+     * eg: start button, restart button, forfeit button, undo button, etc.
      * @param width
      * @param height
      */
     public MenuView(int width, int height, final GameView game_view){
         this.game_view = game_view;
         this.setPreferredSize(new Dimension(width, height));
-        this.setLayout(null);
+        this.setLayout(null); // use absolute layout
 
          /*
           *
           * Setup several buttons for menu
           *
           */
+
+        // add start button
         start_btn = new JButton("Start");
         start_btn.setBounds(10, 10, 100, 50);
         this.add(start_btn);
@@ -57,6 +59,7 @@ public class MenuView extends JPanel {
         });
 
 
+        // add restart button
         restart_btn = new JButton("Restart");
         restart_btn.setBounds(120, 10, 100, 50);
         this.add(restart_btn);
@@ -71,6 +74,7 @@ public class MenuView extends JPanel {
             }
         });
 
+        // add forfeit button
         forfeit_btn = new JButton("Forfeit");
         forfeit_btn.setBounds(230, 10, 100, 50);
         this.add(forfeit_btn);
@@ -85,6 +89,7 @@ public class MenuView extends JPanel {
             }
         });
 
+        // add undo button
         undo_btn = new JButton("Undo");
         undo_btn.setBounds(340, 10, 100, 50);
         this.add(undo_btn);
@@ -99,7 +104,7 @@ public class MenuView extends JPanel {
             }
         });
 
-        // Player1 name
+        // add Player1 name
         player1_btn = new JButton("WHITE");
         player1_btn.setForeground(new Color(255, 255, 255)); // set white color
         player1_btn.setFont(new Font("TimesRoman", Font.BOLD, 30));
@@ -120,7 +125,7 @@ public class MenuView extends JPanel {
         });
 
 
-        // Player2 name
+        // add Player2 name
         player2_btn = new JButton("BLACK");
         player2_btn.setFont(new Font("TimesRoman", Font.BOLD, 30));
         player2_btn.setHorizontalAlignment(SwingConstants.LEFT);
@@ -141,24 +146,25 @@ public class MenuView extends JPanel {
 
         this.setBackground(new Color(100, 175, 89)); // draw menu background
 
-        //player1_name = "WHITE";
+
         this.player1_score = 0;
-        //player2_name = "BLACK";
         this.player2_score = 0;
         this.message = "Press Start button to start the game";
     }
 
     /**
-     * Draw images on canvas
+     * Draw menu
      * @param g
      */
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        Graphics2D g2d = (Graphics2D) g;
+
+        // draw "VS"
         g.setColor(new Color(90, 132, 255));
-        g.setFont(new Font("TimesRoman", Font.BOLD, 30));
+        g.setFont(new Font("TimesRoman", Font.BOLD, 40));
         g.drawString("VS", 200, 200);
+        g.setFont(new Font("TimesRoman", Font.BOLD, 30));
 
 
         // draw score for player1(WHITE)
@@ -176,10 +182,12 @@ public class MenuView extends JPanel {
     }
 
     /**
+     * update player1_score, player2_score, message.
+     * repaint the menu canvas.
      *
-     * @param player1_score
-     * @param player2_score
-     * @param message
+     * @param player1_score  new player1 score
+     * @param player2_score  new player2 score
+     * @param message        new message
      */
     public void drawMenu(int player1_score, int player2_score, String message){
         // update player1_score player2_score and message

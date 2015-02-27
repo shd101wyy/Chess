@@ -14,6 +14,9 @@ import java.util.ArrayList;
  * Created by wangyiyi on 2/12/15.
  */
 
+/**
+ * This is the chessboard class(Model)
+ */
 public class ChessBoard {
     protected int width;           // the width of chess board
     protected int height;          // the height of chess board
@@ -42,6 +45,7 @@ public class ChessBoard {
      * @param height: set the height of chessboard
      */
     public ChessBoard(int width, int height){
+        // set width and height of chessboard
         this.width = width;
         this.height = height;
 

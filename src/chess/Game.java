@@ -4,6 +4,9 @@ import chessboard.ChessBoard;
 
 import javax.swing.*;
 
+/**
+ * Main Game
+ */
 public class Game{
     static JFrame frame;
     private ChessBoard board;    // chess board

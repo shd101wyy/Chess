@@ -29,13 +29,13 @@ public class Chessboard_View extends JPanel {
     protected GameController game_controller; // game controller for the chessboard
 
     // used to store the coordinate of mouse click
-    double clicked_x_coord = -1;
-    double clicked_y_coord = -1;
+    protected double clicked_x_coord = -1;
+    protected double clicked_y_coord = -1;
 
     public Chessboard_View(ChessBoard board, GameController game_controller, int tile_size, int board_width, int board_height){
-        this.board = board;
-        this.game_controller = game_controller;
-        this.tile_size = tile_size;
+        this.board = board;   // bind chessboard
+        this.game_controller = game_controller;  // bind game controller
+        this.tile_size = tile_size;  // set tile size
         this.setPreferredSize(new Dimension(board_width, board_height)); // set preferred size for chessboard view
 
         /**
@@ -49,6 +49,7 @@ public class Chessboard_View extends JPanel {
                 // save mouse click (x, y) coordinate
                 clicked_x_coord = e.getPoint().getX();
                 clicked_y_coord = e.getPoint().getY();
+
                 // System.out.println("X: " + clicked_x_coord + " Y: " + clicked_y_coord);
                 repaint(); // this will call this.paint function
             }
@@ -63,17 +64,16 @@ public class Chessboard_View extends JPanel {
         // System.out.println("paint");
         Graphics2D g2d = (Graphics2D) g;
         this.drawBoard(g2d, clicked_x_coord, clicked_y_coord); // draw empty board
-        //this.drawMenu(g2d, clicked_x_coord, clicked_y_coord);  // draw menu
 
-        String checkmate_or_slatemate = game_controller.isCheckmateOrStalemate();
-        if(checkmate_or_slatemate == null) { // neither checkmate nor stalemate
+        String checkmate_or_stalemate = game_controller.isCheckmateOrStalemate(); // check checkmate or stalemate
+        if(checkmate_or_stalemate == null) { // neither checkmate nor stalemate
             game_controller.checkUserClick(g2d, clicked_x_coord, clicked_y_coord); // check user mouse click
         }
-        else if (checkmate_or_slatemate.equals("checkmate")){ // checkmate
-            game_controller.gameIsOver(checkmate_or_slatemate);
+        else if (checkmate_or_stalemate.equals("checkmate")){ // checkmate
+            game_controller.gameIsOver(checkmate_or_stalemate);
         }
         else { // stalemate
-            game_controller.gameIsOver(checkmate_or_slatemate);
+            game_controller.gameIsOver(checkmate_or_stalemate);
         }
     }
 
@@ -120,7 +120,7 @@ public class Chessboard_View extends JPanel {
     }
 
     /**
-     * draw tiles that the piece can move to
+     * Draw tiles that the piece can move to
      * @param g2d
      */
     public void drawPossibleMovesForPiece(Graphics2D g2d, ArrayList<Coordinate> coords){
