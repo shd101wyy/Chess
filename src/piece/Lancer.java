@@ -47,7 +47,7 @@ public class Lancer extends Piece{
      *           #
      *         # # #                  #: is enemy
      *       # # p # #                @: is possible move area
-     *                                P: archer
+     *                                P: lancer
      *  if there is enemy/friend on left/top/right that block the way, then archer cannot go further
      *
      * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
