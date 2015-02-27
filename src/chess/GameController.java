@@ -21,7 +21,7 @@ public class GameController {
     protected int player1_score; // player1 score
     protected int player2_score; // player2 score
     protected String message;    // game message
-    Stack<ChessBoard> chessboard_history_log; // used to save move history
+    Stack<Chessboard_Log> chessboard_history_log; // used to save move history
 
     /**
      * Constructor: initialize game controller
@@ -103,6 +103,10 @@ public class GameController {
                 if (coord.getX() == opponent_piece.getX_coordinate() && coord.getY() == opponent_piece.getY_coordinate()){ // opponent's piece is captured
                     // System.out.println("You captured a piece");
 
+                    // save current history log
+                    Chessboard_Log log = new Chessboard_Log(this.board);
+                    chessboard_history_log.add(log);
+
                     /*  remove that opponent's piece */
                     this.board.removePiece(opponent_piece);
 
@@ -141,6 +145,11 @@ public class GameController {
             }
             if (coord.getX() == x && coord.getY() == y){ // player can move the piece there
                 // System.out.println("You moved a piece");
+
+                // save current history log
+                Chessboard_Log log = new Chessboard_Log(this.board);
+                chessboard_history_log.add(log);
+
 
                 // move player's piece to that coordinate
                 this.chosen_piece.setCoordinate(x, y);
@@ -247,7 +256,7 @@ public class GameController {
         }
 
         // init chessboard history log
-        this.chessboard_history_log = new Stack<ChessBoard>();
+        this.chessboard_history_log = new Stack<Chessboard_Log>();
 
         this.game_start = true; // start game
         this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
@@ -290,7 +299,7 @@ public class GameController {
             }
 
             // init chessboard history log
-            this.chessboard_history_log = new Stack<ChessBoard>();
+            this.chessboard_history_log = new Stack<Chessboard_Log>();
 
             // rebind the chessboard to GameView, GameConstroller
             this.board = new_board;

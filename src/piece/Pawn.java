@@ -27,6 +27,22 @@ public class Pawn extends Piece {
     }
 
     /**
+     * check whether it is pawn's first time to move
+     * @return true if it is first time move; otherwise return false.
+     */
+    public boolean isFirstTimeMove(){
+        return this.first_time_move;
+    }
+
+    /**
+     * Setter: set first_time_move
+     * @param flag
+     */
+    public void setFirst_time_move(boolean flag){
+        this.first_time_move = flag;
+    }
+
+    /**
      * Assume no promotion for pawn
      *
      * Get all possible move coordinates for this pawn piece at current coordinate
