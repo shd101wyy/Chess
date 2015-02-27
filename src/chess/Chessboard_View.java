@@ -120,13 +120,6 @@ public class Chessboard_View extends JPanel {
     }
 
     /**
-     * Game Over, popup a gameover window.
-     */
-    public void game_over(){
-        JOptionPane.showMessageDialog(this, "Game Over!", "", JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    /**
      * draw tiles that the piece can move to
      * @param g2d
      */

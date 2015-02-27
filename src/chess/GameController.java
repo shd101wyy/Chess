@@ -69,30 +69,27 @@ public class GameController {
      * @param status
      */
     public void gameIsOver(String status){
+        if(this.game_start == false) // game already over
+            return;
         Player current_player = this.getPlayerForThisTurn(); // get current player
-        this.message = (status.equals("checkmate") ? "Checkmate! " : "Stalemate! " ) + (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
         this.game_start = false; // game not started now.
-
-        // update player score
-        if (current_player == Player.WHITE){
-            this.player2_score++;
+        if (status.equals("checkmate")){ // checkmate
+            this.message = "Checkmate! "  + (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
+            // update player score
+            if (current_player == Player.WHITE){
+                this.player2_score++;
+            }
+            else{
+                this.player1_score++;
+            }
         }
-        else{
-            this.player1_score++;
+        else{ // stalemate
+            this.message = "Stalemate!"; // reset message
         }
 
-        ChessBoard new_board = new ChessBoard(8, 8); // create new board;
-
-        // rebind the chessboard to GameView, GameConstroller
-        this.board = new_board;
-        this.game_view.board = new_board;
-        this.game_view.chessboard_view.board = new_board;
 
         // redraw menu
         this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
-
-        // redraw everything
-        this.game_view.redraw();
     }
 
     /**
@@ -257,6 +254,36 @@ public class GameController {
     }
 
     /**
+     *
+     * Start a new game
+     * if game_mode equals 1 => fantasy mode; otherwise classic mode
+     * @param game_mode
+     */
+    public void startNewGame(int game_mode){
+        ChessBoard new_board = new ChessBoard(8, 8); // create new board;
+        this.game_view.chessboard_view.clicked_x_coord = -1;  // reset click x coord
+        this.game_view.chessboard_view.clicked_y_coord = -1;  // reset click y coord
+        // rebind the chessboard to GameView, GameConstroller
+        this.board = new_board;
+        this.game_view.board = new_board;
+        this.game_view.chessboard_view.board = new_board;
+
+        if(game_mode == 2){ // classic mode
+            this.board.generateStandardBoard();
+            this.game_view.redraw();
+        }
+        else { // fantasy mode
+            this.board.generateFantasyBoard();
+            this.game_view.redraw();
+        }
+
+
+        this.chessboard_history_log = new Stack<Chessboard_Log>();   // init chessboard history log
+        this.game_start = true; // start game
+        this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
+        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
+    }
+    /**
      * Player clicked start button
      */
     public void clickedStartButton(){
@@ -274,24 +301,13 @@ public class GameController {
                 null,
                 options,
                 options[2]);
-        if(chosen_option == 2){ // classic mode
-            this.board.generateStandardBoard();
-            this.game_view.redraw();
-        }
-        else if (chosen_option == 1){ // fantasy mode
-            this.board.generateFantasyBoard();
-            this.game_view.redraw();
+
+        if(chosen_option == 1 || chosen_option == 2){
+            this.startNewGame(chosen_option);
         }
         else{
-            return; // do nothing
+            return;
         }
-
-        // init chessboard history log
-        this.chessboard_history_log = new Stack<Chessboard_Log>();
-
-        this.game_start = true; // start game
-        this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
-        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
     }
 
     /**
@@ -321,28 +337,7 @@ public class GameController {
                 options,
                 options[2]);
         if(chosen_option == 2 || chosen_option == 1){ // player chose classic mode or fantasy mode
-            ChessBoard new_board = new ChessBoard(8, 8); // create new board;
-            if(chosen_option == 2){ // classic
-                new_board.generateStandardBoard();
-            }
-            else{ // fantasy
-                new_board.generateFantasyBoard();
-            }
-
-            // init chessboard history log
-            this.chessboard_history_log = new Stack<Chessboard_Log>();
-
-            // rebind the chessboard to GameView, GameConstroller
-            this.board = new_board;
-            this.game_view.board = new_board;
-            this.game_view.chessboard_view.board = new_board;
-
-            this.game_start = true; // start game
-            this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
-            this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
-
-            // redraw everything
-            this.game_view.redraw();
+            this.startNewGame(chosen_option);
         }
     }
 
@@ -367,18 +362,8 @@ public class GameController {
                 this.player1_score++;
             }
 
-            ChessBoard new_board = new ChessBoard(8, 8); // create new board;
-
-            // rebind the chessboard to GameView, GameConstroller
-            this.board = new_board;
-            this.game_view.board = new_board;
-            this.game_view.chessboard_view.board = new_board;
-
             // redraw menu
             this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message);
-
-            // redraw everything
-            this.game_view.redraw();
         }
     }
 
