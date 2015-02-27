@@ -105,7 +105,7 @@ public class GameController {
 
                     // save current history log
                     Chessboard_Log log = new Chessboard_Log(this.board);
-                    chessboard_history_log.add(log);
+                    chessboard_history_log.push(log);
 
                     /*  remove that opponent's piece */
                     this.board.removePiece(opponent_piece);
@@ -148,7 +148,7 @@ public class GameController {
 
                 // save current history log
                 Chessboard_Log log = new Chessboard_Log(this.board);
-                chessboard_history_log.add(log);
+                chessboard_history_log.push(log);
 
 
                 // move player's piece to that coordinate
@@ -308,6 +308,7 @@ public class GameController {
 
             this.game_start = true; // start game
             this.message = "Have fun in game!!\n" + (this.player1_name) + "'s turn";
+            this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
 
             // redraw everything
             this.game_view.redraw();
@@ -348,6 +349,31 @@ public class GameController {
             // redraw everything
             this.game_view.redraw();
         }
+    }
+
+    /**
+     * Player clicked undo button
+     */
+    public void clickedUndoButton(){
+        if (chessboard_history_log.empty() || this.game_start == false){ // cannot undo
+            JOptionPane.showMessageDialog(null, "Cannot undo");
+            return;
+        }
+        Chessboard_Log log = chessboard_history_log.pop();
+        ChessBoard new_board = log.toChessboard(); // create new chessboard from log.
+
+        // rebind the chessboard to GameView, GameConstroller
+        this.board = new_board;
+        this.game_view.board = new_board;
+        this.game_view.chessboard_view.board = new_board;
+
+        this.game_start = true; // start game
+        this.message = (this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn";
+        this.game_view.menu_view.drawMenu(this.player1_score, this.player2_score, this.message); // redraw menu for game
+
+        // redraw everything
+        this.game_view.redraw();
+
     }
 
     /**

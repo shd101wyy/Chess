@@ -88,6 +88,16 @@ public class MenuView extends JPanel {
         undo_btn = new JButton("Undo");
         undo_btn.setBounds(340, 10, 100, 50);
         this.add(undo_btn);
+        undo_btn.addActionListener(new ActionListener() {
+            /**
+             * Clicked undo button
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                game_view.game_controller.clickedUndoButton(); // run click undo button event
+            }
+        });
 
         // Player1 name
         player1_btn = new JButton("WHITE");

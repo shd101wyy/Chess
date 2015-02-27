@@ -34,6 +34,8 @@ public class Chessboard_Log {
         for(int i = 0; i < height; i++){
             for(int j = 0; j < width; j++){
                 Piece p = board.getPieceAtCoordinate(j, i);
+                if (p == null)
+                    continue;
                 String piece_name = p.getPiece_name();
                 if(piece_name.equals("pawn")){ // check pawn first time move
                     if(((Pawn)p).isFirstTimeMove() == true){
@@ -62,10 +64,13 @@ public class Chessboard_Log {
                 int x = j; // get x coord
                 int y = i; // get y coord
                 String piece_name = this.tiles[i][j]; // get piece name
+                if (piece_name == null){
+                    continue;
+                }
                 Piece p;
                 String color = piece_name.substring(0, 5); // get color for that piece
                 piece_name = piece_name.substring(6);      // get piece name
-                Player player = (color == "white" ? Player.WHITE : Player.BLACK); // get player color
+                Player player = (color.equals("white") ? Player.WHITE : Player.BLACK); // get player color
 
                 // I tried to use switch here, but it seems that my java doesn't support it
                 if (piece_name.equals("pawn_first")) {
