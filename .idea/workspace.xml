@@ -44,7 +44,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Chess$unit_test_in_Chess.coverage" NAME="unit_test in Chess Coverage Results" MODIFIED="1425048436923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Chess$unit_test_in_Chess.coverage" NAME="unit_test in Chess Coverage Results" MODIFIED="1425052227263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>unit_test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Chess$ArcherTest.coverage" NAME="ArcherTest Coverage Results" MODIFIED="1424247735961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chess/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7407408" vertical-offset="5698" max-vertical-offset="6405">
-              <caret line="383" column="81" selection-start-line="383" selection-start-column="81" selection-end-line="383" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.9575672" vertical-offset="5668" max-vertical-offset="6525">
+              <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3895#3907#0" expanded="true" />
@@ -131,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chess/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23694779" vertical-offset="1818" max-vertical-offset="2580">
-              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="2580">
+              <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3046#3356#0" expanded="true" />
@@ -229,9 +229,9 @@
         <option value="$PROJECT_DIR$/src/chessboard/Chessboard_Log.java" />
         <option value="$PROJECT_DIR$/src/chess/Chessboard_View.java" />
         <option value="$PROJECT_DIR$/src/chess/Game.java" />
-        <option value="$PROJECT_DIR$/src/chess/GameController.java" />
         <option value="$PROJECT_DIR$/src/chess/GameView.java" />
         <option value="$PROJECT_DIR$/src/chess/MenuView.java" />
+        <option value="$PROJECT_DIR$/src/chess/GameController.java" />
       </list>
     </option>
   </component>
@@ -1240,19 +1240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chess/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7407408" vertical-offset="5698" max-vertical-offset="6405">
-          <caret line="383" column="81" selection-start-line="383" selection-start-column="81" selection-end-line="383" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3895#3907#0" expanded="true" />
-            <element signature="e#7947#7948#0" expanded="true" />
-            <element signature="e#8003#8004#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/GameView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="1515">
@@ -1273,12 +1260,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chess/MenuView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23694779" vertical-offset="1818" max-vertical-offset="2580">
-          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="2580">
+          <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3046#3356#0" expanded="true" />
             <element signature="e#3355#3356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chess/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9575672" vertical-offset="5668" max-vertical-offset="6525">
+          <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3895#3907#0" expanded="true" />
+            <element signature="e#7947#7948#0" expanded="true" />
+            <element signature="e#8003#8004#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -410,9 +410,17 @@ public class GameController {
         String s = (String)JOptionPane.showInputDialog(null, "Please new name for " + btn.getText());
         if (s != null && s.length() > 0){
             if(btn.getText().equals(this.player1_name)){ // update player1 name
+                if(this.player2_name.equals(s)){ // invalid name, cuz player1 and player2 will have the same name
+                    JOptionPane.showMessageDialog(null, "Invalid name: " + s);
+                    return;
+                }
                 this.player1_name = s;
             }
             else{ // update player2 name
+                if(this.player1_name.equals(s)){ // invalid name, cuz player1 and player2 will have the same name
+                    JOptionPane.showMessageDialog(null, "Invalid name: " + s);
+                    return;
+                }
                 this.player2_name = s;
             }
             btn.setText(s); // update player name
