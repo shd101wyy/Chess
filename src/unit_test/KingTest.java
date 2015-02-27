@@ -1,11 +1,10 @@
 package unit_test;
 
-import chess.ChessBoard;
+import chessboard.ChessBoard;
 import chess.Player;
 import org.junit.Test;
 import piece.King;
 import piece.Pawn;
-import piece.Piece;
 import piece.Rook;
 
 import static org.junit.Assert.*;

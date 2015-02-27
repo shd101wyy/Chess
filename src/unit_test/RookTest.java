@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import chess.ChessBoard;
+import chessboard.ChessBoard;
 import chess.Player;
 import piece.Pawn;
 import piece.Piece;

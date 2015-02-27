@@ -4,6 +4,7 @@ package chess;
  * Created by wangyiyi on 2/26/15.
  */
 
+import chessboard.ChessBoard;
 import piece.Coordinate;
 import piece.Piece;
 
@@ -72,7 +73,7 @@ public class Chessboard_View extends JPanel {
             JOptionPane.showMessageDialog(this, "Checkmate!", "", JOptionPane.INFORMATION_MESSAGE);
         }
         else { // stalemate
-            JOptionPane.showMessageDialog(this, "Player"+(this.board.turns%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Player"+(this.board.getTurns()%2 == 0 ? 1 : 2)+" Stalemate!", "", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -108,7 +109,7 @@ public class Chessboard_View extends JPanel {
         int piece_x_coord = p.getX_coordinate();                // get piece x coordinate (left-bottom coordinate system)
         int piece_y_coord = p.getY_coordinate();                // vet piece y coordinate
         int x = piece_x_coord * this.tile_size;                    // convert to canvas coordinate system
-        int y = (this.board.height - piece_y_coord - 1) * this.tile_size;
+        int y = (this.board.getHeight() - piece_y_coord - 1) * this.tile_size;
         try {
             BufferedImage image = ImageIO.read(new File(p.getPiece_image_path()));  // read image for this piece
             g2d.drawImage(image, x, y, this.tile_size, this.tile_size, null);             // draw the image
@@ -147,7 +148,7 @@ public class Chessboard_View extends JPanel {
                 color = new Color(195, 77, 34);
             }
             x = coord.getX() * this.tile_size;  // convert to canvas coordinate
-            y = (this.board.height - 1 - coord.getY()) * this.tile_size;
+            y = (this.board.getHeight() - 1 - coord.getY()) * this.tile_size;
             drawTileForBoard(g2d, x, y, color);
 
                         /* draw piece at that coordinate */
@@ -174,8 +175,8 @@ public class Chessboard_View extends JPanel {
         Piece p;
         int x, y;                   // x and y coordinate of board square. this coordinate is using top-left system
         Color color;
-        for(i = 0; i < this.board.height; i++){
-            for(j = 0; j < this.board.width; j++){
+        for(i = 0; i < this.board.getHeight(); i++){
+            for(j = 0; j < this.board.getWidth(); j++){
                 x = j * this.tile_size; // calculate canvas coordinate
                 y = i * this.tile_size;
                 /*
@@ -198,8 +199,8 @@ public class Chessboard_View extends JPanel {
         /*
          * draw pieces
          */
-        for(i = 0; i < this.board.height; i++){
-            for(j = 0; j < this.board.width; j++){
+        for(i = 0; i < this.board.getHeight(); i++){
+            for(j = 0; j < this.board.getWidth(); j++){
                 /* draw piece */
                 p = this.board.getPieceAtCoordinate(j, i);    // get piece at current canvas coordinate (left-top coordinate system)
                 if(p != null) {

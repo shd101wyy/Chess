@@ -1,5 +1,6 @@
 package chess;
-import com.sun.codemodel.internal.JOp;
+import chessboard.ChessBoard;
+import chessboard.Chessboard_Log;
 import piece.Coordinate;
 import piece.King;
 import piece.Piece;
@@ -49,11 +50,10 @@ public class GameController {
         /*
          * Check checkmate and stalemate
          */
-        if (this.board.playerCannotMove(this.board.turns % 2 == 0 ? Player.WHITE : Player.BLACK)){ // so right now that player cannot move any chess
-            King king = (this.board.turns % 2 == 0) ? (King)this.board.king1 : (King)this.board.king2;  // get current player's king
+        if (this.board.playerCannotMove(this.board.getTurns() % 2 == 0 ? Player.WHITE : Player.BLACK)){ // so right now that player cannot move any chess
+            King king = (this.board.getTurns() % 2 == 0) ? (King)this.board.getKing1() : (King)this.board.getKing2();  // get current player's king
             if(king == null) // chessboard not initialized yet.
                 return null;
-            // this.gameover = true;
             if(king.isInCheck()){ // checkmate
                 return "checkmate";
             }
@@ -119,7 +119,7 @@ public class GameController {
 
                     /* update turns and redraw the canvas */
                     this.chosen_piece = null;
-                    this.board.turns++;
+                    this.board.incrementTurns();
                     this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
                     panel.repaint();
                     return;
@@ -156,7 +156,7 @@ public class GameController {
 
                 // update turns and redraw the canvas
                 this.chosen_piece = null;
-                this.board.turns++;
+                this.board.incrementTurns();
                 this.updateMessage((this.getPlayerForThisTurn() == Player.WHITE ? this.player1_name : this.player2_name) + "'s turn");
                 panel.repaint();
                 return;
@@ -189,7 +189,7 @@ public class GameController {
          */
         if(clicked_x_coord >= 0 && clicked_y_coord >= 0) {     // valid click scope
             x = (int) (clicked_x_coord / 64);                  // convert to left-bottom chess board coordinate system
-            y = this.board.height - 1 - (int) (clicked_y_coord / 64);
+            y = this.board.getHeight() - 1 - (int) (clicked_y_coord / 64);
             p = this.board.getPieceAtCoordinate(x, y);
 
             /*

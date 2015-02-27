@@ -1,6 +1,6 @@
 package unit_test;
 
-import chess.ChessBoard;
+import chessboard.ChessBoard;
 import chess.Player;
 import junit.framework.TestCase;
 import piece.*;

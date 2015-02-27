@@ -4,21 +4,10 @@ package chess;
  * Created by wangyiyi on 2/25/15.
  */
 
-import com.sun.codemodel.internal.JOp;
-import piece.Coordinate;
-import piece.King;
-import piece.Piece;
+import chessboard.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.util.ArrayList;
 
 /**
  *
@@ -58,10 +47,10 @@ public class GameView  extends JPanel{
         this.tile_size = tile_size;
 
         this.menu_width = 500;   // set menu width
-        this.menu_height = this.board.height * tile_size; // set menu height
+        this.menu_height = this.board.getHeight() * tile_size; // set menu height
 
-        this.board_width = this.board.width * tile_size; // set board width
-        this.board_height = this.board.height * tile_size; // set board height
+        this.board_width = this.board.getWidth() * tile_size; // set board width
+        this.board_height = this.board.getHeight() * tile_size; // set board height
 
         this.view_width = this.board_width  + this.menu_width; // set view width
         this.view_height = this.menu_height; // set view height

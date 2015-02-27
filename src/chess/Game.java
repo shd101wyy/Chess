@@ -1,8 +1,8 @@
 package chess;
 
-import java.awt.*;
+import chessboard.ChessBoard;
+
 import javax.swing.*;
-import java.awt.event.*;
 
 public class Game{
     static JFrame frame;
