@@ -1,0 +1,258 @@
+\hypertarget{classchess_1_1_game_controller}{}\section{chess.\+Game\+Controller Class Reference}
+\label{classchess_1_1_game_controller}\index{chess.\+Game\+Controller@{chess.\+Game\+Controller}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classchess_1_1_game_controller_a807721753fe9883b7573eee34f3c8614}{Game\+Controller} (\hyperlink{classchessboard_1_1_chess_board}{Chess\+Board} board, \hyperlink{classchess_1_1_game_view}{Game\+View} game\+\_\+view)
+\item 
+boolean \hyperlink{classchess_1_1_game_controller_ae38db155ab79e9c899405de2116c6991}{players\+King\+Is\+In\+Check} (\hyperlink{enumchessboard_1_1_player}{Player} player)
+\item 
+String \hyperlink{classchess_1_1_game_controller_ac6c59b1167b78b3963c7ecdb53f3541b}{is\+Checkmate\+Or\+Stalemate} ()
+\item 
+void \hyperlink{classchess_1_1_game_controller_abecbe39ba58ba9547d3bdb7c238ef348}{game\+Is\+Over} (String status)
+\item 
+void \hyperlink{classchess_1_1_game_controller_a7d11340cfe1ebe2af49b5108fcaedd18}{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid} (J\+Panel panel, \hyperlink{classpiece_1_1_piece}{Piece} opponent\+\_\+piece)
+\item 
+void \hyperlink{classchess_1_1_game_controller_a9305375980a713c74e6515c16ebefbbc}{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid} (J\+Panel panel, int x, int y)
+\item 
+\hyperlink{enumchessboard_1_1_player}{Player} \hyperlink{classchess_1_1_game_controller_a47ff441aae36d704a7a9c9315d61e284}{get\+Player\+For\+This\+Turn} ()
+\item 
+void \hyperlink{classchess_1_1_game_controller_a978f68fb8834594117aa49b03dbdcf3d}{check\+User\+Click} (Graphics2\+D g2d, double clicked\+\_\+x\+\_\+coord, double clicked\+\_\+y\+\_\+coord)
+\item 
+void \hyperlink{classchess_1_1_game_controller_af6003c4092b5c51ab7e4e9b064823bfc}{update\+Message} (String message)
+\item 
+void \hyperlink{classchess_1_1_game_controller_a1922c179d1cf4b115e68a79089f03faa}{start\+New\+Game} (int game\+\_\+mode)
+\item 
+void \hyperlink{classchess_1_1_game_controller_a152dd59c8605ceab2b0ca60097097f5e}{clicked\+Start\+Button} ()
+\item 
+void \hyperlink{classchess_1_1_game_controller_a22800c136daed1f9208be17e1c8b9c64}{clicked\+Restart\+Button} ()
+\item 
+void \hyperlink{classchess_1_1_game_controller_a76b4903a383e6b16e4cd8ad85dbeda90}{clicked\+Forfeit\+Button} ()
+\item 
+void \hyperlink{classchess_1_1_game_controller_ae179437fea74f6aa6ce03efd8b786b12}{clicked\+Undo\+Button} ()
+\item 
+void \hyperlink{classchess_1_1_game_controller_aa74fdd8304cba081746e040df2a2a4bb}{update\+Player\+Name} (J\+Button btn)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_1_1_game_controller_a610e87d934d993ee057760c0460cc684}{}\hyperlink{classchessboard_1_1_chess_board}{Chess\+Board} {\bfseries board}\label{classchess_1_1_game_controller_a610e87d934d993ee057760c0460cc684}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_aa1e8ed0fa618f886c88b301188bba6a2}{}\hyperlink{classchess_1_1_game_view}{Game\+View} {\bfseries game\+\_\+view}\label{classchess_1_1_game_controller_aa1e8ed0fa618f886c88b301188bba6a2}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_a09e8ba553128ea3e3074416f086bdb98}{}\hyperlink{classpiece_1_1_piece}{Piece} {\bfseries chosen\+\_\+piece}\label{classchess_1_1_game_controller_a09e8ba553128ea3e3074416f086bdb98}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_a8f873f2f1566ac39dbcced78a26c4761}{}boolean {\bfseries game\+\_\+start}\label{classchess_1_1_game_controller_a8f873f2f1566ac39dbcced78a26c4761}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_a41abf03bb07369cde27f1fc1fd49e09d}{}String {\bfseries player1\+\_\+name}\label{classchess_1_1_game_controller_a41abf03bb07369cde27f1fc1fd49e09d}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_aa98adb033188584d5f6f432671bfbf81}{}String {\bfseries player2\+\_\+name}\label{classchess_1_1_game_controller_aa98adb033188584d5f6f432671bfbf81}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_a1caee96ac57ba2cd1382b87ad9c77c4a}{}int {\bfseries player1\+\_\+score}\label{classchess_1_1_game_controller_a1caee96ac57ba2cd1382b87ad9c77c4a}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_ae0ff8b75fc4348be262301766505860c}{}int {\bfseries player2\+\_\+score}\label{classchess_1_1_game_controller_ae0ff8b75fc4348be262301766505860c}
+
+\item 
+\hypertarget{classchess_1_1_game_controller_a62b849f468a91261ab5a701c8932e36f}{}String {\bfseries message}\label{classchess_1_1_game_controller_a62b849f468a91261ab5a701c8932e36f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created by wangyiyi on 2/25/15. \hyperlink{classchess_1_1_game}{Game} Controller 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classchess_1_1_game_controller_a807721753fe9883b7573eee34f3c8614}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!Game\+Controller@{Game\+Controller}}
+\index{Game\+Controller@{Game\+Controller}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{Game\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}chess.\+Game\+Controller.\+Game\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Chess\+Board}}]{board, }
+\item[{{\bf Game\+View}}]{game\+\_\+view}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a807721753fe9883b7573eee34f3c8614}
+Constructor\+: initialize game controller 
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+{\em game\+\_\+view} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classchess_1_1_game_controller_a978f68fb8834594117aa49b03dbdcf3d}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!check\+User\+Click@{check\+User\+Click}}
+\index{check\+User\+Click@{check\+User\+Click}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{check\+User\+Click}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+check\+User\+Click (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{double}]{clicked\+\_\+x\+\_\+coord, }
+\item[{double}]{clicked\+\_\+y\+\_\+coord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a978f68fb8834594117aa49b03dbdcf3d}
+Check user mouse click, and update gui. 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+{\em clicked\+\_\+x\+\_\+coord} & \\
+\hline
+{\em clicked\+\_\+y\+\_\+coord} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_controller_a76b4903a383e6b16e4cd8ad85dbeda90}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!clicked\+Forfeit\+Button@{clicked\+Forfeit\+Button}}
+\index{clicked\+Forfeit\+Button@{clicked\+Forfeit\+Button}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{clicked\+Forfeit\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+clicked\+Forfeit\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a76b4903a383e6b16e4cd8ad85dbeda90}
+Player clicked forfeit button \hypertarget{classchess_1_1_game_controller_a22800c136daed1f9208be17e1c8b9c64}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!clicked\+Restart\+Button@{clicked\+Restart\+Button}}
+\index{clicked\+Restart\+Button@{clicked\+Restart\+Button}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{clicked\+Restart\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+clicked\+Restart\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a22800c136daed1f9208be17e1c8b9c64}
+Player clicked restart button \hypertarget{classchess_1_1_game_controller_a152dd59c8605ceab2b0ca60097097f5e}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!clicked\+Start\+Button@{clicked\+Start\+Button}}
+\index{clicked\+Start\+Button@{clicked\+Start\+Button}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{clicked\+Start\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+clicked\+Start\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a152dd59c8605ceab2b0ca60097097f5e}
+Player clicked start button \hypertarget{classchess_1_1_game_controller_ae179437fea74f6aa6ce03efd8b786b12}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!clicked\+Undo\+Button@{clicked\+Undo\+Button}}
+\index{clicked\+Undo\+Button@{clicked\+Undo\+Button}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{clicked\+Undo\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+clicked\+Undo\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_ae179437fea74f6aa6ce03efd8b786b12}
+Player clicked undo button \hypertarget{classchess_1_1_game_controller_abecbe39ba58ba9547d3bdb7c238ef348}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!game\+Is\+Over@{game\+Is\+Over}}
+\index{game\+Is\+Over@{game\+Is\+Over}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{game\+Is\+Over}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+game\+Is\+Over (
+\begin{DoxyParamCaption}
+\item[{String}]{status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_abecbe39ba58ba9547d3bdb7c238ef348}
+\hyperlink{classchess_1_1_game}{Game} is over 
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_controller_a47ff441aae36d704a7a9c9315d61e284}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!get\+Player\+For\+This\+Turn@{get\+Player\+For\+This\+Turn}}
+\index{get\+Player\+For\+This\+Turn@{get\+Player\+For\+This\+Turn}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{get\+Player\+For\+This\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} chess.\+Game\+Controller.\+get\+Player\+For\+This\+Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a47ff441aae36d704a7a9c9315d61e284}
+\begin{DoxyReturn}{Returns}
+Player for this turn. 
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_game_controller_ac6c59b1167b78b3963c7ecdb53f3541b}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!is\+Checkmate\+Or\+Stalemate@{is\+Checkmate\+Or\+Stalemate}}
+\index{is\+Checkmate\+Or\+Stalemate@{is\+Checkmate\+Or\+Stalemate}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{is\+Checkmate\+Or\+Stalemate}]{\setlength{\rightskip}{0pt plus 5cm}String chess.\+Game\+Controller.\+is\+Checkmate\+Or\+Stalemate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_ac6c59b1167b78b3963c7ecdb53f3541b}
+check whether is checkmate or stalemate \begin{DoxyReturn}{Returns}
+null if neither checkmate nor stalemate; return \char`\"{}checkmate\char`\"{} if checkmate; return \char`\"{}stalemate\char`\"{} if stalemate 
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_game_controller_a7d11340cfe1ebe2af49b5108fcaedd18}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}}
+\index{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid@{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+move\+Piece\+To\+Opponent\+Piece\+Location\+If\+Valid (
+\begin{DoxyParamCaption}
+\item[{J\+Panel}]{panel, }
+\item[{{\bf Piece}}]{opponent\+\_\+piece}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a7d11340cfe1ebe2af49b5108fcaedd18}
+Player\textquotesingle{}s piece captures opponent piece
+
+If it can be done, redraw the chessboard; otherwise do nothing 
+\begin{DoxyParams}{Parameters}
+{\em panel} & \\
+\hline
+{\em opponent\+\_\+piece} & opponent piece \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_controller_a9305375980a713c74e6515c16ebefbbc}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}}
+\index{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid@{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+move\+Player\+Piece\+To\+Empty\+Tile\+If\+Valid (
+\begin{DoxyParamCaption}
+\item[{J\+Panel}]{panel, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a9305375980a713c74e6515c16ebefbbc}
+Move player\textquotesingle{}s piece to unoccupied tile if valid, which means the move is not a suicide move 
+\begin{DoxyParams}{Parameters}
+{\em panel} & \\
+\hline
+{\em x} & the x coord to move to \\
+\hline
+{\em y} & the y coord to move to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_controller_ae38db155ab79e9c899405de2116c6991}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!players\+King\+Is\+In\+Check@{players\+King\+Is\+In\+Check}}
+\index{players\+King\+Is\+In\+Check@{players\+King\+Is\+In\+Check}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{players\+King\+Is\+In\+Check}]{\setlength{\rightskip}{0pt plus 5cm}boolean chess.\+Game\+Controller.\+players\+King\+Is\+In\+Check (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_ae38db155ab79e9c899405de2116c6991}
+Check whether player\textquotesingle{}s king is in check 
+\begin{DoxyParams}{Parameters}
+{\em player} & check this player\textquotesingle{}s king \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if king is in check. 
+\end{DoxyReturn}
+\hypertarget{classchess_1_1_game_controller_a1922c179d1cf4b115e68a79089f03faa}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!start\+New\+Game@{start\+New\+Game}}
+\index{start\+New\+Game@{start\+New\+Game}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{start\+New\+Game}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+start\+New\+Game (
+\begin{DoxyParamCaption}
+\item[{int}]{game\+\_\+mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_a1922c179d1cf4b115e68a79089f03faa}
+Start a new game if game\+\_\+mode equals 1 =$>$ fantasy mode; otherwise classic mode 
+\begin{DoxyParams}{Parameters}
+{\em game\+\_\+mode} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_controller_af6003c4092b5c51ab7e4e9b064823bfc}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!update\+Message@{update\+Message}}
+\index{update\+Message@{update\+Message}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{update\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+update\+Message (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_af6003c4092b5c51ab7e4e9b064823bfc}
+Update game message 
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_controller_aa74fdd8304cba081746e040df2a2a4bb}{}\index{chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}!update\+Player\+Name@{update\+Player\+Name}}
+\index{update\+Player\+Name@{update\+Player\+Name}!chess\+::\+Game\+Controller@{chess\+::\+Game\+Controller}}
+\subsubsection[{update\+Player\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+Controller.\+update\+Player\+Name (
+\begin{DoxyParamCaption}
+\item[{J\+Button}]{btn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_controller_aa74fdd8304cba081746e040df2a2a4bb}
+Update Player Name 
+\begin{DoxyParams}{Parameters}
+{\em btn} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/chess/Game\+Controller.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\hypertarget{classchess_1_1_game_view}{}\section{chess.\+Game\+View Class Reference}
+\label{classchess_1_1_game_view}\index{chess.\+Game\+View@{chess.\+Game\+View}}
+Inheritance diagram for chess.\+Game\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classchess_1_1_game_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classchess_1_1_game_view_a2164e6eddc14ec94819cf68f847cc9ec}{Game\+View} (\hyperlink{classchessboard_1_1_chess_board}{Chess\+Board} board, int tile\+\_\+size)
+\item 
+void \hyperlink{classchess_1_1_game_view_a8e8693a914d8545e48598460879592ec}{bind\+Game\+Controller} (\hyperlink{classchess_1_1_game_controller}{Game\+Controller} game\+\_\+controller)
+\item 
+void \hyperlink{classchess_1_1_game_view_afd6e597bb751b569b59db40ff455d694}{redraw} ()
+\item 
+void \hyperlink{classchess_1_1_game_view_abc5fa8b90f8041721614f2d56fec164e}{init\+Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_1_1_game_view_a0d299352c1008e693e6a27c6453e6bf3}{}\hyperlink{classchessboard_1_1_chess_board}{Chess\+Board} {\bfseries board}\label{classchess_1_1_game_view_a0d299352c1008e693e6a27c6453e6bf3}
+
+\item 
+\hypertarget{classchess_1_1_game_view_ac3ad8e3f6ed9f13a167b85c0ec90c934}{}\hyperlink{classchess_1_1_game_controller}{Game\+Controller} {\bfseries game\+\_\+controller}\label{classchess_1_1_game_view_ac3ad8e3f6ed9f13a167b85c0ec90c934}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a05e36a24df714ada2e83a8dafa8deaa8}{}\hyperlink{classchess_1_1_chessboard___view}{Chessboard\+\_\+\+View} {\bfseries chessboard\+\_\+view}\label{classchess_1_1_game_view_a05e36a24df714ada2e83a8dafa8deaa8}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a413033913e5b7dcefb33e93a5d3b0695}{}\hyperlink{classchess_1_1_menu_view}{Menu\+View} {\bfseries menu\+\_\+view}\label{classchess_1_1_game_view_a413033913e5b7dcefb33e93a5d3b0695}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a4f9cd991b1b69aa71a6093063ae86744}{}int {\bfseries tile\+\_\+size}\label{classchess_1_1_game_view_a4f9cd991b1b69aa71a6093063ae86744}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a1cfb8d5be090955b213d3ced4a8675dd}{}int {\bfseries view\+\_\+width}\label{classchess_1_1_game_view_a1cfb8d5be090955b213d3ced4a8675dd}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a09be3aab3241803988d635105fd13332}{}int {\bfseries view\+\_\+height}\label{classchess_1_1_game_view_a09be3aab3241803988d635105fd13332}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a80f5a13bb9998ac074fa370b7185437d}{}int {\bfseries board\+\_\+width}\label{classchess_1_1_game_view_a80f5a13bb9998ac074fa370b7185437d}
+
+\item 
+\hypertarget{classchess_1_1_game_view_ae955da73a217c4ebc61050c2c6263f80}{}int {\bfseries board\+\_\+height}\label{classchess_1_1_game_view_ae955da73a217c4ebc61050c2c6263f80}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a30303cd2999aaee09917690d3f30b754}{}int {\bfseries menu\+\_\+width}\label{classchess_1_1_game_view_a30303cd2999aaee09917690d3f30b754}
+
+\item 
+\hypertarget{classchess_1_1_game_view_a095c5e95d97527bd2a0326252343f3c6}{}int {\bfseries menu\+\_\+height}\label{classchess_1_1_game_view_a095c5e95d97527bd2a0326252343f3c6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Draw G\+U\+I for chess game \hyperlink{classchess_1_1_game}{Game} View consists of Chessboard View and Menu View 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classchess_1_1_game_view_a2164e6eddc14ec94819cf68f847cc9ec}{}\index{chess\+::\+Game\+View@{chess\+::\+Game\+View}!Game\+View@{Game\+View}}
+\index{Game\+View@{Game\+View}!chess\+::\+Game\+View@{chess\+::\+Game\+View}}
+\subsubsection[{Game\+View}]{\setlength{\rightskip}{0pt plus 5cm}chess.\+Game\+View.\+Game\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Chess\+Board}}]{board, }
+\item[{int}]{tile\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_view_a2164e6eddc14ec94819cf68f847cc9ec}
+Constructor\+: init game view 
+\begin{DoxyParams}{Parameters}
+{\em board} & the chessboard that we are using now \\
+\hline
+{\em tile\+\_\+size} & this size of tile \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classchess_1_1_game_view_a8e8693a914d8545e48598460879592ec}{}\index{chess\+::\+Game\+View@{chess\+::\+Game\+View}!bind\+Game\+Controller@{bind\+Game\+Controller}}
+\index{bind\+Game\+Controller@{bind\+Game\+Controller}!chess\+::\+Game\+View@{chess\+::\+Game\+View}}
+\subsubsection[{bind\+Game\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+View.\+bind\+Game\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+Controller}}]{game\+\_\+controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_view_a8e8693a914d8545e48598460879592ec}
+Bing game controller to this game view 
+\begin{DoxyParams}{Parameters}
+{\em game\+\_\+controller} & the game controller that we are going to use. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_game_view_abc5fa8b90f8041721614f2d56fec164e}{}\index{chess\+::\+Game\+View@{chess\+::\+Game\+View}!init\+Window@{init\+Window}}
+\index{init\+Window@{init\+Window}!chess\+::\+Game\+View@{chess\+::\+Game\+View}}
+\subsubsection[{init\+Window}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+View.\+init\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_view_abc5fa8b90f8041721614f2d56fec164e}
+Initialize game window \hypertarget{classchess_1_1_game_view_afd6e597bb751b569b59db40ff455d694}{}\index{chess\+::\+Game\+View@{chess\+::\+Game\+View}!redraw@{redraw}}
+\index{redraw@{redraw}!chess\+::\+Game\+View@{chess\+::\+Game\+View}}
+\subsubsection[{redraw}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Game\+View.\+redraw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_game_view_afd6e597bb751b569b59db40ff455d694}
+redraw the whole game view 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/chess/Game\+View.\+java\end{DoxyCompactItemize}

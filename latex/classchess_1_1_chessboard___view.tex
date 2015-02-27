@@ -1,0 +1,159 @@
+\hypertarget{classchess_1_1_chessboard___view}{}\section{chess.\+Chessboard\+\_\+\+View Class Reference}
+\label{classchess_1_1_chessboard___view}\index{chess.\+Chessboard\+\_\+\+View@{chess.\+Chessboard\+\_\+\+View}}
+Inheritance diagram for chess.\+Chessboard\+\_\+\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classchess_1_1_chessboard___view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classchess_1_1_chessboard___view_a603a5829216277fc2987cae53e7cfff0}{Chessboard\+\_\+\+View} (\hyperlink{classchessboard_1_1_chess_board}{Chess\+Board} board, \hyperlink{classchess_1_1_game_controller}{Game\+Controller} game\+\_\+controller, int tile\+\_\+size, int board\+\_\+width, int board\+\_\+height)
+\item 
+void \hyperlink{classchess_1_1_chessboard___view_a5e73e6ae6724334ae54ac3b5e9969f1f}{paint} (Graphics g)
+\item 
+void \hyperlink{classchess_1_1_chessboard___view_a0d2cefaddf8ae8a0b52f71347e4017fa}{draw\+Tile\+For\+Board} (Graphics2\+D g2d, int x, int y, Color color)
+\item 
+void \hyperlink{classchess_1_1_chessboard___view_a1aacffbd1910181a835308ae40afbb0d}{draw\+Piece} (Graphics2\+D g2d, \hyperlink{classpiece_1_1_piece}{Piece} p)
+\item 
+void \hyperlink{classchess_1_1_chessboard___view_a0e84f18e7cfa470edac2a16e54f7e6eb}{draw\+Possible\+Moves\+For\+Piece} (Graphics2\+D g2d, Array\+List$<$ \hyperlink{classpiece_1_1_coordinate}{Coordinate} $>$ coords)
+\item 
+void \hyperlink{classchess_1_1_chessboard___view_a43e435d12ccea60a92d3b9d4638d48c3}{draw\+Board} (Graphics2\+D g2d, double clicked\+\_\+x\+\_\+coord, double clicked\+\_\+y\+\_\+coord)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_1_1_chessboard___view_a9672d977ec1b62b2d9f4a47035c8132a}{}\hyperlink{classchessboard_1_1_chess_board}{Chess\+Board} {\bfseries board}\label{classchess_1_1_chessboard___view_a9672d977ec1b62b2d9f4a47035c8132a}
+
+\item 
+\hypertarget{classchess_1_1_chessboard___view_aa4fc1ec2f50b04614b0a7fe23a49d6dd}{}int {\bfseries tile\+\_\+size}\label{classchess_1_1_chessboard___view_aa4fc1ec2f50b04614b0a7fe23a49d6dd}
+
+\item 
+\hypertarget{classchess_1_1_chessboard___view_ad23b8076d6da9841122d29cca79a99c8}{}\hyperlink{classchess_1_1_game_controller}{Game\+Controller} {\bfseries game\+\_\+controller}\label{classchess_1_1_chessboard___view_ad23b8076d6da9841122d29cca79a99c8}
+
+\item 
+\hypertarget{classchess_1_1_chessboard___view_a37099dff3f03c778c3ba348e4cd46536}{}double {\bfseries clicked\+\_\+x\+\_\+coord} = -\/1\label{classchess_1_1_chessboard___view_a37099dff3f03c778c3ba348e4cd46536}
+
+\item 
+\hypertarget{classchess_1_1_chessboard___view_a25bc9c5c75ed9926655598a6cd0eced7}{}double {\bfseries clicked\+\_\+y\+\_\+coord} = -\/1\label{classchess_1_1_chessboard___view_a25bc9c5c75ed9926655598a6cd0eced7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Chessboard View class This class is used to draw chessboard 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classchess_1_1_chessboard___view_a603a5829216277fc2987cae53e7cfff0}{}\index{chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}!Chessboard\+\_\+\+View@{Chessboard\+\_\+\+View}}
+\index{Chessboard\+\_\+\+View@{Chessboard\+\_\+\+View}!chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}}
+\subsubsection[{Chessboard\+\_\+\+View}]{\setlength{\rightskip}{0pt plus 5cm}chess.\+Chessboard\+\_\+\+View.\+Chessboard\+\_\+\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf Chess\+Board}}]{board, }
+\item[{{\bf Game\+Controller}}]{game\+\_\+controller, }
+\item[{int}]{tile\+\_\+size, }
+\item[{int}]{board\+\_\+width, }
+\item[{int}]{board\+\_\+height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chessboard___view_a603a5829216277fc2987cae53e7cfff0}
+Mouse press event
+
+\subsection{Member Function Documentation}
+\hypertarget{classchess_1_1_chessboard___view_a43e435d12ccea60a92d3b9d4638d48c3}{}\index{chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}!draw\+Board@{draw\+Board}}
+\index{draw\+Board@{draw\+Board}!chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}}
+\subsubsection[{draw\+Board}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chessboard\+\_\+\+View.\+draw\+Board (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{double}]{clicked\+\_\+x\+\_\+coord, }
+\item[{double}]{clicked\+\_\+y\+\_\+coord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chessboard___view_a43e435d12ccea60a92d3b9d4638d48c3}
+Draw current chessboard
+
+
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+{\em clicked\+\_\+x\+\_\+coord} & the x coordinate where we clicked \\
+\hline
+{\em clicked\+\_\+y\+\_\+coord} & the y coordinate where we clicked \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chessboard___view_a1aacffbd1910181a835308ae40afbb0d}{}\index{chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}!draw\+Piece@{draw\+Piece}}
+\index{draw\+Piece@{draw\+Piece}!chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}}
+\subsubsection[{draw\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chessboard\+\_\+\+View.\+draw\+Piece (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{{\bf Piece}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chessboard___view_a1aacffbd1910181a835308ae40afbb0d}
+Draw Piece on Chessboard 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+{\em p} & the piece we want to draw \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chessboard___view_a0e84f18e7cfa470edac2a16e54f7e6eb}{}\index{chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}!draw\+Possible\+Moves\+For\+Piece@{draw\+Possible\+Moves\+For\+Piece}}
+\index{draw\+Possible\+Moves\+For\+Piece@{draw\+Possible\+Moves\+For\+Piece}!chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}}
+\subsubsection[{draw\+Possible\+Moves\+For\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chessboard\+\_\+\+View.\+draw\+Possible\+Moves\+For\+Piece (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{Array\+List$<$ {\bf Coordinate} $>$}]{coords}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chessboard___view_a0e84f18e7cfa470edac2a16e54f7e6eb}
+Draw tiles that the piece can move to 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chessboard___view_a0d2cefaddf8ae8a0b52f71347e4017fa}{}\index{chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}!draw\+Tile\+For\+Board@{draw\+Tile\+For\+Board}}
+\index{draw\+Tile\+For\+Board@{draw\+Tile\+For\+Board}!chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}}
+\subsubsection[{draw\+Tile\+For\+Board}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chessboard\+\_\+\+View.\+draw\+Tile\+For\+Board (
+\begin{DoxyParamCaption}
+\item[{Graphics2\+D}]{g2d, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{Color}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chessboard___view_a0d2cefaddf8ae8a0b52f71347e4017fa}
+Draw tile on board. \begin{DoxyVerb} Coordinate System
+ (0, 0) -----------------------> x
+ |
+ |
+ |
+ |      canvas coordinate system.
+ |     (x, y)
+ |
+ y
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em g2d} & \\
+\hline
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+{\em color} & the color to draw \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_1_1_chessboard___view_a5e73e6ae6724334ae54ac3b5e9969f1f}{}\index{chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}!paint@{paint}}
+\index{paint@{paint}!chess\+::\+Chessboard\+\_\+\+View@{chess\+::\+Chessboard\+\_\+\+View}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void chess.\+Chessboard\+\_\+\+View.\+paint (
+\begin{DoxyParamCaption}
+\item[{Graphics}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_1_1_chessboard___view_a5e73e6ae6724334ae54ac3b5e9969f1f}
+Draw images on canvas 
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/chess/Chessboard\+\_\+\+View.\+java\end{DoxyCompactItemize}
