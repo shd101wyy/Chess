@@ -397,7 +397,7 @@ public class GameController {
      * Player clicked undo button
      */
     public void clickedUndoButton(){
-        if (chessboard_history_log.empty() || this.game_start == false){ // cannot undo
+        if (chessboard_history_log == null || chessboard_history_log.empty() || this.game_start == false){ // cannot undo
             JOptionPane.showMessageDialog(null, "Cannot undo");
             return;
         }

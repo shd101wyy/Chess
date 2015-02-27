@@ -26,28 +26,12 @@ public class Lancer extends Piece{
     }
 
     /**
-     * add (x, y) to coords if there is enemy
-     * @param coords the array list that contains all possible move coords
-     * @param x the x coordinate
-     * @param y the y coordinate
-     */
-    public void addToCoordIfThereIsEnemy(ArrayList<Coordinate> coords, int x, int y){
-        if (x < 0 || x >= this.board.getWidth() || y < 0 || y >= this.board.getHeight()) // invalid coordinate
-            return;
-        Piece p = this.board.getPieceAtCoordinate(x, y); // get piece at that coord
-        if (p == null) return; // empty
-        if (p.player == this.player)
-            return; // player's
-        else // enemy
-            coords.add(new Coordinate(x, y));
-    }
-    /**
      * Attack and Move coordinate:
      *
      *           #
-     *         # # #                  #: is enemy
-     *       # # p # #                @: is possible move area
-     *                                P: lancer
+     *         # # #                  #: possible moves
+     *       # # p # #                P: lancer
+     *
      *  if there is enemy/friend on left/top/right that block the way, then archer cannot go further
      *
      * @return ArrayList<Coordinate> Object that contains all possible move coordinates.
