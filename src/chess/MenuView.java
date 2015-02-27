@@ -15,12 +15,16 @@ import java.awt.event.ActionListener;
  *
  */
 public class MenuView extends JPanel {
-    private String player1_name;  // name of player1
-    private String player2_name;  // name of player2
     private int player1_score; // score of player1
     private int player2_score; // score of player2
     private String message;      // game message
     protected GameView game_view; // game view associated with the menu view
+    protected JButton start_btn; // start button
+    protected JButton restart_btn; // restart button
+    protected JButton forfeit_btn; // forfeit button
+    protected JButton undo_btn; // undo button
+    protected JButton player1_btn; // player1 name
+    protected JButton player2_btn; // player2 name
     /**
      * MenuView constructor
      * This constructor is used to put several components on panel
@@ -38,7 +42,7 @@ public class MenuView extends JPanel {
           * Setup several buttons for menu
           *
           */
-        JButton start_btn = new JButton("Start");
+        start_btn = new JButton("Start");
         start_btn.setBounds(10, 10, 100, 50);
         this.add(start_btn);
         start_btn.addActionListener(new ActionListener() {
@@ -53,7 +57,7 @@ public class MenuView extends JPanel {
         });
 
 
-        JButton restart_btn = new JButton("Restart");
+        restart_btn = new JButton("Restart");
         restart_btn.setBounds(120, 10, 100, 50);
         this.add(restart_btn);
         restart_btn.addActionListener(new ActionListener() {
@@ -67,7 +71,7 @@ public class MenuView extends JPanel {
             }
         });
 
-        JButton forfeit_btn = new JButton("Forfeit");
+        forfeit_btn = new JButton("Forfeit");
         forfeit_btn.setBounds(230, 10, 100, 50);
         this.add(forfeit_btn);
         forfeit_btn.addActionListener(new ActionListener() {
@@ -81,26 +85,57 @@ public class MenuView extends JPanel {
             }
         });
 
-        JButton undo_btn = new JButton("Undo");
+        undo_btn = new JButton("Undo");
         undo_btn.setBounds(340, 10, 100, 50);
         this.add(undo_btn);
 
-        JButton player1_btn = new JButton("WHITE");
-        player1_btn.setBounds(10, 100, 100, 50);
+        // Player1 name
+        player1_btn = new JButton("WHITE");
+        player1_btn.setForeground(new Color(255, 255, 255)); // set white color
+        player1_btn.setFont(new Font("TimesRoman", Font.BOLD, 30));
+        player1_btn.setHorizontalAlignment(SwingConstants.LEFT);
+        player1_btn.setBounds(10, 100, 200, 50);
+        player1_btn.setBorderPainted(false);
+        player1_btn.setFocusPainted(false);
+        player1_btn.setContentAreaFilled(false);
         this.add(player1_btn);
+        player1_btn.addActionListener(new ActionListener() {
+            /**
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                game_view.game_controller.updatePlayerName(player1_btn);
+            }
+        });
 
 
-        JButton player2_btn = new JButton("BLACK");
-        player2_btn.setBounds(340, 100, 100, 50);
+        // Player2 name
+        player2_btn = new JButton("BLACK");
+        player2_btn.setFont(new Font("TimesRoman", Font.BOLD, 30));
+        player2_btn.setHorizontalAlignment(SwingConstants.LEFT);
+        player2_btn.setBounds(300, 100, 200, 50);
+        player2_btn.setBorderPainted(false);
+        player2_btn.setFocusPainted(false);
+        player2_btn.setContentAreaFilled(false);
         this.add(player2_btn);
+        player2_btn.addActionListener(new ActionListener() {
+            /**
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                game_view.game_controller.updatePlayerName(player2_btn);
+            }
+        });
 
         this.setBackground(new Color(100, 175, 89)); // draw menu background
 
-        player1_name = "WHITE";
-        player1_score = 0;
-        player2_name = "BLACK";
-        player2_score = 0;
-        message = "Press Start button to start the game";
+        //player1_name = "WHITE";
+        this.player1_score = 0;
+        //player2_name = "BLACK";
+        this.player2_score = 0;
+        this.message = "Press Start button to start the game";
     }
 
     /**

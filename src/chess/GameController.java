@@ -301,7 +301,7 @@ public class GameController {
             return;
         }
         Player current_player = this.getPlayerForThisTurn();
-        int entry = JOptionPane.showConfirmDialog(null, (current_player == Player.WHITE ? this.player1_name : this.player2_name) + "! Do you want to restart the game?", "Please select", JOptionPane.YES_NO_OPTION);
+        int entry = JOptionPane.showConfirmDialog(null, (current_player == Player.WHITE ? this.player1_name : this.player2_name) + "! Do you want to give up the game?", "Please select", JOptionPane.YES_NO_OPTION);
         if (entry == JOptionPane.YES_OPTION){ // player want to forfeit
             this.message = (current_player == Player.WHITE ? this.player2_name : player1_name) + " Win!!"; // reset message
             this.game_start = false;
@@ -325,7 +325,27 @@ public class GameController {
 
             // redraw everything
             this.game_view.redraw();
+        }
+    }
 
+    /**
+     * Update Player Name
+     * @param btn
+     */
+    public void updatePlayerName(JButton btn){
+        if(this.game_start == true){
+            JOptionPane.showMessageDialog(null, "You cannot change your name during the game");
+            return;
+        }
+        String s = (String)JOptionPane.showInputDialog(null, "Please new name for " + btn.getText());
+        if (s != null && s.length() > 0){
+            if(btn.getText().equals(this.player1_name)){ // update player1 name
+                this.player1_name = s;
+            }
+            else{ // update player2 name
+                this.player2_name = s;
+            }
+            btn.setText(s); // update player name
         }
     }
 }
